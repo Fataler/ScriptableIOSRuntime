@@ -1,55 +1,68 @@
-# Scriptable Widgets Runtime
+# ScriptableWidgets
 
-## Overview
-A lightweight JavaScript runtime that lets you create, configure, and run UI widgets on any macOS or iOS device. Widgets are plain JS modules that export a `render` function and optional lifecycle hooks.
+A collection of hand-crafted widgets for the [Scriptable](https://scriptable.app/) iOS app, with a local preview server for development on macOS.
 
-## Core Capabilities
-- **Declarative UI**: Build UI with JSX‑like syntax or plain DOM APIs.
-- **Reactive State**: `useState`, `useEffect`‑style hooks for auto‑updates.
-- **Cross‑Platform**: Works in Scriptable, Shortcuts, and native macOS apps.
-- **Sandboxed Execution**: Secure sandbox prevents unwanted system access.
-- **Hot‑Reload**: Changes to widget files reload instantly during development.
-- **Theme Support**: Dark/light modes, custom color palettes.
+## Widgets
 
-## Example Widgets
-### 1. Clock (`FClock.js`)
-```js
-export function render({ now }) {
-  const h = now.getHours();
-  const m = now.getMinutes();
-  return `<div class="clock">${h}:${m.toString().padStart(2,'0')}</div>`;
-}
-```
-### 2. Time Counter (`FTimeCounter.js`)
-```js
-import { useState, useEffect } from "runtime";
-export function render() {
-  const [seconds, set] = useState(0);
-  useEffect(() => {
-    const id = setInterval(() => set(s => s + 1), 1000);
-    return () => clearInterval(id);
-  }, []);
-  return `<span>${seconds}s</span>`;
-}
-```
-### 3. Weather Card (`FWeather.js`)
-```js
-export async function render({ location }) {
-  const data = await fetch(`https://api.weather.com/v3/wx/conditions/current?geocode=${location}&format=json`).then(r=>r.json());
-  return `<div class="weather">${data.temperature}° – ${data.narrative}</div>`;
-}
-```
+### 🌤 FWeather
+A weather widget powered by [Open-Meteo](https://open-meteo.com/) — no API key required.
 
-## Getting Started
-1. Clone repo.
-2. Run `npm install` (only dev deps).
-3. Launch `npm run dev` – opens a preview window.
-4. Edit any widget file; the preview updates instantly.
+- Shows current temperature, feels-like, wind, precipitation probability and UV index
+- Large readable text, minimal design
+- Tapping the widget opens a weather page (Yandex Погода or custom URL)
+- Caches data locally, updates every 20 minutes
+- Sizes: **mini** (1×1) and **normal** (2×1)
 
-## Contribution
-- Follow the coding style from `eslint-config-widget`.
-- Write docs for new hooks in `HOOKS.md`.
-- Submit PRs with test coverage (`npm test`).
+### 🍼 FeedMe
+A baby feeding tracker widget.
+
+- Shows time since last feeding and countdown to next
+- Color-coded status: green (ok) → yellow (soon) → red (time to feed)
+- **Tap the widget** to log a feeding instantly
+- Supports Google Apps Script backend for syncing between multiple phones
+- Sizes: **mini** (1×1) and **normal** (2×1)
+
+### 🔵 FTimeCounter
+Activity rings showing progress through the current day, week, month and year — inspired by Apple Health.
+
+- Concentric rings, each representing a time period (day/week/month/year)
+- Sizes: **micro** (lock screen `accessoryCircular`) and **mini** (1×1 home screen)
 
 ---
-*Runtime designed for scriptable, fast, and safe widget creation.*
+
+## Local Preview
+
+The repo includes a Node.js preview server that runs widgets in a browser during development — no need to copy code to your phone on every change.
+
+```bash
+node preview/server.mjs
+# or
+node preview/server.mjs --open   # opens browser automatically
+```
+
+The server watches `widgets/` and reloads instantly on file changes.  
+It mocks Scriptable APIs (`ListWidget`, `DrawContext`, `Color`, `Font`, etc.) in the browser environment so widgets render visually.
+
+---
+
+## Widget structure
+
+Each widget is a single self-contained `.js` file that runs in Scriptable:
+
+- Has a top-level `CONFIG` object with all tunable parameters
+- Calls `await main()` on start
+- Uses Scriptable APIs: `ListWidget`, `DrawContext`, `Script`, `Alert`, `FileManager`, etc.
+- No npm dependencies — each file is standalone and can be pasted directly into Scriptable
+
+---
+
+## Requirements
+
+- **On device:** [Scriptable](https://scriptable.app/) (free, iOS/iPadOS)
+- **For local preview:** Node.js 18+
+
+---
+
+## License
+
+MIT
