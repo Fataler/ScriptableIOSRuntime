@@ -1,0 +1,28 @@
+{
+  "widgets": [
+    {
+      "id": "fweather",
+      "file": "widgets/FWeather.js",
+      "title": "FWeather",
+      "description": "Погода Open-Meteo",
+      "sizes": ["mini", "normal"],
+      "defaultSize": "normal"
+    },
+    {
+      "id": "feedme",
+      "file": "widgets/FeedMe.js",
+      "title": "FeedMe",
+      "description": "Кормление ребёнка",
+      "sizes": ["mini", "normal"],
+      "defaultSize": "normal"
+    },
+    {
+      "id": "ftimecounter",
+      "file": "widgets/FTimeCounter.js",
+      "title": "FTimeCounter",
+      "description": "Кольца дня, недели, месяца и года",
+      "sizes": ["micro", "mini"],
+      "defaultSize": "mini"
+    }
+  ]
+}

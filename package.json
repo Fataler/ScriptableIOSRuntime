@@ -1,0 +1,9 @@
+{
+  "name": "scriptable-widgets",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "preview": "node preview/server.mjs",
+    "preview:open": "node preview/server.mjs --open"
+  }
+}

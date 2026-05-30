@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scriptable Preview</title>
+  <link rel="stylesheet" href="/preview/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div>
+      <h1 id="title">Scriptable Preview</h1>
+      <p id="subtitle" class="subtitle">Локальный рантайм для виджетов</p>
+    </div>
+    <div class="controls">
+      <label>
+        Виджет
+        <select id="widget"></select>
+      </label>
+      <label>
+        Размер
+        <select id="size">
+          <option value="normal" selected>Normal 2×1</option>
+          <option value="mini">Mini 1×1</option>
+        </select>
+      </label>
+      <label>
+        config.widgetFamily
+        <select id="family">
+          <option value="medium" selected>medium</option>
+          <option value="small">small</option>
+          <option value="accessoryCircular">accessoryCircular</option>
+        </select>
+      </label>
+      <button type="button" id="refresh">Обновить</button>
+      <button type="button" id="clear-storage" class="secondary">Сбросить кэш</button>
+    </div>
+  </header>
+
+  <p id="status" class="status" data-kind="busy">Загрузка…</p>
+
+  <main class="stage">
+    <div class="phone">
+      <img id="widget-preview" alt="" width="680" height="320" />
+    </div>
+    <p class="hint">
+      Добавляй скрипты в <code>widgets/</code> — они появятся в списке (или укажи в <code>widgets.json</code>).
+      Размер и <code>widgetFamily</code> синхронизированы как на iOS при <code>widgetSize: "auto"</code>.
+      <a id="open-link" href="#" target="_blank" rel="noopener">URL виджета</a>
+    </p>
+  </main>
+
+  <script type="module" src="/preview/preview.js"></script>
+</body>
+</html>
