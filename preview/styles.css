@@ -101,6 +101,7 @@ button:hover {
 
 .phone {
   display: inline-block;
+  max-width: min(100%, 480px);
   padding: 18px;
   border-radius: 24px;
   background: #080a12;
@@ -111,7 +112,8 @@ button:hover {
 
 #widget-preview {
   display: block;
-  max-width: 100%;
+  width: 100%;
+  height: auto;
   background: #111;
 }
 

@@ -24,6 +24,7 @@ const CONFIG = {
     // Ребёнок
     // ----------------------------------------------------------
     babyName: "Катя",
+    babyBirthDate: "2026-05-26", // "YYYY-MM-DD" — дата рождения для расчёта возраста и объёма
   
     // Интервал кормления в минутах:
     // 180 = 3 часа
@@ -136,7 +137,7 @@ const CONFIG = {
     const action = params.action || "";
   
     if (action === "feed") {
-      const amount = getNumber(params.amount, CONFIG.defaultAmountMl);
+      const amount = getNumber(params.amount, getDefaultFeedAmountMl());
       const type = cleanText(params.type) || CONFIG.defaultFeedType;
   
       addFeeding(data, {
@@ -274,16 +275,17 @@ const CONFIG = {
   
     const action = actions[choice].id;
   
-    if (action === "feed_now") {
+  if (action === "feed_now") {
+      const defaultAmountMl = getDefaultFeedAmountMl();
       addFeeding(data, {
         date: new Date(),
-        amountMl: CONFIG.defaultAmountMl,
+        amountMl: defaultAmountMl,
         type: CONFIG.defaultFeedType,
         source: "manual"
       });
   
       await saveData(data);
-      await notify("Кормление отмечено", `${CONFIG.defaultAmountMl} мл · ${CONFIG.defaultFeedType}`);
+      await notify("Кормление отмечено", `${defaultAmountMl} мл · ${CONFIG.defaultFeedType}`);
       await preview(data, CONFIG.previewSize);
       return;
     }
@@ -343,12 +345,15 @@ const CONFIG = {
   function buildMenuMessage(stats) {
     const intervalMinutes = stats.intervalMinutes || getTargetIntervalMinutes(new Date());
     const intervalLine = `Интервал: ${humanTime(intervalMinutes)}${stats.isNightInterval ? " (ночь)" : ""}`;
+    const ageLine = stats.ageLabel ? `Возраст: ${stats.ageLabel}\n` : "";
+    const recLine = stats.recommended ? `Норма за кормление: ${stats.recommended.label}\n` : "";
   
     if (!stats.hasData) {
-      return `Пока нет записей.\n${intervalLine}`;
+      return `${ageLine}${recLine}Пока нет записей.\n${intervalLine}`;
     }
   
     return (
+      `${ageLine}${recLine}` +
       `Последнее: ${formatClock(stats.lastDate)}\n` +
       `Прошло: ${humanTime(stats.elapsedMinutes)}\n` +
       `Следующее: ${formatClock(stats.nextDate)}\n` +
@@ -399,13 +404,14 @@ const CONFIG = {
   }
   
   async function askFeedingFields(defaultDate = new Date()) {
+    const defaultAmountMl = getDefaultFeedAmountMl(defaultDate);
     const a = new Alert();
     a.title = "Кормление";
     a.message = "Дата, время, объём и тип.";
   
     a.addTextField("Дата ДД.ММ.ГГГГ", formatDateInput(defaultDate));
     a.addTextField("Время ЧЧ:ММ", formatClock(defaultDate));
-    a.addTextField("Объём, мл", String(CONFIG.defaultAmountMl));
+    a.addTextField("Объём, мл", String(defaultAmountMl));
     a.addTextField("Тип", CONFIG.defaultFeedType);
   
     a.addAction("Сохранить");
@@ -436,11 +442,12 @@ const CONFIG = {
   }
   
   async function askCustomFeeding() {
+    const defaultAmountMl = getDefaultFeedAmountMl();
     const a = new Alert();
     a.title = "Новое кормление";
     a.message = "Укажи объём и тип кормления.";
   
-    a.addTextField("Объём, мл", String(CONFIG.defaultAmountMl));
+    a.addTextField("Объём, мл", String(defaultAmountMl));
     a.addTextField("Тип", CONFIG.defaultFeedType);
   
     a.addAction("Сохранить");
@@ -450,7 +457,7 @@ const CONFIG = {
     if (result === -1) return null;
   
     return {
-      amountMl: getNumber(a.textFieldValue(0), CONFIG.defaultAmountMl),
+      amountMl: getNumber(a.textFieldValue(0), defaultAmountMl),
       type: cleanText(a.textFieldValue(1)) || CONFIG.defaultFeedType
     };
   }
@@ -598,8 +605,9 @@ const CONFIG = {
     const w = CANVAS.normal.w;
   
     const pad = 34;
-  
-    drawText(ctx, `🍼 ${CONFIG.babyName}`, pad, 28, 28, CONFIG.ui.text, "bold");
+    const ageSuffix = stats.ageLabel ? ` (${stats.ageLabel})` : "";
+
+    drawText(ctx, `🍼 ${CONFIG.babyName}${ageSuffix}`, pad, 28, 28, CONFIG.ui.text, "bold");
   
     drawPill(
       ctx,
@@ -652,7 +660,11 @@ const CONFIG = {
       stats.hasData ? formatClock(stats.nextDate) : "—",
       stats.hasData ? `интервал ${intervalLabel}` : "нажми виджет"
     );
-  
+
+    const lastCaption = stats.recommended
+      ? `норма ${stats.recommended.label}`
+      : (stats.hasData ? `${getDefaultFeedAmountMl()} мл по тапу` : "пусто");
+
     drawInfoCard(
       ctx,
       pad + (cardW + gap) * 2,
@@ -661,7 +673,7 @@ const CONFIG = {
       cardH,
       "Последнее",
       stats.hasData ? formatClock(stats.lastDate) : "—",
-      stats.hasData ? `${CONFIG.defaultAmountMl} мл по тапу` : "пусто"
+      lastCaption
     );
   }
   
@@ -674,7 +686,9 @@ const CONFIG = {
     const w = CANVAS.mini.w;
   
     const pad = 24;
-  
+    const ageSuffix = stats.ageLabel ? ` (${stats.ageLabel})` : "";
+    const nameLine = `${CONFIG.babyName}${ageSuffix}`;
+
     drawText(ctx, "🍼", pad, 22, 34, CONFIG.ui.text, "bold");
   
     drawPill(
@@ -688,7 +702,7 @@ const CONFIG = {
       0.18
     );
   
-    drawText(ctx, CONFIG.babyName, pad, 72, 25, CONFIG.ui.muted, "bold");
+    drawText(ctx, nameLine, pad, 72, 25, CONFIG.ui.muted, "bold");
     drawText(ctx, state.miniMain, pad, 116, 45, CONFIG.ui.text, "heavy");
   
     drawTextInRect(
@@ -722,14 +736,20 @@ const CONFIG = {
   // ============================================================
   
   function getState(stats) {
+    const recSuffix = stats.recommended ? ` · норма ${stats.recommended.label}` : "";
+
     if (!stats.hasData) {
+      const startSub = stats.recommended
+        ? `Норма: ${stats.recommended.label} · тап запишет первое кормление`
+        : "Тап по виджету запишет первое кормление";
+
       return {
         label: "старт",
         color: CONFIG.ui.empty,
         main: "Нажми, чтобы начать",
-        sub: "Тап по виджету запишет первое кормление",
+        sub: startSub,
         miniMain: "Старт",
-        miniSub: "Нажми, чтобы записать первое кормление"
+        miniSub: startSub
       };
     }
   
@@ -738,9 +758,9 @@ const CONFIG = {
         label: "пора",
         color: CONFIG.ui.late,
         main: "Пора кормить",
-        sub: `Последнее ${formatClock(stats.lastDate)} · прошло ${humanTime(stats.elapsedMinutes)}`,
+        sub: `Последнее ${formatClock(stats.lastDate)} · прошло ${humanTime(stats.elapsedMinutes)}${recSuffix}`,
         miniMain: "Пора",
-        miniSub: `Прошло ${humanTime(stats.elapsedMinutes)}`
+        miniSub: `Прошло ${humanTime(stats.elapsedMinutes)}${recSuffix}`
       };
     }
   
@@ -749,9 +769,9 @@ const CONFIG = {
         label: "скоро",
         color: CONFIG.ui.soon,
         main: `Через ${humanTime(stats.remainingMinutes)}`,
-        sub: `Последнее ${formatClock(stats.lastDate)} · следующее около ${formatClock(stats.nextDate)}`,
+        sub: `Последнее ${formatClock(stats.lastDate)} · следующее около ${formatClock(stats.nextDate)}${recSuffix}`,
         miniMain: humanTimeShort(stats.remainingMinutes),
-        miniSub: `Следующее около ${formatClock(stats.nextDate)}`
+        miniSub: `Следующее около ${formatClock(stats.nextDate)}${recSuffix}`
       };
     }
   
@@ -790,6 +810,96 @@ const CONFIG = {
   
   
   // ============================================================
+  // 9b. ВОЗРАСТ И ОБЪЁМ ПИТАНИЯ
+  // ============================================================
+
+  function getBabyAge(birthDateStr, nowDate = new Date()) {
+    if (!birthDateStr) return null;
+
+    const birth = parseIsoDateLocal(birthDateStr);
+    if (isNaN(birth.getTime())) return null;
+
+    const todayStart = startOfDayLocal(nowDate);
+    const birthStart = startOfDayLocal(birth);
+    const ageDays = Math.floor((todayStart.getTime() - birthStart.getTime()) / 86400000);
+
+    if (ageDays < 0) return null;
+    const ageMonths = Math.floor(ageDays / 30.44);
+
+    return { ageDays, ageMonths };
+  }
+
+  function formatBabyAge(ageDays) {
+    if (ageDays == null) return "";
+    if (ageDays <= 0) return "0 дн";
+    if (ageDays <= 30) return `${ageDays} дн`;
+
+    const months = Math.floor(ageDays / 30.44);
+    if (months < 1) return `${ageDays} дн`;
+    if (months < 12) return `${months} мес`;
+
+    const years = Math.floor(months / 12);
+    const rem = months % 12;
+    if (rem === 0) return `${years} г`;
+    return `${years} г ${rem} мес`;
+  }
+
+  function getRecommendedVolumeMl(ageDays) {
+    if (ageDays == null || ageDays <= 0) return null;
+
+    // WHO formula: daily volume = weight × ml/kg/day ÷ feedings/day
+    // Term infant ~3.3 kg, 8 feedings/day first month, 6-7 later
+    // Day 1: 30-60 ml/kg/day → ~15 ml/feed
+    // Day 3: 90-120 → ~40
+    // Day 6: 150-180 → ~65
+    // Month 2+: 150 ml/kg/day with growing weight
+    // Month 6+: 120 ml/kg/day (solids introduced)
+    // Month 9+: 100 ml/kg/day
+
+    if (ageDays <= 1) return makeRecommendedVolume(15);
+    if (ageDays <= 2) return makeRecommendedVolume(25);
+    if (ageDays <= 3) return makeRecommendedVolume(40);
+    if (ageDays <= 4) return makeRecommendedVolume(50);
+    if (ageDays <= 5) return makeRecommendedVolume(58);
+    if (ageDays <= 7) return makeRecommendedVolume(65);
+    if (ageDays <= 14) return makeRecommendedVolume(70);
+    if (ageDays <= 30) return makeRecommendedVolume(80);
+    if (ageDays <= 60) return makeRecommendedVolume(100);
+    if (ageDays <= 90) return makeRecommendedVolume(120);
+    if (ageDays <= 120) return makeRecommendedVolume(140);
+    if (ageDays <= 150) return makeRecommendedVolume(155);
+    if (ageDays <= 180) return makeRecommendedVolume(170);
+    if (ageDays <= 270) return makeRecommendedVolume(190);
+    if (ageDays <= 365) return makeRecommendedVolume(200);
+
+    return null;
+  }
+
+  function makeRecommendedVolume(avg) {
+    const rounded = roundUpRecommendedMl(avg);
+    return {
+      avg,
+      displayMl: rounded,
+      label: `~${rounded} мл`
+    };
+  }
+
+  function roundUpRecommendedMl(value) {
+    const step = value >= 50 ? 10 : 5;
+    return Math.ceil(value / step) * step;
+  }
+
+  function getDefaultFeedAmountMl(atDate = new Date()) {
+    const age = getBabyAge(CONFIG.babyBirthDate, atDate);
+    const recommended = age ? getRecommendedVolumeMl(age.ageDays) : null;
+    const displayMl = recommended && recommended.displayMl;
+    return Number.isFinite(displayMl) && displayMl > 0
+      ? displayMl
+      : CONFIG.defaultAmountMl;
+  }
+
+
+  // ============================================================
   // 10. СТАТИСТИКА
   // ============================================================
   
@@ -814,7 +924,7 @@ const CONFIG = {
       Math.floor((now.getTime() - lastDate.getTime()) / 60000)
     );
   
-    const intervalMinutes = getTargetIntervalMinutes(now);
+    const intervalMinutes = getTargetIntervalMinutes(lastDate);
     const remainingMinutes = intervalMinutes - elapsedMinutes;
   
     const nextDate = new Date(lastDate.getTime() + intervalMinutes * 60 * 1000);
@@ -832,6 +942,10 @@ const CONFIG = {
       return sum + getNumber(item.amountMl, 0);
     }, 0);
   
+    const age = getBabyAge(CONFIG.babyBirthDate);
+    const ageLabel = age ? formatBabyAge(age.ageDays) : null;
+    const recommended = age ? getRecommendedVolumeMl(age.ageDays) : null;
+
     return {
       hasData: true,
       lastDate,
@@ -840,14 +954,20 @@ const CONFIG = {
       remainingMinutes,
       progress,
       intervalMinutes,
-      isNightInterval: isNightTime(now),
+      isNightInterval: isNightTime(lastDate),
       todayCount: today.length,
-      todayMl
+      todayMl,
+      age,
+      ageLabel,
+      recommended
     };
   }
   
   function emptyStats() {
     const intervalMinutes = getTargetIntervalMinutes(new Date());
+    const age = getBabyAge(CONFIG.babyBirthDate);
+    const ageLabel = age ? formatBabyAge(age.ageDays) : null;
+    const recommended = age ? getRecommendedVolumeMl(age.ageDays) : null;
   
     return {
       hasData: false,
@@ -859,7 +979,10 @@ const CONFIG = {
       intervalMinutes,
       isNightInterval: isNightTime(new Date()),
       todayCount: 0,
-      todayMl: 0
+      todayMl: 0,
+      age,
+      ageLabel,
+      recommended
     };
   }
   
@@ -910,13 +1033,17 @@ const CONFIG = {
   
   function statsFromElapsed(elapsedMinutes, extras = {}) {
     const now = new Date();
-    const interval = getTargetIntervalMinutes(now);
+    const interval = getTargetIntervalMinutes(lastDate);
     const elapsed = Math.round(elapsedMinutes);
     const lastDate = new Date(now.getTime() - elapsed * 60 * 1000);
     const remainingMinutes = interval - elapsed;
     const nextDate = new Date(lastDate.getTime() + interval * 60 * 1000);
     const progress = clamp(elapsed / interval, 0, 1);
   
+    const age = getBabyAge(CONFIG.babyBirthDate);
+    const ageLabel = age ? formatBabyAge(age.ageDays) : null;
+    const recommended = age ? getRecommendedVolumeMl(age.ageDays) : null;
+
     return {
       hasData: true,
       lastDate,
@@ -925,9 +1052,12 @@ const CONFIG = {
       remainingMinutes,
       progress,
       intervalMinutes: interval,
-      isNightInterval: isNightTime(now),
+      isNightInterval: isNightTime(lastDate),
       todayCount: getNumber(extras.todayCount, 3),
-      todayMl: getNumber(extras.todayMl, 90)
+      todayMl: getNumber(extras.todayMl, 90),
+      age,
+      ageLabel,
+      recommended
     };
   }
   
@@ -1473,6 +1603,27 @@ const CONFIG = {
     if (!date) return "—";
   
     return `${formatDateInput(date)} ${formatClock(date)}`;
+  }
+
+  function parseIsoDateLocal(value) {
+    const text = cleanText(value);
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(text);
+    if (!m) return new Date(NaN);
+
+    const year = Number(m[1]);
+    const month = Number(m[2]);
+    const day = Number(m[3]);
+    const dt = new Date(year, month - 1, day, 12, 0, 0, 0);
+
+    if (dt.getFullYear() !== year || dt.getMonth() !== month - 1 || dt.getDate() !== day) {
+      return new Date(NaN);
+    }
+
+    return dt;
+  }
+
+  function startOfDayLocal(date) {
+    return new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0, 0);
   }
   
   function parseDateTimeFields(dateStr, timeStr) {

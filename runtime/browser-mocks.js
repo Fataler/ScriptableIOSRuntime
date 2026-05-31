@@ -238,13 +238,28 @@ export function installMocks(options = {}) {
     systemFont(size) {
       return { size, weight: "regular" };
     },
+    lightSystemFont(size) {
+      return { size, weight: "300" };
+    },
+    lightRoundedSystemFont(size) {
+      return { size, weight: "300" };
+    },
     mediumSystemFont(size) {
+      return { size, weight: "medium" };
+    },
+    mediumRoundedSystemFont(size) {
       return { size, weight: "medium" };
     },
     boldSystemFont(size) {
       return { size, weight: "bold" };
     },
+    boldRoundedSystemFont(size) {
+      return { size, weight: "bold" };
+    },
     heavySystemFont(size) {
+      return { size, weight: "heavy" };
+    },
+    heavyRoundedSystemFont(size) {
       return { size, weight: "heavy" };
     }
   };

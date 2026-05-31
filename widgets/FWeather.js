@@ -789,41 +789,54 @@ const CONFIG = {
     const c = weather.current;
     const a = weather.analysis;
     const desc = describeWeatherCode(c.weatherCode, c.isDay);
-  
+
     let priority = "good";
     let main = shortWeatherText(desc.text);
-  
+
     if (a.flags.thunder) {
-      main = "⛈ гроза — дома";
+      main = "⛈ гроза — лучше дома";
+      priority = "bad";
+    } else if (a.flags.veryWindy && a.flags.cold) {
+      main = "💨 ветер и мороз";
       priority = "bad";
     } else if (a.flags.veryWindy) {
       main = "💨 сильный ветер";
       priority = "bad";
+    } else if (a.flags.snow && a.flags.cold) {
+      main = "🌨 снег и мороз";
+      priority = "warning";
     } else if (a.flags.umbrella && a.nextRain) {
-      main = `☔ дождь ${formatHourRangeHuman(a.nextRain.start, a.nextRain.end)}`;
+      const now = Date.now();
+      const rainStart = a.nextRain.start.getTime();
+      main = now >= rainStart
+        ? `🌧 дождь до ${two(a.nextRain.end.getHours())}:00`
+        : `🌧 дождь ${formatHourRangeHuman(a.nextRain.start, a.nextRain.end)}`;
       priority = "warning";
     } else if (a.flags.snow) {
-      main = "🌨 идёт снег";
+      main = "🌨 снег";
+      priority = "warning";
+    } else if (a.flags.windy && a.flags.cool) {
+      main = "💨 ветрено и свежо";
       priority = "warning";
     } else if (a.flags.windy) {
       main = "💨 ветрено";
       priority = "warning";
     } else if (a.flags.cold) {
-      main = `🥶 ощущается ${signedRound(c.feelsLike)}°`;
+      main = "🥶 холодно";
       priority = "cold";
     } else if (a.flags.hot) {
-      main = `🥵 ощущается ${signedRound(c.feelsLike)}°`;
+      main = "🥵 жарко";
       priority = "hot";
     } else if (a.flags.rainRisk) {
       main = "🌦 дождь возможен";
       priority = "warning";
     }
-  
+
     if (weather.staleCache) {
-      main = "⚠️ кэш";
+      main = "кэш — обнови";
       priority = "warning";
     }
-  
+
     return {
       priority,
       main,
@@ -835,45 +848,48 @@ const CONFIG = {
   
   function buildWearAdvice(weather) {
     const feels = weather.current.feelsLike;
+    const c = weather.current;
     const a = weather.analysis;
-  
+
     let base;
-  
-    if (feels <= -10) base = "пуховик";
+
+    if (feels <= -15) base = "пуховик, шапка, перчатки";
+    else if (feels <= -10) base = "пуховик, шапка";
     else if (feels <= -2) base = "куртка, шапка";
     else if (feels <= 7) base = "куртка";
     else if (feels <= 14) base = "худи";
     else if (feels <= 21) base = "кофта";
     else if (feels <= 26) base = "футболка";
     else base = "легко одеться";
-  
-    const extras = [];
-    if (a.flags.umbrella) extras.push("☔");
-    if (a.flags.windy && feels <= 16) extras.push("💨");
-    if (a.flags.uv) extras.push("SPF");
-    if (a.flags.hot) extras.push("💧");
-    if (a.flags.snow) extras.push("🥾");
-    if (a.flags.cold && feels > -2) extras.push("🧢");
-  
+
+    const mods = [];
+    if (a.flags.umbrella) mods.push("☔");
+    if (a.flags.windy && c.windSpeed >= 5 && feels < c.temperature - 3) mods.push("ветрозащита");
+    if (a.flags.uv) mods.push("SPF");
+    if (a.flags.hot) mods.push("пей воду");
+    if (a.flags.snow) mods.push("непромокаемая обувь");
+
     let line = `🧥 ${base}`;
-    if (extras.length > 0) line += ` · ${extras.join(" ")}`;
-  
+    if (mods.length > 0) line += ` · ${mods.join(" ")}`;
+
     return line;
   }
   
   function buildWalkAdvice(weather) {
     const a = weather.analysis;
-  
-    if (a.flags.thunder) return "не выходи";
-    if (a.flags.veryWindy) return "ненадолго на улице";
+
+    if (a.flags.thunder) return "лучше дома";
+    if (a.flags.veryWindy && a.flags.cold) return "ветер и мороз — дома";
+    if (a.flags.veryWindy) return "сильный ветер — осторожнее";
     if (a.flags.umbrella && a.nextRain) return buildWalkAroundRain(a.nextRain);
-    if (a.walkWindow) {
-      return `можно ${formatHourRange(a.walkWindow.start, a.walkWindow.end)}`;
-    }
-    if (a.flags.hot) return "в тени лучше";
-    if (a.flags.cold) return "ненадолго на улице";
+    if (a.walkWindow) return `можно ${formatHourRange(a.walkWindow.start, a.walkWindow.end)}`;
+    if (a.flags.snow) return "осторожно, скользко";
+    if (a.flags.hot && a.flags.uv) return "в тени, SPF";
+    if (a.flags.hot) return "в тени прохладнее";
+    if (a.flags.cold && a.flags.windy) return "тепло одевшись";
+    if (a.flags.cold) return "тепло одевшись";
     if (a.flags.windy) return "без открытых мест";
-  
+
     return "";
   }
   
@@ -894,14 +910,11 @@ const CONFIG = {
     const c = weather.current;
     const a = weather.analysis;
     const items = [];
-  
-    if (a.flags.humid) items.push("сыро");
-    if (a.flags.dry) items.push("сухо");
-    if (a.flags.lowPressure) items.push(`${round(c.pressureMmHg)}↓`);
-    if (a.flags.highPressure) items.push(`${round(c.pressureMmHg)}↑`);
-    if (c.cloudCover >= 85) items.push("пасмурно");
-    if (a.flags.uv) items.push(`UV ${round(a.maxUv)}`);
-  
+
+    if (a.flags.humid) items.push("высокая влажность");
+    if (a.flags.dry) items.push("сухой воздух");
+    if (c.cloudCover >= 85 && !a.flags.umbrella) items.push("пасмурно");
+
     return items.length === 0 ? "всё спокойно" : items.join(" · ");
   }
   
@@ -1028,26 +1041,30 @@ const CONFIG = {
   
   function drawNormal(ctx, weather, visual) {
     const w = CANVAS.normal.w;
+    const h = CANVAS.normal.h;
     const pad = 24;
     const c = weather.current;
     const s = weather.summary;
-  
+
     const tempW = 200;
     const rightX = pad + tempW + 24;
     const rightW = w - rightX - pad;
-  
-    drawText(ctx, `${visual.icon} ${truncate(weather.location.name, 22)}`, pad, 22, 26, CONFIG.ui.text, "bold");
-    drawStatusDot(ctx, w - pad - 12, 30, visual.accent);
-    drawText(ctx, getStatusPillText(weather), w - pad - 88, 24, 14, visual.accent, "bold");
-  
-    drawText(ctx, `${signedRound(c.temperature)}°`, pad, 58, 76, CONFIG.ui.text, "heavy");
-    drawText(ctx, `как ${signedRound(c.feelsLike)}°`, pad, 132, 23, CONFIG.ui.soft, "medium");
-  
-    drawTextInRect(ctx, s.main, rightX, 58, rightW, 50, 27, visual.accent, "bold");
-  
+
+    drawText(ctx, `${visual.icon} ${truncate(weather.location.name, 22)}`, pad, 20, 26, CONFIG.ui.text, "bold");
+    drawStatusDot(ctx, w - pad - 12, 28, visual.accent);
+    drawText(ctx, getStatusPillText(weather), w - pad - 88, 22, 14, visual.accent, "bold");
+
+    ctx.setFillColor(colorWithAlpha(visual.accent, 0.08));
+    ctx.fillEllipse(new Rect(pad - 10, 42, 170, 95));
+
+    drawText(ctx, `${signedRound(c.temperature)}°`, pad, 50, 72, CONFIG.ui.text, "heavy");
+    drawText(ctx, `как ${signedRound(c.feelsLike)}°`, pad, 124, 22, CONFIG.ui.soft, "medium");
+
+    drawTextInRect(ctx, s.main, rightX, 54, rightW, 44, 26, visual.accent, "bold");
+
     const panelLines = buildAdviceLines(s, 52);
-    const panelH = panelHeight(panelLines, 28, 14);
-    drawAdvicePanel(ctx, rightX, CANVAS.normal.h - pad - panelH, rightW, panelH, panelLines, 28, 18);
+    const panelH = panelHeight(panelLines, 26, 12);
+    drawAdvicePanel(ctx, rightX, h - pad - panelH, rightW, panelH, panelLines, 26, 16);
   }
   
   function drawMini(ctx, weather, visual) {
@@ -1057,29 +1074,29 @@ const CONFIG = {
     const innerW = w - pad * 2;
     const c = weather.current;
     const s = weather.summary;
-  
-    drawText(ctx, truncate(weather.location.name, 18), pad, 22, 15, CONFIG.ui.soft, "medium");
-    drawText(ctx, visual.icon, w - pad - 42, 14, 38, CONFIG.ui.text, "bold");
-  
-    ctx.setFillColor(colorWithAlpha(visual.accent, 0.14));
-    ctx.fillEllipse(new Rect(pad - 8, 44, 150, 88));
-  
-    drawText(ctx, `${signedRound(c.temperature)}°`, pad, 52, 68, CONFIG.ui.text, "heavy");
-    drawText(ctx, `как ${signedRound(c.feelsLike)}°`, pad, 125, 19, CONFIG.ui.soft, "medium");
-  
-    drawTextInRect(ctx, s.main, pad, 146, innerW, 58, 22, visual.accent, "bold");
-  
+
+    drawText(ctx, truncate(weather.location.name, 18), pad, 20, 15, CONFIG.ui.soft, "medium");
+    drawText(ctx, visual.icon, w - pad - 42, 12, 38, CONFIG.ui.text, "bold");
+
+    ctx.setFillColor(colorWithAlpha(visual.accent, 0.10));
+    ctx.fillEllipse(new Rect(pad - 10, 40, 150, 90));
+
+    drawText(ctx, `${signedRound(c.temperature)}°`, pad, 50, 68, CONFIG.ui.text, "heavy");
+    drawText(ctx, `как ${signedRound(c.feelsLike)}°`, pad, 120, 18, CONFIG.ui.soft, "medium");
+
+    drawTextInRect(ctx, s.main, pad, 142, innerW, 44, 20, visual.accent, "bold");
+
     const panelLines = buildAdviceLines(s, 30);
-    const panelH = panelHeight(panelLines, 26, 12);
-    drawAdvicePanel(ctx, pad, h - pad - panelH, innerW, panelH, panelLines, 26, 17);
+    const panelH = panelHeight(panelLines, 26, 10);
+    drawAdvicePanel(ctx, pad, h - pad - panelH, innerW, panelH, panelLines, 26, 16);
   }
   
   function buildAdviceLines(summary, maxLen) {
     const lines = [];
-  
+
     if (cleanText(summary.wear)) lines.push(truncate(summary.wear, maxLen));
     if (cleanText(summary.walk)) lines.push(truncate(`🚶 ${summary.walk}`, maxLen));
-  
+
     return lines;
   }
   

@@ -58,10 +58,8 @@ familySelect.addEventListener("change", () => {
 
 window.addEventListener("scriptable-preview-ready", e => {
   const { dataUrl, url, size } = e.detail;
-  const dims = PREVIEW_LOGICAL_SIZES[size] || PREVIEW_LOGICAL_SIZES.normal;
+  const dims = PREVIEW_LOGICAL_SIZES[size] || PREVIEW_LOGICAL_SIZES.medium;
 
-  widgetImg.style.width = `${dims.w}px`;
-  widgetImg.style.height = `${dims.h}px`;
   widgetImg.width = dims.w;
   widgetImg.height = dims.h;
   widgetImg.classList.toggle("is-micro", size === "micro");
@@ -132,7 +130,8 @@ function syncSizeOptions() {
   const sizeLabels = {
     micro: "Micro lock (76×76)",
     mini: "Mini 1×1 (320×320)",
-    normal: "Normal 2×1 (680×320)"
+    medium: "Medium 2×1 (680×320)",
+    large: "Large 2×2 (680×680)"
   };
 
   sizeSelect.innerHTML = "";
