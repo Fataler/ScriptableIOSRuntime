@@ -33,8 +33,8 @@ const CONFIG = {
   
     // Ночной интервал (null = как днём). Активен между nightHoursStart и nightHoursEnd.
     nightIntervalMinutes: 240,
-    nightHoursStart: 22,
-    nightHoursEnd: 7,
+    nightHoursStart: 0,
+    nightHoursEnd: 8,
   
     // За сколько минут до кормления статус становится жёлтым
     warningMinutesBefore: 35,

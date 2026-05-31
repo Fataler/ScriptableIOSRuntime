@@ -28,6 +28,13 @@ Activity rings showing progress through the current day, week, month and year �
 - Concentric rings, each representing a time period (day/week/month/year)
 - Sizes: **micro** (lock screen `accessoryCircular`) and **mini** (1×1 home screen)
 
+### 🔐 RouterVpnToggle (script)
+Standalone Scriptable script (not a widget): toggles **VPN Client** on a TP-Link AX5400-class router over LAN.
+
+- **On iPhone:** `scripts/RouterVpnToggle.js` — set `host`, `password`, run on home Wi‑Fi
+- Uses the router’s own `tpEncrypt.js` via WebView (same API as the web UI)
+- **Dev only (Mac, LAN):** `tools/router-vpn/smoke-test.mjs` — see `tools/router-vpn/README.md`
+
 ---
 
 ## Local Preview
