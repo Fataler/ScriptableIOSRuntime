@@ -183,27 +183,26 @@ const CONFIG = {
       return;
     }
   
-    const recent = feedings.slice(0, 10);
+    const historyItems = buildHistoryItems(feedings);
     const a = new Alert();
-    a.title = "История последних 10 записей";
+    a.title = "История кормлений";
     a.message = "Выберите запись для действия";
-    recent.forEach((item, idx) => {
-      const dateStr = formatClock(new Date(item.at));
-      const label = `${dateStr} · ${item.amountMl} мл · ${item.type || CONFIG.defaultFeedType}`;
+    historyItems.forEach((item) => {
+      const label = `${item.whenLabel} · ${item.amountMl} мл · ${item.type || CONFIG.defaultFeedType}`;
       a.addAction(label);
     });
     a.addCancelAction("Закрыть");
   
     const choice = await a.presentSheet();
-    if (choice < 0 || choice >= recent.length) return; // cancelled
+    if (choice < 0 || choice >= historyItems.length) return; // cancelled
   
-    const selected = recent[choice];
+    const selected = historyItems[choice];
     // Find actual index in original array
     const actualIdx = data.feedings.findIndex(f => f.at === selected.at && f.amountMl === selected.amountMl && f.type === selected.type);
   
     const actAlert = new Alert();
     actAlert.title = "Действие над записью";
-    actAlert.message = `${formatClock(new Date(selected.at))} · ${selected.amountMl} мл · ${selected.type || CONFIG.defaultFeedType}`;
+    actAlert.message = `${formatShortDateTime(new Date(selected.at))} · ${selected.amountMl} мл · ${selected.type || CONFIG.defaultFeedType}`;
     actAlert.addAction("Редактировать");
     actAlert.addAction("Удалить");
     actAlert.addCancelAction("Отмена");
@@ -319,14 +318,18 @@ const CONFIG = {
       return;
     }
   
-    if (action === "edit_last") {
-      const saved = await editLastFeeding(data);
-      if (saved) await preview(data, CONFIG.previewSize);
-      return;
-    }
-  
     if (action === "preview") {
       await preview(data, CONFIG.previewSize);
+      return;
+    }
+
+    if (action === "size_mini") {
+      await preview(data, "mini");
+      return;
+    }
+
+    if (action === "size_normal") {
+      await preview(data, "normal");
       return;
     }
   
@@ -340,6 +343,29 @@ const CONFIG = {
         await notify("Удалять нечего", "История кормлений пустая");
       }
     }
+  }
+
+  function buildHistoryItems(feedings, now = new Date()) {
+    return feedings.map(item => {
+      const atDate = new Date(item.at);
+      return {
+        ...item,
+        whenLabel: formatHistoryWhen(atDate, now)
+      };
+    });
+  }
+
+  function formatHistoryWhen(date, now = new Date()) {
+    if (!date) return "—";
+
+    const startToday = startOfDayLocal(now);
+    const startTarget = startOfDayLocal(date);
+    const dayDiff = Math.floor((startToday.getTime() - startTarget.getTime()) / 86400000);
+
+    if (dayDiff === 0) return `сегодня ${formatClock(date)}`;
+    if (dayDiff === 1) return `вчера ${formatClock(date)}`;
+
+    return `${formatShortDateTime(date)}`;
   }
   
   function buildMenuMessage(stats) {
@@ -462,61 +488,6 @@ const CONFIG = {
     };
   }
   
-  async function editLastFeeding(data) {
-    const last = getLastFeeding(data);
-  
-    if (!last) {
-      await notify("Редактировать нечего", "История кормлений пустая");
-      return false;
-    }
-  
-    const current = new Date(last.at);
-  
-    const a = new Alert();
-    a.title = "Последняя запись";
-    a.message =
-      `Сейчас: ${formatDateTime(current)}\n` +
-      `${last.amountMl} мл · ${last.type || CONFIG.defaultFeedType}`;
-  
-    a.addTextField("Дата ДД.ММ.ГГГГ", formatDateInput(current));
-    a.addTextField("Время ЧЧ:ММ", formatClock(current));
-    a.addTextField("Объём, мл", String(last.amountMl ?? CONFIG.defaultAmountMl));
-    a.addTextField("Тип", last.type || CONFIG.defaultFeedType);
-  
-    a.addAction("Сохранить");
-    a.addCancelAction("Отмена");
-  
-    const result = await a.presentAlert();
-    if (result === -1) return false;
-  
-    const when = parseDateTimeFields(a.textFieldValue(0), a.textFieldValue(1));
-  
-    if (!when) {
-      await notify("Не сохранено", "Неверная дата или время");
-      return false;
-    }
-  
-    const amountMl = getNumber(normalizeCommaNumber(a.textFieldValue(2)), NaN);
-  
-    if (!Number.isFinite(amountMl) || amountMl < 0) {
-      await notify("Не сохранено", "Объём должен быть числом ≥ 0");
-      return false;
-    }
-  
-    last.at = when.toISOString();
-    last.amountMl = amountMl;
-    last.type = cleanText(a.textFieldValue(3)) || CONFIG.defaultFeedType;
-    last.editedAt = new Date().toISOString();
-  
-    await saveData(data);
-    await notify(
-      "Запись обновлена",
-      `${formatDateTime(when)} · ${amountMl} мл · ${last.type}`
-    );
-  
-    return true;
-  }
-  
   async function preview(data, size) {
     const widget = await createWidget(data, size);
   
@@ -606,8 +577,9 @@ const CONFIG = {
   
     const pad = 34;
     const ageSuffix = stats.ageLabel ? ` (${stats.ageLabel})` : "";
+    const bottleLabel = stats.isNightInterval ? "🍼🌙" : "🍼";
 
-    drawText(ctx, `🍼 ${CONFIG.babyName}${ageSuffix}`, pad, 28, 28, CONFIG.ui.text, "bold");
+    drawText(ctx, `${bottleLabel} ${CONFIG.babyName}${ageSuffix}`, pad, 28, 28, CONFIG.ui.text, "bold");
   
     drawPill(
       ctx,
@@ -688,8 +660,9 @@ const CONFIG = {
     const pad = 24;
     const ageSuffix = stats.ageLabel ? ` (${stats.ageLabel})` : "";
     const nameLine = `${CONFIG.babyName}${ageSuffix}`;
+    const bottleLabel = stats.isNightInterval ? "🍼🌙" : "🍼";
 
-    drawText(ctx, "🍼", pad, 22, 34, CONFIG.ui.text, "bold");
+    drawText(ctx, bottleLabel, pad, 22, 34, CONFIG.ui.text, "bold");
   
     drawPill(
       ctx,
@@ -1392,15 +1365,6 @@ const CONFIG = {
     return data.feedings.shift();
   }
   
-  function getLastFeeding(data) {
-    if (!data.feedings || data.feedings.length === 0) return null;
-  
-    data.feedings.sort((a, b) => new Date(b.at).getTime() - new Date(a.at).getTime());
-  
-    return data.feedings[0];
-  }
-  
-  
   // ============================================================
   // 12. РИСОВАНИЕ: ФОН
   // ============================================================
@@ -1603,6 +1567,12 @@ const CONFIG = {
     if (!date) return "—";
   
     return `${formatDateInput(date)} ${formatClock(date)}`;
+  }
+
+  function formatShortDateTime(date) {
+    if (!date) return "—";
+
+    return `${two(date.getDate())}.${two(date.getMonth() + 1)} ${formatClock(date)}`;
   }
 
   function parseIsoDateLocal(value) {

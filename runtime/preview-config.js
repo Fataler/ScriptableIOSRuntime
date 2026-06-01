@@ -9,6 +9,23 @@ export const PREVIEW_LOGICAL_SIZES = {
 /** Match iPhone @3x home-screen widgets in preview. */
 export const PREVIEW_DEVICE_PIXEL_RATIO = 3;
 
+/**
+ * Browser canvas text metrics are usually a bit more optimistic than real
+ * Scriptable-on-iPhone rendering, especially for bold/heavy Cyrillic text.
+ * Keep preview slightly conservative so layouts fail earlier locally.
+ */
+export const PREVIEW_TEXT_METRICS = {
+  lineHeightMultiplier: 1.24,
+  widthMultiplier: 1.05,
+  weightWidthMultiplier: {
+    regular: 1,
+    medium: 1.01,
+    bold: 1.03,
+    heavy: 1.05
+  },
+  emojiWidthMultiplier: 1.08
+};
+
 export const SIZE_TO_WIDGET_FAMILY = {
   micro: "accessoryCircular",
   mini: "small",

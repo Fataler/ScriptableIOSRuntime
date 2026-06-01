@@ -6,7 +6,22 @@
       "title": "FWeather",
       "description": "Погода Open-Meteo",
       "sizes": ["mini", "normal"],
-      "defaultSize": "normal"
+      "defaultSize": "normal",
+      "previewControls": {
+        "debugPresets": true,
+        "now": true,
+        "bounds": true,
+        "query": true
+      },
+      "debugPresets": [
+        { "value": "", "label": "Реальные данные" },
+        { "value": "calm", "label": "Спокойно" },
+        { "value": "rain_now", "label": "Дождь сейчас" },
+        { "value": "rain_soon", "label": "Дождь скоро" },
+        { "value": "snow", "label": "Снег" },
+        { "value": "wind", "label": "Ветер" },
+        { "value": "hot", "label": "Жара" }
+      ]
     },
     {
       "id": "feedme",

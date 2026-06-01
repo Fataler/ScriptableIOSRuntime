@@ -24,16 +24,31 @@
           <option value="mini">Mini 1×1</option>
         </select>
       </label>
-      <label>
-        config.widgetFamily
-        <select id="family">
-          <option value="medium" selected>medium</option>
-          <option value="small">small</option>
-          <option value="large">large</option>
-          <option value="accessoryCircular">accessoryCircular</option>
+      <label id="control-debug-wrap">
+        Debug preset
+        <select id="debug">
+          <option value="">Реальные данные</option>
         </select>
       </label>
+      <label id="control-now-wrap">
+        Время now
+        <input id="now" type="text" placeholder="2026-06-01T07:00:00+03:00" />
+      </label>
+      <label id="control-bounds-wrap" class="toggle">
+        <span>Bounds overlay</span>
+        <input id="bounds" type="checkbox" />
+      </label>
+      <label id="control-query-wrap">
+        Доп. query
+        <input id="query" type="text" placeholder="foo=bar&x=1" />
+      </label>
+      <label>
+        Derived family
+        <div id="family-badge" class="badge">small</div>
+      </label>
       <button type="button" id="refresh">Обновить</button>
+      <button type="button" id="reset-controls" class="secondary">Сбросить инструменты</button>
+      <button type="button" id="copy-url" class="secondary">Копировать URL</button>
       <button type="button" id="clear-storage" class="secondary">Сбросить кэш</button>
     </div>
   </header>
@@ -41,14 +56,36 @@
   <p id="status" class="status" data-kind="busy">Загрузка…</p>
 
   <main class="stage">
-    <div class="phone">
-      <img id="widget-preview" alt="" width="680" height="320" />
+    <div class="workspace">
+      <section class="preview-column">
+        <div class="phone">
+          <img id="widget-preview" alt="" width="680" height="320" />
+        </div>
+        <p class="hint">
+          Добавляй скрипты в <code>widgets/</code> — они появятся в списке (или укажи в <code>widgets.json</code>).
+          Debug preset подставляет query вроде <code>debug=rain_soon</code>. <code>Derived family</code> только показывает,
+          какой <code>config.widgetFamily</code> рантайм отдаёт скрипту для текущего размера.
+          <a id="open-link" href="#" target="_blank" rel="noopener">URL виджета</a>
+        </p>
+      </section>
+      <aside class="debug-panel">
+        <div id="debug-card" class="debug-card">
+          <h2>Debug</h2>
+          <div id="preset-chips" class="chips"></div>
+        </div>
+        <div class="debug-card">
+          <h2>State</h2>
+          <dl class="meta">
+            <div><dt>Widget</dt><dd id="meta-widget">-</dd></div>
+            <div><dt>Size</dt><dd id="meta-size">-</dd></div>
+            <div><dt>Family</dt><dd id="meta-family">-</dd></div>
+            <div id="meta-debug-row"><dt>Debug</dt><dd id="meta-debug">-</dd></div>
+            <div id="meta-now-row"><dt>Now</dt><dd id="meta-now">-</dd></div>
+            <div><dt>Query</dt><dd id="meta-query">-</dd></div>
+          </dl>
+        </div>
+      </aside>
     </div>
-    <p class="hint">
-      Добавляй скрипты в <code>widgets/</code> — они появятся в списке (или укажи в <code>widgets.json</code>).
-      Размер и <code>widgetFamily</code> синхронизированы как на iOS при <code>widgetSize: "auto"</code>.
-      <a id="open-link" href="#" target="_blank" rel="noopener">URL виджета</a>
-    </p>
   </main>
 
   <script type="module" src="/preview/preview.js"></script>

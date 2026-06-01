@@ -1,4 +1,4 @@
-import { PREVIEW_DEVICE_PIXEL_RATIO } from "./preview-config.js";
+import { PREVIEW_DEVICE_PIXEL_RATIO, PREVIEW_TEXT_METRICS } from "./preview-config.js";
 
 const STORAGE_ROOT = "scriptable-preview";
 
@@ -579,8 +579,8 @@ function createDrawContextClass() {
       const ctx = this._ctx;
       applyTextStyle(ctx, this._font, this._textColor, this._textAlign);
 
-      const lineHeight = this._font.size * 1.2;
-      const lines = wrapText(ctx, String(text), rect.width);
+      const lineHeight = this._font.size * PREVIEW_TEXT_METRICS.lineHeightMultiplier;
+      const lines = wrapText(ctx, String(text), rect.width, this._font);
       const blockHeight = lines.length * lineHeight;
       let y = rect.y + Math.max(0, (rect.height - blockHeight) / 2);
 
@@ -603,11 +603,11 @@ function createDrawContextClass() {
 function applyTextStyle(ctx, font, color, align) {
   const weight =
     font.weight === "heavy"
-      ? "800"
+      ? "900"
       : font.weight === "bold"
-        ? "700"
+        ? "760"
         : font.weight === "medium"
-          ? "500"
+          ? "560"
           : "400";
 
   ctx.font = `${weight} ${font.size}px ${FONT_STACK}`;
@@ -620,14 +620,14 @@ function applyTextStyle(ctx, font, color, align) {
   ctx.shadowOffsetY = 0;
 }
 
-function wrapText(ctx, text, maxWidth) {
+function wrapText(ctx, text, maxWidth, font) {
   const words = text.split(/\s+/);
   const lines = [];
   let line = "";
 
   for (const word of words) {
     const test = line ? `${line} ${word}` : word;
-    if (ctx.measureText(test).width > maxWidth && line) {
+    if (measurePreviewTextWidth(ctx, test, font) > maxWidth && line) {
       lines.push(line);
       line = word;
     } else {
@@ -639,6 +639,27 @@ function wrapText(ctx, text, maxWidth) {
   if (lines.length === 0) lines.push(text);
 
   return lines;
+}
+
+function measurePreviewTextWidth(ctx, text, font) {
+  const base = ctx.measureText(String(text)).width;
+  const key = normalizeFontWeight(font);
+  const weightBoost = PREVIEW_TEXT_METRICS.weightWidthMultiplier[key] || 1;
+  const emojiBoost = containsEmoji(text) ? PREVIEW_TEXT_METRICS.emojiWidthMultiplier : 1;
+
+  return base * PREVIEW_TEXT_METRICS.widthMultiplier * weightBoost * emojiBoost;
+}
+
+function normalizeFontWeight(font) {
+  const value = String(font?.weight || "regular");
+  if (value === "heavy") return "heavy";
+  if (value === "bold") return "bold";
+  if (value === "medium") return "medium";
+  return "regular";
+}
+
+function containsEmoji(text) {
+  return /[\p{Extended_Pictographic}\uFE0F]/u.test(String(text || ""));
 }
 
 function roundRectPath(ctx, x, y, w, h, rx, ry) {

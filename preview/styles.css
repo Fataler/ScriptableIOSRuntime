@@ -47,6 +47,7 @@ h1 {
   flex-wrap: wrap;
   gap: 12px;
   align-items: flex-end;
+  max-width: 980px;
 }
 
 label {
@@ -57,14 +58,29 @@ label {
   color: var(--muted);
 }
 
+label.toggle {
+  justify-content: flex-end;
+}
+
+label.toggle input {
+  width: 18px;
+  height: 18px;
+  min-width: 0;
+}
+
 select,
-button {
+button,
+input {
   font: inherit;
   border-radius: 10px;
   border: 1px solid #2b3148;
   background: var(--panel);
   color: var(--text);
   padding: 8px 12px;
+}
+
+input {
+  min-width: 180px;
 }
 
 button {
@@ -99,6 +115,17 @@ button:hover {
   padding: 8px 32px 48px;
 }
 
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(320px, 720px) 320px;
+  gap: 24px;
+  align-items: start;
+}
+
+.preview-column {
+  min-width: 0;
+}
+
 .phone {
   display: inline-block;
   max-width: min(100%, 480px);
@@ -128,6 +155,93 @@ button:hover {
   font-size: 0.9rem;
   max-width: 720px;
   line-height: 1.5;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #2b3148;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  min-width: 110px;
+}
+
+.debug-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.debug-card {
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.debug-card h2 {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid #2b3148;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.chip.active {
+  background: linear-gradient(180deg, #2f4f78, #243a5c);
+  border-color: #3f5f8d;
+}
+
+.meta {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.meta div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.meta dt {
+  color: var(--muted);
+}
+
+.meta dd {
+  margin: 0;
+  text-align: right;
+  word-break: break-word;
+  max-width: 190px;
+}
+
+.meta dt {
+  color: var(--muted);
+}
+
+.meta dd {
+  margin: 0;
+  text-align: right;
+}
+
+@media (max-width: 1100px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
 }
 
 a {

@@ -2,8 +2,7 @@ import { installMocks } from "../runtime/browser-mocks.js";
 import { runScriptableWidget } from "../runtime/loader.js";
 import {
   PREVIEW_LOGICAL_SIZES,
-  widgetFamilyForSize,
-  widgetSizeForFamily
+  widgetFamilyForSize
 } from "../runtime/preview-config.js";
 
 const widgetImg = document.getElementById("widget-preview");
@@ -13,11 +12,31 @@ const titleEl = document.getElementById("title");
 const subtitleEl = document.getElementById("subtitle");
 const widgetSelect = document.getElementById("widget");
 const sizeSelect = document.getElementById("size");
-const familySelect = document.getElementById("family");
+const debugSelect = document.getElementById("debug");
+const nowInput = document.getElementById("now");
+const boundsInput = document.getElementById("bounds");
+const queryInput = document.getElementById("query");
+const controlDebugWrap = document.getElementById("control-debug-wrap");
+const controlNowWrap = document.getElementById("control-now-wrap");
+const controlBoundsWrap = document.getElementById("control-bounds-wrap");
+const controlQueryWrap = document.getElementById("control-query-wrap");
+const familyBadgeEl = document.getElementById("family-badge");
+const debugCardEl = document.getElementById("debug-card");
+const presetChipsEl = document.getElementById("preset-chips");
+const copyUrlBtn = document.getElementById("copy-url");
+const resetControlsBtn = document.getElementById("reset-controls");
+const metaWidgetEl = document.getElementById("meta-widget");
+const metaSizeEl = document.getElementById("meta-size");
+const metaFamilyEl = document.getElementById("meta-family");
+const metaDebugRowEl = document.getElementById("meta-debug-row");
+const metaDebugEl = document.getElementById("meta-debug");
+const metaNowRowEl = document.getElementById("meta-now-row");
+const metaNowEl = document.getElementById("meta-now");
+const metaQueryEl = document.getElementById("meta-query");
 const refreshBtn = document.getElementById("refresh");
 const clearStorageBtn = document.getElementById("clear-storage");
 
-const PREVIEW_QUERY_KEYS = new Set(["widget", "size", "family"]);
+const PREVIEW_QUERY_KEYS = new Set(["widget", "size", "debug", "query", "now", "bounds"]);
 
 let widgetsCatalog = [];
 
@@ -37,21 +56,57 @@ clearStorageBtn.addEventListener("click", () => {
   runPreview();
 });
 
+copyUrlBtn.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(window.location.href);
+    setStatus("URL скопирован", "ok");
+  } catch (error) {
+    setStatus("Не удалось скопировать URL", "error");
+  }
+});
+
+resetControlsBtn.addEventListener("click", () => {
+  debugSelect.value = "";
+  nowInput.value = "";
+  boundsInput.checked = false;
+  queryInput.value = "";
+  syncPresetChips();
+  updateUrl();
+  runPreview();
+});
+
 widgetSelect.addEventListener("change", () => {
   syncSizeOptions();
-  syncFamilyFromSize(sizeSelect.value, { updateSelect: true });
+  syncDebugOptions();
+  syncWidgetSpecificControls();
+  syncFamilyBadge(sizeSelect.value);
   updateUrl();
   runPreview();
 });
 
 sizeSelect.addEventListener("change", () => {
-  syncFamilyFromSize(sizeSelect.value, { updateSelect: true });
+  syncFamilyBadge(sizeSelect.value);
   updateUrl();
   runPreview();
 });
 
-familySelect.addEventListener("change", () => {
-  syncSizeFromFamily(familySelect.value, { updateSelect: true });
+debugSelect.addEventListener("change", () => {
+  syncPresetChips();
+  updateUrl();
+  runPreview();
+});
+
+nowInput.addEventListener("change", () => {
+  updateUrl();
+  runPreview();
+});
+
+boundsInput.addEventListener("change", () => {
+  updateUrl();
+  runPreview();
+});
+
+queryInput.addEventListener("change", () => {
   updateUrl();
   runPreview();
 });
@@ -93,7 +148,10 @@ async function init() {
     fillWidgetSelect();
     applyUrlParams();
     syncSizeOptions();
-    syncFamilyFromSize(sizeSelect.value, { updateSelect: true });
+    syncDebugOptions();
+    syncWidgetSpecificControls();
+    syncPresetChips();
+    syncFamilyBadge(sizeSelect.value);
     await runPreview();
   } catch (error) {
     console.error(error);
@@ -146,45 +204,138 @@ function syncSizeOptions() {
   else sizeSelect.value = w?.defaultSize || sizes[0];
 }
 
-function syncFamilyFromSize(size, { updateSelect = false } = {}) {
+function syncFamilyFromSize(size) {
   const family = widgetFamilyForSize(size);
-  if (updateSelect && familySelect.value !== family) {
-    familySelect.value = family;
-  }
   return family;
 }
 
-function syncSizeFromFamily(family, { updateSelect = false } = {}) {
-  const size = widgetSizeForFamily(family, getAllowedSizes());
-  if (updateSelect && sizeSelect.value !== size) {
-    sizeSelect.value = size;
+function syncFamilyBadge(size) {
+  const family = syncFamilyFromSize(size);
+  familyBadgeEl.textContent = family;
+  metaFamilyEl.textContent = family;
+}
+
+function syncDebugOptions() {
+  const w = getSelectedWidget();
+  const presets = Array.isArray(w?.debugPresets) && w.debugPresets.length
+    ? w.debugPresets
+    : [{ value: "", label: "Реальные данные" }];
+  const current = debugSelect.value;
+
+  debugSelect.innerHTML = "";
+  for (const preset of presets) {
+    const opt = document.createElement("option");
+    opt.value = preset.value || "";
+    opt.textContent = preset.label || preset.value || "preset";
+    debugSelect.appendChild(opt);
   }
-  return size;
+
+  if (presets.some(x => String(x.value || "") === current)) debugSelect.value = current;
+  else debugSelect.value = "";
+}
+
+function getWidgetCapabilities() {
+  const w = getSelectedWidget();
+  const controls = w?.previewControls || {};
+
+  return {
+    debugPresets: controls.debugPresets === true && Array.isArray(w?.debugPresets) && w.debugPresets.some(x => x.value),
+    now: controls.now === true,
+    bounds: controls.bounds === true,
+    query: controls.query !== false
+  };
+}
+
+function syncWidgetSpecificControls() {
+  const caps = getWidgetCapabilities();
+
+  if (!caps.debugPresets) debugSelect.value = "";
+  if (!caps.now) nowInput.value = "";
+  if (!caps.bounds) boundsInput.checked = false;
+  if (!caps.query) queryInput.value = "";
+
+  controlDebugWrap.hidden = !caps.debugPresets;
+  controlNowWrap.hidden = !caps.now;
+  controlBoundsWrap.hidden = !caps.bounds;
+  controlQueryWrap.hidden = !caps.query;
+  debugCardEl.hidden = !caps.debugPresets;
+  metaDebugRowEl.hidden = !caps.debugPresets;
+  metaNowRowEl.hidden = !caps.now;
+  resetControlsBtn.hidden = !(caps.debugPresets || caps.now || caps.bounds || caps.query);
+}
+
+function syncPresetChips() {
+  const caps = getWidgetCapabilities();
+  const w = getSelectedWidget();
+  const presets = Array.isArray(w?.debugPresets) ? w.debugPresets : [];
+  presetChipsEl.innerHTML = "";
+
+  if (!caps.debugPresets) return;
+
+  const realBtn = document.createElement("button");
+  realBtn.type = "button";
+  realBtn.className = `chip${debugSelect.value ? "" : " active"}`;
+  realBtn.textContent = "Реальные данные";
+  realBtn.addEventListener("click", () => {
+    debugSelect.value = "";
+    syncPresetChips();
+    updateUrl();
+    runPreview();
+  });
+  presetChipsEl.appendChild(realBtn);
+
+  for (const preset of presets) {
+    if (!preset.value) continue;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = `chip${debugSelect.value === preset.value ? " active" : ""}`;
+    btn.textContent = preset.label || preset.value;
+    btn.addEventListener("click", () => {
+      debugSelect.value = preset.value;
+      syncPresetChips();
+      updateUrl();
+      runPreview();
+    });
+    presetChipsEl.appendChild(btn);
+  }
 }
 
 function applyUrlParams() {
   const params = new URLSearchParams(window.location.search);
   const widgetId = params.get("widget");
   const size = params.get("size");
-  const family = params.get("family");
+  const debug = params.get("debug");
+  const query = params.get("query");
+  const now = params.get("now");
+  const bounds = params.get("bounds");
 
   if (widgetId && widgetsCatalog.some(w => w.id === widgetId)) {
     widgetSelect.value = widgetId;
   }
 
   syncSizeOptions();
+  syncDebugOptions();
+  syncWidgetSpecificControls();
 
-  if (family && [...familySelect.options].some(o => o.value === family)) {
-    familySelect.value = family;
-    syncSizeFromFamily(family, { updateSelect: true });
-  } else if (size && [...sizeSelect.options].some(o => o.value === size)) {
+  if (size && [...sizeSelect.options].some(o => o.value === size)) {
     sizeSelect.value = size;
-    syncFamilyFromSize(size, { updateSelect: true });
   }
+
+  if (debug && [...debugSelect.options].some(o => o.value === debug)) {
+    debugSelect.value = debug;
+  }
+
+  nowInput.value = now || "";
+  boundsInput.checked = bounds === "1";
+  queryInput.value = query || "";
+  syncWidgetSpecificControls();
+  syncFamilyBadge(sizeSelect.value);
+  syncPresetChips();
 }
 
 function updateUrl() {
   const w = getSelectedWidget();
+  const caps = getWidgetCapabilities();
   const params = new URLSearchParams(window.location.search);
 
   if (w?.id) params.set("widget", w.id);
@@ -193,20 +344,47 @@ function updateUrl() {
   if (sizeSelect.value) params.set("size", sizeSelect.value);
   else params.delete("size");
 
-  if (familySelect.value) params.set("family", familySelect.value);
-  else params.delete("family");
+  if (caps.debugPresets && debugSelect.value) params.set("debug", debugSelect.value);
+  else params.delete("debug");
 
-  const next = `${window.location.pathname}?${params}`;
+  if (caps.now && nowInput.value.trim()) params.set("now", nowInput.value.trim());
+  else params.delete("now");
+
+  if (caps.bounds && boundsInput.checked) params.set("bounds", "1");
+  else params.delete("bounds");
+
+  if (caps.query && queryInput.value.trim()) params.set("query", queryInput.value.trim());
+  else params.delete("query");
+
+  const nextQuery = params.toString();
+  const next = nextQuery ? `${window.location.pathname}?${nextQuery}` : window.location.pathname;
   window.history.replaceState(null, "", next);
 }
 
 function queryParametersFromUrl() {
   const params = new URLSearchParams(window.location.search);
+  const caps = getWidgetCapabilities();
   const queryParameters = {};
 
   for (const [key, value] of params.entries()) {
     if (PREVIEW_QUERY_KEYS.has(key)) continue;
     if (value !== "") queryParameters[key] = value;
+  }
+
+  const debug = caps.debugPresets ? params.get("debug") : "";
+  if (debug) queryParameters.debug = debug;
+
+  const now = caps.now ? params.get("now") : "";
+  if (now) queryParameters.now = now;
+
+  if (caps.bounds && params.get("bounds") === "1") queryParameters.debug_bounds = "1";
+
+  const extra = caps.query ? params.get("query") : "";
+  if (extra) {
+    const extraParams = new URLSearchParams(extra);
+    for (const [key, value] of extraParams.entries()) {
+      if (value !== "") queryParameters[key] = value;
+    }
   }
 
   return queryParameters;
@@ -217,7 +395,13 @@ async function runPreview() {
   if (!w) return;
 
   const size = sizeSelect.value;
-  const family = syncFamilyFromSize(size, { updateSelect: true });
+  const family = syncFamilyFromSize(size);
+  syncFamilyBadge(size);
+  metaWidgetEl.textContent = w.title || w.id;
+  metaSizeEl.textContent = size;
+  metaDebugEl.textContent = debugSelect.value || "real";
+  metaNowEl.textContent = nowInput.value || "device";
+  metaQueryEl.textContent = buildMetaQuery();
 
   titleEl.textContent = w.title || w.id;
   subtitleEl.textContent = w.description || "Scriptable preview";
@@ -261,4 +445,11 @@ function setStatus(text, kind) {
 
 function errorMessage(error) {
   return String(error && error.message ? error.message : error);
+}
+
+function buildMetaQuery() {
+  const params = queryParametersFromUrl();
+  const entries = Object.entries(params);
+  if (entries.length === 0) return "—";
+  return entries.map(([key, value]) => `${key}=${value}`).join("&");
 }
