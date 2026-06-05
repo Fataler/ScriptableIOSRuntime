@@ -38,6 +38,27 @@
       "description": "Кольца дня, недели, месяца и года",
       "sizes": ["micro", "mini"],
       "defaultSize": "mini"
+    },
+    {
+      "id": "gameofday",
+      "file": "widgets/GameOfDay.js",
+      "title": "GameOfDay",
+      "description": "Игра дня из локального календаря",
+      "sizes": ["mini", "normal"],
+      "defaultSize": "normal",
+      "previewControls": {
+        "debugPresets": true,
+        "bounds": true,
+        "now": true,
+        "query": true
+      },
+      "debugPresets": [
+        { "value": "", "label": "Реальные данные" },
+        { "value": "demo", "label": "Demo fallback" },
+        { "value": "leap", "label": "02-29 leap day" },
+        { "value": "fallback", "label": "02-29 from 02-28" },
+        { "value": "coverless", "label": "Без обложки" }
+      ]
     }
   ]
 }

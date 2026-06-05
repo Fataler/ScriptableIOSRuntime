@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build:game-of-day": "node tools/game-of-day/build-json.mjs",
+    "enrich:game-of-day:covers": "node tools/game-of-day/enrich-covers.mjs",
     "preview": "node preview/server.mjs",
     "preview:open": "node preview/server.mjs --open",
     "test:router-vpn": "node tools/router-vpn/smoke-test.mjs"

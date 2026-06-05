@@ -47,9 +47,14 @@ const CONFIG = {
     // ----------------------------------------------------------
     // Хранилище
     // ----------------------------------------------------------
-    // "googleAppsScript" — общий JSON через Google Apps Script (оба телефона)
+    // "remoteHttp" — общий JSON через внешний HTTP backend (например, Amvera)
     // "local" — только файлы Scriptable (+ опционально iCloud Drive ниже)
-    storageBackend: "googleAppsScript",
+    storageBackend: "remoteHttp",
+    backendUrl: "https://feedme-fataler.amvera.io/api/feedme",
+    backendKey: "DOWEN",
+    backendTimeoutSeconds: 15,
+
+    // Legacy aliases для старой GAS-конфигурации.
     gasUrl: "https://script.google.com/macros/s/AKfycbzhYoCHE-YjvN8CAqSiuivdW-zvgAp3DOG5lUEYS_i5Jv2qz_6ysYiPgG8oJQuFZLHdog/exec",
     gasKey: "DOWEN",
     gasTimeoutSeconds: 15,
@@ -98,7 +103,7 @@ const CONFIG = {
     // scenario: "empty" | "ok" | "soon" | "late"
     debug: {
       debugSize : false,
-      enabled: false,
+      enabled: true,
       scenario: "soon",
       todayCount: 5,
       todayMl: 150,
@@ -161,6 +166,12 @@ const CONFIG = {
     }
   
     if (!config.runsInWidget) {
+      data = await refreshDataForInteractiveSession(data);
+      if (shouldBlockInteractiveSession(data)) {
+        await notify("Не удалось загрузить историю", "Бэкенд недоступен и локальной копии нет");
+        Script.complete();
+        return;
+      }
       await showMenu(data);
       Script.complete();
       return;
@@ -198,7 +209,10 @@ const CONFIG = {
   
     const selected = historyItems[choice];
     // Find actual index in original array
-    const actualIdx = data.feedings.findIndex(f => f.at === selected.at && f.amountMl === selected.amountMl && f.type === selected.type);
+    const actualIdx = data.feedings.findIndex(f => {
+      if (selected.id && f.id) return f.id === selected.id;
+      return f.at === selected.at && f.amountMl === selected.amountMl && f.type === selected.type;
+    });
   
     const actAlert = new Alert();
     actAlert.title = "Действие над записью";
@@ -237,10 +251,12 @@ const CONFIG = {
     const amountMl = getNumber(normalizeCommaNumber(a.textFieldValue(2)), NaN);
     if (!Number.isFinite(amountMl) || amountMl < 0) { await notify("Не сохранено", "Объём должен быть числом ≥ 0"); return false; }
   
+    const nowIso = new Date().toISOString();
     item.at = when.toISOString();
     item.amountMl = amountMl;
     item.type = cleanText(a.textFieldValue(3)) || CONFIG.defaultFeedType;
-    item.editedAt = new Date().toISOString();
+    item.editedAt = nowIso;
+    item.updatedAt = nowIso;
     await saveData(data);
     await notify("Запись обновлена", `${formatDateTime(when)} · ${amountMl} мл · ${item.type}`);
     return true;
@@ -248,7 +264,7 @@ const CONFIG = {
   
   // Delete a feeding entry at a given index
   async function deleteFeedingAt(data, idx) {
-    const removed = (data.feedings || []).splice(idx, 1)[0];
+    const removed = markFeedingDeletedAt(data, idx);
     if (!removed) return false;
     await saveData(data);
     await notify("Запись удалена", `${formatClock(new Date(removed.at))}`);
@@ -1006,9 +1022,9 @@ const CONFIG = {
   
   function statsFromElapsed(elapsedMinutes, extras = {}) {
     const now = new Date();
-    const interval = getTargetIntervalMinutes(lastDate);
     const elapsed = Math.round(elapsedMinutes);
     const lastDate = new Date(now.getTime() - elapsed * 60 * 1000);
+    const interval = getTargetIntervalMinutes(lastDate);
     const remainingMinutes = interval - elapsed;
     const nextDate = new Date(lastDate.getTime() + interval * 60 * 1000);
     const progress = clamp(elapsed / interval, 0, 1);
@@ -1039,28 +1055,38 @@ const CONFIG = {
   // 11. ХРАНЕНИЕ
   // ============================================================
 
-  function isGasBackend() {
-    return (CONFIG.storageBackend || "local") === "googleAppsScript";
+  function isRemoteBackend() {
+    const mode = String(CONFIG.storageBackend || "local").toLowerCase();
+    return mode === "remotehttp" || mode === "googleappsscript";
   }
 
-  function buildGasUrl() {
-    const base = cleanText(CONFIG.gasUrl);
-    const key = cleanText(CONFIG.gasKey);
+  function buildBackendUrl(extraParams = null) {
+    const base = cleanText(CONFIG.backendUrl || CONFIG.gasUrl);
+    const key = cleanText(CONFIG.backendKey || CONFIG.gasKey);
 
     if (!base || !key) return null;
 
+    const params = Object.assign({ key }, extraParams || {});
+    const query = Object.keys(params)
+      .filter(k => params[k] !== undefined && params[k] !== null && params[k] !== "")
+      .map(k => encodeURIComponent(k) + "=" + encodeURIComponent(String(params[k])))
+      .join("&");
     const sep = base.includes("?") ? "&" : "?";
-    return base + sep + "key=" + encodeURIComponent(key);
+    return base + sep + query;
   }
 
-  async function fetchDataFromGas() {
-    const url = buildGasUrl();
+  async function fetchDataFromBackend() {
+    const url = buildBackendUrl({ _ts: Date.now() });
     if (!url) return null;
 
     try {
       const req = new Request(url);
       req.method = "GET";
-      req.timeoutInterval = CONFIG.gasTimeoutSeconds || 15;
+      req.headers = {
+        "Cache-Control": "no-cache, no-store, max-age=0",
+        "Pragma": "no-cache"
+      };
+      req.timeoutInterval = CONFIG.backendTimeoutSeconds || CONFIG.gasTimeoutSeconds || 15;
 
       const data = await req.loadJSON();
 
@@ -1068,30 +1094,62 @@ const CONFIG = {
 
       return normalizeFeedingData(data);
     } catch (e) {
-      console.log("GAS load failed:", e.message || e);
+      console.log("FeedMe backend load failed:", e.message || e);
       return null;
     }
   }
 
-  async function postDataToGas(data) {
-    const url = buildGasUrl();
-    if (!url) return false;
+  async function fetchMetaFromBackend() {
+    const url = buildBackendUrl({ meta: 1, _ts: Date.now() });
+    if (!url) return null;
 
     try {
       const req = new Request(url);
+      req.method = "GET";
+      req.headers = {
+        "Cache-Control": "no-cache, no-store, max-age=0",
+        "Pragma": "no-cache"
+      };
+      req.timeoutInterval = CONFIG.backendTimeoutSeconds || CONFIG.gasTimeoutSeconds || 15;
+
+      const data = await req.loadJSON();
+      if (!data || data.error) throw new Error(data && data.error ? data.error : "empty response");
+
+      return {
+        version: getNumber(data.version, 0),
+        updatedAt: normalizeIsoDateTime(data.updatedAt),
+        count: getNumber(data.count, 0)
+      };
+    } catch (e) {
+      console.log("FeedMe backend meta failed:", e.message || e);
+      return null;
+    }
+  }
+
+  async function postDataToBackend(data) {
+    const url = buildBackendUrl();
+    if (!url) return null;
+
+    try {
+      const payload = cloneFeedingData(data);
+      delete payload._remoteLoadError;
+      delete payload._pendingSync;
+
+      const req = new Request(url);
       req.method = "POST";
       req.headers = { "Content-Type": "application/json" };
-      req.body = JSON.stringify(data);
-      req.timeoutInterval = CONFIG.gasTimeoutSeconds || 15;
+      req.body = JSON.stringify(payload);
+      req.timeoutInterval = CONFIG.backendTimeoutSeconds || CONFIG.gasTimeoutSeconds || 15;
 
       const res = await req.loadJSON();
 
       if (res && res.error) throw new Error(res.error);
 
-      return true;
+      const responseData = res && res.data ? res.data : (res && res.ok ? payload : res);
+      return normalizeFeedingData(responseData);
     } catch (e) {
-      console.log("GAS save failed:", e.message || e);
-      return false;
+      console.log("FeedMe backend save failed:", e.message || e);
+      return null;
     }
   }
 
@@ -1100,15 +1158,26 @@ const CONFIG = {
     if (!local) return normalizeFeedingData(remote);
     if (!remote) return normalizeFeedingData(local);
 
-    const map = new Map();
+    local = normalizeFeedingData(local);
+    remote = normalizeFeedingData(remote);
 
+    const feedingsMap = new Map();
     for (const f of [...(remote.feedings || []), ...(local.feedings || [])]) {
-      if (f && f.at) map.set(f.at, f);
+      if (!f || !f.id) continue;
+      const prev = feedingsMap.get(f.id);
+      if (!prev || getFeedingSyncTimestamp(f) >= getFeedingSyncTimestamp(prev)) {
+        feedingsMap.set(f.id, f);
+      }
     }
 
-    const feedings = [...map.values()]
-      .sort((a, b) => new Date(b.at).getTime() - new Date(a.at).getTime())
-      .slice(0, CONFIG.keepLastRecords);
+    const deletedMap = new Map();
+    for (const item of [...(remote.deletedFeedings || []), ...(local.deletedFeedings || [])]) {
+      if (!item || !item.id) continue;
+      const prev = deletedMap.get(item.id);
+      if (!prev || getDeletedSyncTimestamp(item) >= getDeletedSyncTimestamp(prev)) {
+        deletedMap.set(item.id, item);
+      }
+    }
 
     const updatedAt = [local.updatedAt, remote.updatedAt]
       .filter(Boolean)
@@ -1121,7 +1190,8 @@ const CONFIG = {
       babyName: remote.babyName || local.babyName || CONFIG.babyName,
       createdAt: local.createdAt || remote.createdAt,
       updatedAt: updatedAt ? new Date(updatedAt).toISOString() : new Date().toISOString(),
-      feedings
+      feedings: [...feedingsMap.values()],
+      deletedFeedings: [...deletedMap.values()]
     });
   }
 
@@ -1246,6 +1316,21 @@ const CONFIG = {
     return Number.isFinite(t) ? t : 0;
   }
 
+  function hasRemoteChanged(localData, remoteMeta) {
+    if (!remoteMeta || !remoteMeta.updatedAt) return true;
+    if (!localData) return true;
+
+    const localUpdatedAt = normalizeIsoDateTime(localData.updatedAt);
+    const localCount = Array.isArray(localData.feedings) ? localData.feedings.length : 0;
+    const remoteCount = getNumber(remoteMeta.count, localCount);
+
+    if (!localUpdatedAt) return true;
+    if (localUpdatedAt !== remoteMeta.updatedAt) return true;
+    if (remoteCount !== localCount) return true;
+
+    return false;
+  }
+
   async function ensureFileDownloaded(fm, path) {
     if (
       typeof fm.isFileDownloaded === "function" &&
@@ -1256,13 +1341,161 @@ const CONFIG = {
   }
 
   function normalizeFeedingData(data) {
-    if (!data.feedings) data.feedings = [];
+    if (!data || typeof data !== "object") data = createDefaultData();
+
+    data.version = Math.max(getNumber(data.version, 1), 2);
+    data.babyName = cleanText(data.babyName) || CONFIG.babyName;
+    data.createdAt = normalizeIsoDateTime(data.createdAt) || new Date().toISOString();
+    data.updatedAt = normalizeIsoDateTime(data.updatedAt) || new Date().toISOString();
+
+    const feedings = Array.isArray(data.feedings) ? data.feedings : [];
+    const deletedFeedings = Array.isArray(data.deletedFeedings) ? data.deletedFeedings : [];
+
+    const normalizedFeedings = feedings
+      .map(normalizeFeedingRecord)
+      .filter(Boolean);
+
+    const feedingMap = new Map();
+    for (const item of normalizedFeedings) {
+      const prev = feedingMap.get(item.id);
+      if (!prev || getFeedingSyncTimestamp(item) >= getFeedingSyncTimestamp(prev)) {
+        feedingMap.set(item.id, item);
+      }
+    }
+
+    data.feedings = [...feedingMap.values()];
+
+    data.deletedFeedings = deletedFeedings
+      .map(normalizeDeletedFeedingRecord)
+      .filter(Boolean);
+
+    const deletedMap = new Map();
+    for (const item of data.deletedFeedings) {
+      const prev = deletedMap.get(item.id);
+      if (!prev || getDeletedSyncTimestamp(item) >= getDeletedSyncTimestamp(prev)) {
+        deletedMap.set(item.id, item);
+      }
+    }
+
+    data.deletedFeedings = [...deletedMap.values()]
+      .sort((a, b) => getDeletedSyncTimestamp(b) - getDeletedSyncTimestamp(a))
+      .slice(0, CONFIG.keepLastRecords);
 
     data.feedings = data.feedings
-      .filter(x => x && x.at)
-      .sort((a, b) => new Date(b.at).getTime() - new Date(a.at).getTime());
+      .filter(item => {
+        const deleted = deletedMap.get(item.id);
+        if (!deleted) return true;
+        return getFeedingSyncTimestamp(item) > getDeletedSyncTimestamp(deleted);
+      })
+      .sort((a, b) => new Date(b.at).getTime() - new Date(a.at).getTime())
+      .slice(0, CONFIG.keepLastRecords);
 
     return data;
+  }
+
+  function normalizeFeedingRecord(item) {
+    if (!item || typeof item !== "object" || Array.isArray(item)) return null;
+    const at = normalizeIsoDateTime(item.at);
+    if (!at) return null;
+
+    const amountMl = getNumber(item.amountMl, NaN);
+    if (!Number.isFinite(amountMl) || amountMl < 0) return null;
+
+    const updatedAt = normalizeIsoDateTime(item.updatedAt || item.editedAt || item.at) || at;
+    const editedAt = normalizeIsoDateTime(item.editedAt);
+
+    return {
+      id: cleanText(item.id) || buildLegacyFeedingId(item),
+      at,
+      amountMl,
+      type: cleanText(item.type),
+      source: cleanText(item.source),
+      updatedAt,
+      editedAt: editedAt || undefined
+    };
+  }
+
+  function normalizeDeletedFeedingRecord(item) {
+    if (!item || typeof item !== "object" || Array.isArray(item)) return null;
+    const id = cleanText(item.id);
+    const deletedAt = normalizeIsoDateTime(item.deletedAt || item.updatedAt || item.at);
+    if (!id || !deletedAt) return null;
+    return { id, deletedAt };
+  }
+
+  function normalizeIsoDateTime(value) {
+    if (value == null || value === "") return "";
+    const dt = new Date(value);
+    if (!Number.isFinite(dt.getTime())) return "";
+    return dt.toISOString();
+  }
+
+  function getFeedingSyncTimestamp(item) {
+    return toSyncTimestamp(item && (item.updatedAt || item.editedAt || item.at));
+  }
+
+  function getDeletedSyncTimestamp(item) {
+    return toSyncTimestamp(item && (item.deletedAt || item.updatedAt));
+  }
+
+  function toSyncTimestamp(value) {
+    const t = value ? new Date(value).getTime() : 0;
+    return Number.isFinite(t) ? t : 0;
+  }
+
+  function buildLegacyFeedingId(item) {
+    return [
+      "legacy",
+      cleanText(item && item.at),
+      String(getNumber(item && item.amountMl, "")),
+      cleanText(item && item.type),
+      cleanText(item && item.source)
+    ].join("|");
+  }
+
+  function generateFeedingId(date = new Date()) {
+    return "f_" + date.getTime().toString(36) + "_" + Math.random().toString(36).slice(2, 8);
+  }
+
+  function cloneFeedingData(data) {
+    return JSON.parse(JSON.stringify(data));
+  }
+
+  function applyDataSnapshot(target, snapshot) {
+    const clone = cloneFeedingData(snapshot);
+    for (const key of Object.keys(target || {})) delete target[key];
+    Object.assign(target, clone);
+    return target;
+  }
+
+  function withRemoteLoadError(data, code) {
+    const normalized = normalizeFeedingData(data || createDefaultData());
+    normalized._remoteLoadError = code || "gas_load_failed";
+    return normalized;
+  }
+
+  function clearRemoteLoadError(data) {
+    if (data && data._remoteLoadError) delete data._remoteLoadError;
+    return data;
+  }
+
+  function hasRemoteLoadError(data) {
+    return !!(data && data._remoteLoadError);
+  }
+
+  function shouldBlockInteractiveSession(data) {
+    return !!(data && data._remoteLoadError === "gas_load_failed_no_local");
+  }
+
+  function markPendingSync(data, value = true) {
+    if (!data) return data;
+    if (value) data._pendingSync = true;
+    else delete data._pendingSync;
+    return data;
+  }
+
+  function hasPendingSync(data) {
+    return !!(data && data._pendingSync);
   }
 
   async function readDataFile(fm, path) {
@@ -1293,20 +1526,31 @@ const CONFIG = {
   async function loadData() {
     const local = await loadBestLocalData();
 
-    if (isGasBackend() && buildGasUrl()) {
-      const remote = await fetchDataFromGas();
-      const merged = mergeFeedingData(local, remote);
+    if (isRemoteBackend() && buildBackendUrl()) {
+      const meta = await fetchMetaFromBackend();
+      const needsRemoteFetch = hasPendingSync(local) || hasRemoteChanged(local, meta);
+      const remote = needsRemoteFetch ? await fetchDataFromBackend() : local;
 
-      if (merged) {
-        writeLocalCache(JSON.stringify(merged, null, 2));
-        return merged;
+      if (remote) {
+        let resolved = remote;
+
+        if (hasPendingSync(local) && needsRemoteFetch) {
+          const merged = mergeFeedingData(local, remote);
+          const pushed = await postDataToBackend(merged);
+          resolved = pushed || merged;
+          markPendingSync(resolved, !pushed);
+        } else {
+          markPendingSync(resolved, false);
+        }
+
+        clearRemoteLoadError(resolved);
+        writeLocalCache(JSON.stringify(resolved, null, 2));
+        return resolved;
       }
 
-      if (local) return local;
+      if (local) return withRemoteLoadError(local, "gas_load_failed_local_fallback");
 
-      const data = createDefaultData();
-      await saveData(data);
-      return data;
+      return withRemoteLoadError(createDefaultData(), "gas_load_failed_no_local");
     }
 
     if (local) return local;
@@ -1316,44 +1560,81 @@ const CONFIG = {
     return data;
   }
 
-  async function saveData(data) {
-    data.updatedAt = new Date().toISOString();
-
-    data.feedings = (data.feedings || [])
-      .sort((a, b) => new Date(b.at).getTime() - new Date(a.at).getTime())
-      .slice(0, CONFIG.keepLastRecords);
-
-    const normalized = normalizeFeedingData(data);
-    const json = JSON.stringify(normalized, null, 2);
-
-    writeLocalCache(json);
-
-    if (isGasBackend() && buildGasUrl()) {
-      await postDataToGas(normalized);
-      return;
+  async function refreshDataForInteractiveSession(currentData) {
+    if (!isRemoteBackend() || !buildBackendUrl()) return currentData;
+    const meta = await fetchMetaFromBackend();
+    const needsRemoteFetch = hasPendingSync(currentData) || hasRemoteChanged(currentData, meta);
+    if (!needsRemoteFetch) {
+      clearRemoteLoadError(currentData);
+      return currentData;
     }
 
+    const fresh = await fetchDataFromBackend();
+    if (!fresh) {
+      if (shouldBlockInteractiveSession(currentData)) return currentData;
+      return withRemoteLoadError(currentData, "gas_refresh_failed");
+    }
+    let resolved = fresh;
+    if (hasPendingSync(currentData)) {
+      const merged = mergeFeedingData(currentData, fresh);
+      const pushed = await postDataToBackend(merged);
+      resolved = pushed || merged;
+      markPendingSync(resolved, !pushed);
+    } else {
+      markPendingSync(resolved, false);
+    }
+    clearRemoteLoadError(resolved);
+    writeLocalCache(JSON.stringify(resolved, null, 2));
+    return resolved;
+  }
+
+  async function saveData(data) {
+    clearRemoteLoadError(data);
+    data.updatedAt = new Date().toISOString();
+
+    const normalized = normalizeFeedingData(data);
+
+    if (isRemoteBackend() && buildBackendUrl()) {
+      const remoteSaved = await postDataToBackend(normalized);
+      const finalData = remoteSaved || markPendingSync(normalized, true);
+      if (remoteSaved) markPendingSync(finalData, false);
+      applyDataSnapshot(data, finalData);
+      const finalJson = JSON.stringify(finalData, null, 2);
+      writeLocalCache(finalJson);
+      return data;
+    }
+
+    const json = JSON.stringify(normalized, null, 2);
+    markPendingSync(normalized, false);
+    applyDataSnapshot(data, normalized);
+    writeLocalCache(json);
     await syncToSharedFolder(getWritableStorage().fm, json);
+    return data;
   }
   
   function createDefaultData() {
     return {
-      version: 1,
+      version: 2,
       babyName: CONFIG.babyName,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
-      feedings: []
+      feedings: [],
+      deletedFeedings: []
     };
   }
   
   function addFeeding(data, entry) {
     if (!data.feedings) data.feedings = [];
+    if (!data.deletedFeedings) data.deletedFeedings = [];
+    const nowIso = new Date().toISOString();
   
     data.feedings.unshift({
+      id: generateFeedingId(entry.date),
       at: entry.date.toISOString(),
       amountMl: entry.amountMl,
       type: entry.type,
-      source: entry.source || "unknown"
+      source: entry.source || "unknown",
+      updatedAt: nowIso
     });
   }
   
@@ -1362,7 +1643,22 @@ const CONFIG = {
   
     data.feedings.sort((a, b) => new Date(b.at).getTime() - new Date(a.at).getTime());
   
-    return data.feedings.shift();
+    return markFeedingDeletedAt(data, 0);
+  }
+
+  function markFeedingDeletedAt(data, idx) {
+    if (!data.feedings || idx < 0 || idx >= data.feedings.length) return null;
+    if (!data.deletedFeedings) data.deletedFeedings = [];
+
+    const removed = data.feedings.splice(idx, 1)[0];
+    if (!removed) return null;
+
+    data.deletedFeedings.unshift({
+      id: removed.id || buildLegacyFeedingId(removed),
+      deletedAt: new Date().toISOString()
+    });
+
+    return removed;
   }
   
   // ============================================================

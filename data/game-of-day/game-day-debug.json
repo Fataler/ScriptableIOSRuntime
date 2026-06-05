@@ -1,0 +1,5615 @@
+{
+  "meta": {
+    "generatedAt": "2026-06-04T23:38:50.945Z",
+    "source": "temp/game-of-day/Календарь великих игр - Лист 1.csv",
+    "version": 2,
+    "totalDays": 366
+  },
+  "stats": {
+    "totalDays": 366,
+    "withCover": 365,
+    "withoutCover": 1,
+    "missingYear": 0,
+    "missingPlatforms": 0,
+    "missingSummary": 0,
+    "fallbackDays": 1
+  },
+  "days": {
+    "01-01": {
+      "selected": "Empire (Empire 1977)",
+      "sourceRow": 2,
+      "incomplete": [
+        "missing_cover"
+      ],
+      "original": {
+        "date": "1 января",
+        "title": "Empire (Empire 1977)",
+        "year": 1977,
+        "platforms": [
+          "Основной фрейм (PLATO)"
+        ],
+        "summary": "Одна из первых стратегических видеоигр, заложившая основу жанра военно-тактических игр.",
+        "comment": ""
+      }
+    },
+    "01-02": {
+      "selected": "Yu-Gi-Oh! GX: Spirit Caller",
+      "sourceRow": 3,
+      "incomplete": [],
+      "original": {
+        "date": "2 января",
+        "title": "Yu-Gi-Oh! GX: Spirit Caller",
+        "year": 2007,
+        "platforms": [
+          "Nintendo DS"
+        ],
+        "summary": "Игра по популярному аниме, предлагающая стратегические карточные бои на портативной платформе.",
+        "comment": ""
+      }
+    },
+    "01-03": {
+      "selected": "Zork I",
+      "sourceRow": 4,
+      "incomplete": [],
+      "original": {
+        "date": "3 января",
+        "title": "Zork I",
+        "year": 1980,
+        "platforms": [
+          "ПК (DOS)"
+        ],
+        "summary": "Классический текстовый квест, открывший миллионам игроков мир интерактивных приключений.",
+        "comment": ""
+      }
+    },
+    "01-04": {
+      "selected": "Amplitude",
+      "sourceRow": 5,
+      "incomplete": [],
+      "original": {
+        "date": "4 января",
+        "title": "Amplitude",
+        "year": 2003,
+        "platforms": [
+          "PlayStation 2"
+        ],
+        "summary": "Музыкальная ритм-игра от Harmonix, предшественница серии Guitar Hero, задавшая тренды жанра.",
+        "comment": ""
+      }
+    },
+    "01-05": {
+      "selected": "Darksiders",
+      "sourceRow": 6,
+      "incomplete": [],
+      "original": {
+        "date": "5 января",
+        "title": "Darksiders",
+        "year": 2010,
+        "platforms": [
+          "PlayStation 3",
+          "Xbox 360"
+        ],
+        "summary": "Постапокалиптический экшен с элементами слэшера, вдохновленный библейскими темами, получил крепкие оценки критиков.",
+        "comment": ""
+      }
+    },
+    "01-06": {
+      "selected": "Crash Bandicoot Nitro Kart 3D",
+      "sourceRow": 7,
+      "incomplete": [],
+      "original": {
+        "date": "6 января",
+        "title": "Crash Bandicoot Nitro Kart 3D",
+        "year": 2008,
+        "platforms": [
+          "Мобильные устройства"
+        ],
+        "summary": "Мобильные гонки с культовым персонажем Crash, адаптировавшие серию под возможности телефонов.",
+        "comment": ""
+      }
+    },
+    "01-07": {
+      "selected": "The Legend of Zelda: Four Swords Adventures",
+      "sourceRow": 8,
+      "incomplete": [],
+      "original": {
+        "date": "7 января",
+        "title": "The Legend of Zelda: Four Swords Adventures",
+        "year": 2004,
+        "platforms": [
+          "Nintendo GameCube"
+        ],
+        "summary": "Кооперативное приключение в серии Zelda, предлагающее совместное прохождение легендарных подземелий.",
+        "comment": ""
+      }
+    },
+    "01-08": {
+      "selected": "Bayonetta",
+      "sourceRow": 9,
+      "incomplete": [],
+      "original": {
+        "date": "8 января",
+        "title": "Bayonetta",
+        "year": 2010,
+        "platforms": [
+          "PlayStation 3",
+          "Xbox 360"
+        ],
+        "summary": "Стильный слэшер от PlatinumGames с динамичным геймплеем и харизматичной героиней-ведьмой.",
+        "comment": ""
+      }
+    },
+    "01-09": {
+      "selected": "Kingdom Hearts: Birth by Sleep",
+      "sourceRow": 10,
+      "incomplete": [],
+      "original": {
+        "date": "9 января",
+        "title": "Kingdom Hearts: Birth by Sleep",
+        "year": 2010,
+        "platforms": [
+          "PlayStation Portable (PSP)"
+        ],
+        "summary": "Приквел культовой серии, сочетающей миры Disney и Final Fantasy; известен увлекательной боевой системой.",
+        "comment": ""
+      }
+    },
+    "01-10": {
+      "selected": "Vagrant Story",
+      "sourceRow": 11,
+      "incomplete": [],
+      "original": {
+        "date": "10 января",
+        "title": "Vagrant Story",
+        "year": 2000,
+        "platforms": [
+          "PlayStation"
+        ],
+        "summary": "Изящный ролевой экшен от Square, получивший культовый статус за глубокую боевую систему и сюжет.",
+        "comment": ""
+      }
+    },
+    "01-11": {
+      "selected": "Resident Evil 4",
+      "sourceRow": 12,
+      "incomplete": [],
+      "original": {
+        "date": "11 января",
+        "title": "Resident Evil 4",
+        "year": 2005,
+        "platforms": [
+          "GameCube"
+        ],
+        "summary": "Революционный survival horror, переосмысливший игровой процесс и получивший признание критиков.",
+        "comment": ""
+      }
+    },
+    "01-12": {
+      "selected": "The Lion King",
+      "sourceRow": 13,
+      "incomplete": [],
+      "original": {
+        "date": "12 января",
+        "title": "The Lion King",
+        "year": 1994,
+        "platforms": [
+          "Sega Genesis",
+          "SNES"
+        ],
+        "summary": "Красочный платформер по мотивам диснеевского мультфильма, известный высокой сложностью и отличной анимацией.",
+        "comment": ""
+      }
+    },
+    "01-13": {
+      "selected": "Detention",
+      "sourceRow": 14,
+      "incomplete": [],
+      "original": {
+        "date": "13 января",
+        "title": "Detention",
+        "year": 2017,
+        "platforms": [
+          "ПК",
+          "PS4",
+          "Switch"
+        ],
+        "summary": "Тайваньский атмосферный хоррор, получивший высокие оценки критиков.",
+        "comment": ""
+      }
+    },
+    "01-14": {
+      "selected": "SimCity 4",
+      "sourceRow": 15,
+      "incomplete": [],
+      "original": {
+        "date": "14 января",
+        "title": "SimCity 4",
+        "year": 2003,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Градостроительный симулятор, позволяющий создавать мегаполисы; эталон жанра с глубокой проработкой деталей.",
+        "comment": ""
+      }
+    },
+    "01-15": {
+      "selected": "DmC: Devil May Cry",
+      "sourceRow": 16,
+      "incomplete": [],
+      "original": {
+        "date": "15 января",
+        "title": "DmC: Devil May Cry",
+        "year": 2013,
+        "platforms": [
+          "PlayStation 3",
+          "Xbox 360"
+        ],
+        "summary": "Современный перезапуск культового слэшера, отмеченный эффектными боями и стильной визуальной подачей.",
+        "comment": ""
+      }
+    },
+    "01-16": {
+      "selected": "Mega Man 2",
+      "sourceRow": 17,
+      "incomplete": [],
+      "original": {
+        "date": "16 января",
+        "title": "Mega Man 2",
+        "year": 1988,
+        "platforms": [
+          "NES"
+        ],
+        "summary": "Классический платформер, ставший эталоном жанра благодаря отличному дизайну уровней и музыке.",
+        "comment": ""
+      }
+    },
+    "01-17": {
+      "selected": "Ape Escape 3",
+      "sourceRow": 18,
+      "incomplete": [],
+      "original": {
+        "date": "17 января",
+        "title": "Ape Escape 3",
+        "year": 2006,
+        "platforms": [
+          "PlayStation 2"
+        ],
+        "summary": "Весёлый платформер, где игрок с помощью аналоговых стиков ловит озорных обезьян; популярное завершение трилогии.",
+        "comment": ""
+      }
+    },
+    "01-18": {
+      "selected": "LittleBigPlanet 2",
+      "sourceRow": 19,
+      "incomplete": [],
+      "original": {
+        "date": "18 января",
+        "title": "LittleBigPlanet 2",
+        "year": 2011,
+        "platforms": [
+          "PlayStation 3"
+        ],
+        "summary": "Кооперативный платформер, вдохновляющий игроков на творчество; знаменит редактором уровней и обаянием мира.",
+        "comment": ""
+      }
+    },
+    "01-19": {
+      "selected": "Candy Crush Saga",
+      "sourceRow": 20,
+      "incomplete": [],
+      "original": {
+        "date": "19 января",
+        "title": "Candy Crush Saga",
+        "year": 2012,
+        "platforms": [
+          "Мобильные устройства"
+        ],
+        "summary": "Мобильная головоломка «три в ряд», ставшая глобальным хитом и заложившая основы free-to-play-монетизации.",
+        "comment": ""
+      }
+    },
+    "01-20": {
+      "selected": "NFL 2K",
+      "sourceRow": 21,
+      "incomplete": [],
+      "original": {
+        "date": "20 января",
+        "title": "NFL 2K",
+        "year": 2000,
+        "platforms": [
+          "Dreamcast"
+        ],
+        "summary": "Спортивный симулятор, поднявший планку реализма и графики в жанре американского футбола.",
+        "comment": ""
+      }
+    },
+    "01-21": {
+      "selected": "Resident Evil 2",
+      "sourceRow": 22,
+      "incomplete": [],
+      "original": {
+        "date": "21 января",
+        "title": "Resident Evil 2",
+        "year": 1998,
+        "platforms": [
+          "PlayStation"
+        ],
+        "summary": "Знаковый survival horror в Раккун-Сити; культовая игра, задавшая стандарты жанра на годы вперёд.",
+        "comment": ""
+      }
+    },
+    "01-22": {
+      "selected": "No More Heroes",
+      "sourceRow": 23,
+      "incomplete": [],
+      "original": {
+        "date": "22 января",
+        "title": "No More Heroes",
+        "year": 2008,
+        "platforms": [
+          "Wii"
+        ],
+        "summary": "Стильный экшен от Суды51, сочетает безумный юмор и динамичные бои с использованием световой катаны.",
+        "comment": ""
+      }
+    },
+    "01-23": {
+      "selected": "Team Fortress 2",
+      "sourceRow": 24,
+      "incomplete": [],
+      "original": {
+        "date": "23 января",
+        "title": "Team Fortress 2",
+        "year": 2007,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Классический командный шутер от Valve, определивший жанр своими уникальными персонажами и постоянной поддержкой.",
+        "comment": ""
+      }
+    },
+    "01-24": {
+      "selected": "Yakuza 0",
+      "sourceRow": 25,
+      "incomplete": [],
+      "original": {
+        "date": "24 января",
+        "title": "Yakuza 0",
+        "year": 2015,
+        "platforms": [
+          "PlayStation 4",
+          "Xbox One",
+          "ПК"
+        ],
+        "summary": "Приквел криминальной саги Yakuza, погружающий в атмосферу Японии 80-х с глубоким сюжетом и харизматичными героями.",
+        "comment": ""
+      }
+    },
+    "01-25": {
+      "selected": "Celeste",
+      "sourceRow": 26,
+      "incomplete": [],
+      "original": {
+        "date": "25 января",
+        "title": "Celeste",
+        "year": 2018,
+        "platforms": [
+          "ПК",
+          "PlayStation 4",
+          "Xbox One",
+          "Switch"
+        ],
+        "summary": "Инди-платформер о преодолении себя, получивший признание за хардкорный геймплей и трогательный сюжет.",
+        "comment": ""
+      }
+    },
+    "01-26": {
+      "selected": "Mass Effect 2",
+      "sourceRow": 27,
+      "incomplete": [],
+      "original": {
+        "date": "26 января",
+        "title": "Mass Effect 2",
+        "year": 2010,
+        "platforms": [
+          "ПК",
+          "Xbox 360"
+        ],
+        "summary": "Научно-фантастическая RPG от BioWare с глубоким сюжетом и персонажами; эталон жанра, где важен выбор игрока.",
+        "comment": ""
+      }
+    },
+    "01-27": {
+      "selected": "Dead or Alive 4",
+      "sourceRow": 28,
+      "incomplete": [],
+      "original": {
+        "date": "27 января",
+        "title": "Dead or Alive 4",
+        "year": 2005,
+        "platforms": [
+          "Xbox 360"
+        ],
+        "summary": "Файтинг нового поколения, впечатливший графикой и быстрыми динамичными боями; популярный в жанре на Xbox.",
+        "comment": ""
+      }
+    },
+    "01-28": {
+      "selected": "Donkey Kong Land III",
+      "sourceRow": 29,
+      "incomplete": [],
+      "original": {
+        "date": "28 января",
+        "title": "Donkey Kong Land III",
+        "year": 2000,
+        "platforms": [
+          "Game Boy"
+        ],
+        "summary": "Портативный платформер из серии Donkey Kong, предлагающий классический геймплей с новым уровнем сложности.",
+        "comment": ""
+      }
+    },
+    "01-29": {
+      "selected": "Duke Nukem 3D",
+      "sourceRow": 30,
+      "incomplete": [],
+      "original": {
+        "date": "29 января",
+        "title": "Duke Nukem 3D",
+        "year": 1996,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Знаковый шутер от первого лица 90-х, известный своим дерзким юмором и новаторским для своего времени дизайном уровней.",
+        "comment": ""
+      }
+    },
+    "01-30": {
+      "selected": "The Sims: Castaway Stories",
+      "sourceRow": 31,
+      "incomplete": [],
+      "original": {
+        "date": "30 января",
+        "title": "The Sims: Castaway Stories",
+        "year": 2008,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Отдельная часть серии The Sims, где персонажи выживают на необитаемом острове; симулятор жизни с элементами приключения.",
+        "comment": ""
+      }
+    },
+    "01-31": {
+      "selected": "Final Fantasy VII",
+      "sourceRow": 32,
+      "incomplete": [],
+      "original": {
+        "date": "31 января",
+        "title": "Final Fantasy VII",
+        "year": 1997,
+        "platforms": [
+          "PlayStation"
+        ],
+        "summary": "Легендарная JRPG, популяризировавшая жанр по всему миру; сочетает эпичный сюжет и новаторскую 3D-графику.",
+        "comment": ""
+      }
+    },
+    "02-01": {
+      "selected": "SimCity",
+      "sourceRow": 33,
+      "incomplete": [],
+      "original": {
+        "date": "1 февраля",
+        "title": "SimCity",
+        "year": 1989,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Оригинальный градостроительный симулятор от Уилла Райта, давший начало жанру и позволяющий строить города мечты.",
+        "comment": ""
+      }
+    },
+    "02-02": {
+      "selected": "Persona 3 Reload",
+      "sourceRow": 34,
+      "incomplete": [],
+      "original": {
+        "date": "2 февраля",
+        "title": "Persona 3 Reload",
+        "year": 2024,
+        "platforms": [
+          "ПК",
+          "PS4/5",
+          "Xbox One/Series"
+        ],
+        "summary": "Современный ремейк классической JRPG, заново покоривший критиков.",
+        "comment": ""
+      }
+    },
+    "02-03": {
+      "selected": "Slay the Spire (Android)",
+      "sourceRow": 35,
+      "incomplete": [],
+      "original": {
+        "date": "3 февраля",
+        "title": "Slay the Spire (Android)",
+        "year": 2021,
+        "platforms": [
+          "Android"
+        ],
+        "summary": "Мобильный порт культовой карточной roguelike, популяризировавшей жанр.",
+        "comment": ""
+      }
+    },
+    "02-04": {
+      "selected": "The Sims",
+      "sourceRow": 36,
+      "incomplete": [],
+      "original": {
+        "date": "4 февраля",
+        "title": "The Sims",
+        "year": 2000,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Первый симулятор жизни в серии, позволивший игрокам управлять повседневной жизнью виртуальных персонажей; культурный феномен.",
+        "comment": ""
+      }
+    },
+    "02-05": {
+      "selected": "Outlast (PS4, PAL)",
+      "sourceRow": 37,
+      "incomplete": [],
+      "original": {
+        "date": "5 февраля",
+        "title": "Outlast (PS4, PAL)",
+        "year": 2014,
+        "platforms": [
+          "PlayStation 4"
+        ],
+        "summary": "Переиздание легендарного survival‑horror на новом поколении консолей.",
+        "comment": ""
+      }
+    },
+    "02-06": {
+      "selected": "Street Fighter II",
+      "sourceRow": 38,
+      "incomplete": [],
+      "original": {
+        "date": "6 февраля",
+        "title": "Street Fighter II",
+        "year": 1991,
+        "platforms": [
+          "Аркада"
+        ],
+        "summary": "Революционный файтинг, популяризировавший жанр и заложивший основу киберспортивных турниров по видеоиграм.",
+        "comment": ""
+      }
+    },
+    "02-07": {
+      "selected": "Shadow of the Colossus (PS4 ремейк, EU)",
+      "sourceRow": 39,
+      "incomplete": [],
+      "original": {
+        "date": "7 февраля",
+        "title": "Shadow of the Colossus (PS4 ремейк, EU)",
+        "year": 2018,
+        "platforms": [
+          "PlayStation 4"
+        ],
+        "summary": "Полный ремейк одной из величайших игр всех времён, получивший восторги прессы.",
+        "comment": ""
+      }
+    },
+    "02-08": {
+      "selected": "Metroid Prime Remastered",
+      "sourceRow": 40,
+      "incomplete": [],
+      "original": {
+        "date": "8 февраля",
+        "title": "Metroid Prime Remastered",
+        "year": 2023,
+        "platforms": [
+          "Nintendo Switch"
+        ],
+        "summary": "Переиздание культового шутера от первого лица с улучшенной графикой и управлением.",
+        "comment": ""
+      }
+    },
+    "02-09": {
+      "selected": "BioShock 2",
+      "sourceRow": 41,
+      "incomplete": [],
+      "original": {
+        "date": "9 февраля",
+        "title": "BioShock 2",
+        "year": 2010,
+        "platforms": [
+          "ПК",
+          "PS3",
+          "Xbox 360"
+        ],
+        "summary": "Продолжение революционного шутера, расширившее мир Rapture.",
+        "comment": ""
+      }
+    },
+    "02-10": {
+      "selected": "Dragon Quest III",
+      "sourceRow": 42,
+      "incomplete": [],
+      "original": {
+        "date": "10 февраля",
+        "title": "Dragon Quest III",
+        "year": 1988,
+        "platforms": [
+          "NES (Famicom)"
+        ],
+        "summary": "Культовая JRPG в Японии, вызвавшая огромные очереди при выходе; классика, повлиявшая на развитие жанра.",
+        "comment": ""
+      }
+    },
+    "02-11": {
+      "selected": "Xenogears",
+      "sourceRow": 43,
+      "incomplete": [],
+      "original": {
+        "date": "11 февраля",
+        "title": "Xenogears",
+        "year": 1998,
+        "platforms": [
+          "PlayStation"
+        ],
+        "summary": "Амбициозная RPG от Square с философским сюжетом и мехами",
+        "comment": "культовая игра среди поклонников жанра."
+      }
+    },
+    "02-12": {
+      "selected": "Super Mario Bros. 3",
+      "sourceRow": 44,
+      "incomplete": [],
+      "original": {
+        "date": "12 февраля",
+        "title": "Super Mario Bros. 3",
+        "year": 1990,
+        "platforms": [
+          "NES"
+        ],
+        "summary": "Культовый платформер от Nintendo, расширивший возможности жанра; до сих пор считается одним из лучших в серии Mario.",
+        "comment": ""
+      }
+    },
+    "02-13": {
+      "selected": "Kingdom Come: Deliverance",
+      "sourceRow": 45,
+      "incomplete": [],
+      "original": {
+        "date": "13 февраля",
+        "title": "Kingdom Come: Deliverance",
+        "year": 2018,
+        "platforms": [
+          "ПК",
+          "PS4",
+          "Xbox One"
+        ],
+        "summary": "Реалистичная RPG в средневековой Богемии, прославившаяся вниманием к деталям.",
+        "comment": ""
+      }
+    },
+    "02-14": {
+      "selected": "Florence",
+      "sourceRow": 46,
+      "incomplete": [],
+      "original": {
+        "date": "14 февраля",
+        "title": "Florence",
+        "year": 2018,
+        "platforms": [
+          "iOS (мобильная)"
+        ],
+        "summary": "Трогательная инди-игра о любви и жизни, отмеченная наградами за эмоциональный сюжет и оригинальный геймплей.",
+        "comment": ""
+      }
+    },
+    "02-15": {
+      "selected": "Far Cry New Dawn",
+      "sourceRow": 47,
+      "incomplete": [],
+      "original": {
+        "date": "15 февраля",
+        "title": "Far Cry New Dawn",
+        "year": 2019,
+        "platforms": [
+          "ПК",
+          "PS4",
+          "Xbox One"
+        ],
+        "summary": "Постапокалиптический спин‑офф Far Cry с ко‑опом и красочным миром.",
+        "comment": ""
+      }
+    },
+    "02-16": {
+      "selected": "Bayonetta (Switch порт)",
+      "sourceRow": 48,
+      "incomplete": [],
+      "original": {
+        "date": "16 февраля",
+        "title": "Bayonetta (Switch порт)",
+        "year": 2018,
+        "platforms": [
+          "Nintendo Switch"
+        ],
+        "summary": "Переиздание культового слэшера с улучшенным геймплеем на гибридной консоли Nintendo.",
+        "comment": ""
+      }
+    },
+    "02-17": {
+      "selected": "Wild Hearts",
+      "sourceRow": 49,
+      "incomplete": [],
+      "original": {
+        "date": "17 февраля",
+        "title": "Wild Hearts",
+        "year": 2023,
+        "platforms": [
+          "ПК",
+          "PS5",
+          "Xbox Series"
+        ],
+        "summary": "Современный охотничий экшен в духе Monster Hunter от Koei Tecmo и EA.",
+        "comment": ""
+      }
+    },
+    "02-18": {
+      "selected": "Banished",
+      "sourceRow": 50,
+      "incomplete": [],
+      "original": {
+        "date": "18 февраля",
+        "title": "Banished",
+        "year": 2014,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Инди‑симулятор выживания поселенцев, получивший признание за глубину экономики.",
+        "comment": ""
+      }
+    },
+    "02-19": {
+      "selected": "Warhammer 40,000: Dawn of War II",
+      "sourceRow": 51,
+      "incomplete": [],
+      "original": {
+        "date": "19 февраля",
+        "title": "Warhammer 40,000: Dawn of War II",
+        "year": 2009,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Знаковая RTS из вселенной Warhammer, сочетающая тактику и RPG‑элементы.",
+        "comment": ""
+      }
+    },
+    "02-20": {
+      "selected": "Balatro",
+      "sourceRow": 52,
+      "incomplete": [],
+      "original": {
+        "date": "20 февраля",
+        "title": "Balatro",
+        "year": 2024,
+        "platforms": [
+          "ПК",
+          "Switch",
+          "PS4/5",
+          "Xbox"
+        ],
+        "summary": "Роглайк‑карточная игра, мгновенно ставшая инди‑хитом (Metacritic 90+).",
+        "comment": ""
+      }
+    },
+    "02-21": {
+      "selected": "The Legend of Zelda",
+      "sourceRow": 53,
+      "incomplete": [],
+      "original": {
+        "date": "21 февраля",
+        "title": "The Legend of Zelda",
+        "year": 1986,
+        "platforms": [
+          "Famicom Disk System",
+          "NES"
+        ],
+        "summary": "Первая игра серии Zelda, заложившая основы приключенческого жанра; новаторская нелинейная структура мира.",
+        "comment": ""
+      }
+    },
+    "02-22": {
+      "selected": "Sons of the Forest (полный релиз)",
+      "sourceRow": 54,
+      "incomplete": [],
+      "original": {
+        "date": "22 февраля",
+        "title": "Sons of the Forest (полный релиз)",
+        "year": 2024,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Продолжение знаменитого survival‑хоррора с расширенным ко‑опом и песочницей.",
+        "comment": ""
+      }
+    },
+    "02-23": {
+      "selected": "NieR: Automata",
+      "sourceRow": 55,
+      "incomplete": [],
+      "original": {
+        "date": "23 февраля",
+        "title": "NieR: Automata",
+        "year": 2017,
+        "platforms": [
+          "PlayStation 4",
+          "ПК"
+        ],
+        "summary": "Философский экшен от PlatinumGames, сочетает глубокий сюжет о человечности с динамичными боями; хит критиков.",
+        "comment": ""
+      }
+    },
+    "02-24": {
+      "selected": "Hollow Knight",
+      "sourceRow": 56,
+      "incomplete": [],
+      "original": {
+        "date": "24 февраля",
+        "title": "Hollow Knight",
+        "year": 2017,
+        "platforms": [
+          "ПК",
+          "Nintendo Switch"
+        ],
+        "summary": "Атмосферный метроидвания-платформер с прекрасной анимацией и сложными боссами, полюбившийся фанатам жанра.",
+        "comment": ""
+      }
+    },
+    "02-25": {
+      "selected": "Elden Ring",
+      "sourceRow": 57,
+      "incomplete": [],
+      "original": {
+        "date": "25 февраля",
+        "title": "Elden Ring",
+        "year": 2022,
+        "platforms": [
+          "ПК",
+          "PlayStation 4/5",
+          "Xbox One/Series"
+        ],
+        "summary": "Масштабная action/RPG от FromSoftware и Джорджа Мартина",
+        "comment": "объединяет сложность Souls-игр с открытым миром и стала хитом последних лет."
+      }
+    },
+    "02-26": {
+      "selected": "Stardew Valley",
+      "sourceRow": 58,
+      "incomplete": [],
+      "original": {
+        "date": "26 февраля",
+        "title": "Stardew Valley",
+        "year": 2016,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Культовый симулятор фермы, вдохновивший жанр и продолжающий расширяться.",
+        "comment": ""
+      }
+    },
+    "02-27": {
+      "selected": "Pokémon Red / Green",
+      "sourceRow": 59,
+      "incomplete": [],
+      "original": {
+        "date": "27 февраля",
+        "title": "Pokémon Red / Green",
+        "year": 1996,
+        "platforms": [
+          "Game Boy (JP)"
+        ],
+        "summary": "Первые игры серии Pokémon (в Японии), начавшие мировую «покемономанию» и представившие концепцию сбора и тренировки карманных монстров.",
+        "comment": ""
+      }
+    },
+    "02-28": {
+      "selected": "Heroes of Might and Magic III",
+      "sourceRow": 60,
+      "incomplete": [],
+      "original": {
+        "date": "28 февраля",
+        "title": "Heroes of Might and Magic III",
+        "year": 1999,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Легендарная пошаговая стратегия, ставшая эталоном жанра; обожаема за разнообразие тактик и богатый фантазийный мир.",
+        "comment": ""
+      }
+    },
+    "03-01": {
+      "selected": "Horizon Zero Dawn (PAL)",
+      "sourceRow": 61,
+      "incomplete": [],
+      "original": {
+        "date": "1 марта",
+        "title": "Horizon Zero Dawn (PAL)",
+        "year": 2017,
+        "platforms": [
+          "PlayStation 4"
+        ],
+        "summary": "Открытый мир с роботами‑динозаврами и сильной героиней",
+        "comment": "одна из лучших игр PS4."
+      }
+    },
+    "03-02": {
+      "selected": "Maquette",
+      "sourceRow": 62,
+      "incomplete": [],
+      "original": {
+        "date": "2 марта",
+        "title": "Maquette",
+        "year": 2021,
+        "platforms": [
+          "ПК",
+          "PS4/5"
+        ],
+        "summary": "Инновационная головоломка‑реплика про любовь и масштабирование миров.",
+        "comment": ""
+      }
+    },
+    "03-03": {
+      "selected": "The Legend of Zelda: Breath of the Wild",
+      "sourceRow": 63,
+      "incomplete": [],
+      "original": {
+        "date": "3 марта",
+        "title": "The Legend of Zelda: Breath of the Wild",
+        "year": 2017,
+        "platforms": [
+          "Nintendo Switch",
+          "Wii U"
+        ],
+        "summary": "Игра, переосмыслившая формулу открытого мира; полная свобода исследования сделала её новым эталоном жанра.",
+        "comment": ""
+      }
+    },
+    "03-04": {
+      "selected": "Ultimate Chicken Horse",
+      "sourceRow": 64,
+      "incomplete": [],
+      "original": {
+        "date": "4 марта",
+        "title": "Ultimate Chicken Horse",
+        "year": 2016,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Весёлый соревновательный платформер с пользовательскими уровнями и дружеским хаосом.",
+        "comment": ""
+      }
+    },
+    "03-05": {
+      "selected": "Tomb Raider (2013)",
+      "sourceRow": 65,
+      "incomplete": [],
+      "original": {
+        "date": "5 марта",
+        "title": "Tomb Raider (2013)",
+        "year": 2013,
+        "platforms": [
+          "ПК",
+          "PS3",
+          "Xbox 360"
+        ],
+        "summary": "Перезапуск приключений Лары Крофт, положивший начало трилогии Survivor.",
+        "comment": ""
+      }
+    },
+    "03-06": {
+      "selected": "Mass Effect 3",
+      "sourceRow": 66,
+      "incomplete": [],
+      "original": {
+        "date": "6 марта",
+        "title": "Mass Effect 3",
+        "year": 2012,
+        "platforms": [
+          "ПК",
+          "PS3",
+          "X360"
+        ],
+        "summary": "Кульминация космической трилогии BioWare, где решения игрока сходятся в масштабной войне за судьбу галактики.",
+        "comment": ""
+      }
+    },
+    "03-07": {
+      "selected": "South Park: The Stick of Truth",
+      "sourceRow": 67,
+      "incomplete": [],
+      "original": {
+        "date": "7 марта",
+        "title": "South Park: The Stick of Truth",
+        "year": 2014,
+        "platforms": [
+          "ПК",
+          "PS3",
+          "X360"
+        ],
+        "summary": "Сатирическая RPG по South Park, точно переносящая стиль сериала в пошаговые бои и абсурдный юмор.",
+        "comment": ""
+      }
+    },
+    "03-08": {
+      "selected": "Kirby’s Extra Epic Yarn",
+      "sourceRow": 68,
+      "incomplete": [],
+      "original": {
+        "date": "8 марта",
+        "title": "Kirby’s Extra Epic Yarn",
+        "year": 2019,
+        "platforms": [
+          "Nintendo 3DS"
+        ],
+        "summary": "Переиздание очаровательного платформера Kirby's Epic Yarn с мягкой «тканевой» эстетикой и более доступным темпом.",
+        "comment": ""
+      }
+    },
+    "03-09": {
+      "selected": "The Last Spell",
+      "sourceRow": 69,
+      "incomplete": [],
+      "original": {
+        "date": "9 марта",
+        "title": "The Last Spell",
+        "year": 2023,
+        "platforms": [
+          "ПК",
+          "PS4/5",
+          "Switch"
+        ],
+        "summary": "Мрачная тактическая roguelite-стратегия о защите последнего города от ночных волн чудовищ.",
+        "comment": ""
+      }
+    },
+    "03-10": {
+      "selected": "Cities: Skylines",
+      "sourceRow": 70,
+      "incomplete": [],
+      "original": {
+        "date": "10 марта",
+        "title": "Cities: Skylines",
+        "year": 2015,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Градостроительный симулятор, ставший новым жанровым эталоном благодаря гибкому строительству и активному моддингу.",
+        "comment": ""
+      }
+    },
+    "03-11": {
+      "selected": "Chrono Trigger",
+      "sourceRow": 71,
+      "incomplete": [],
+      "original": {
+        "date": "11 марта",
+        "title": "Chrono Trigger",
+        "year": 1995,
+        "platforms": [
+          "Super Nintendo (SNES)"
+        ],
+        "summary": "Классическая JRPG от Square, признанная одной из лучших игр всех времён за инновационную боевую систему и нелинейный сюжет.",
+        "comment": ""
+      }
+    },
+    "03-12": {
+      "selected": "Hypnospace Outlaw",
+      "sourceRow": 72,
+      "incomplete": [],
+      "original": {
+        "date": "12 марта",
+        "title": "Hypnospace Outlaw",
+        "year": 2019,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Детективное приключение в стилистике альтернативного интернета 90-х, где расследование ведётся через странные веб-страницы и чаты.",
+        "comment": ""
+      }
+    },
+    "03-13": {
+      "selected": "Journey",
+      "sourceRow": 73,
+      "incomplete": [],
+      "original": {
+        "date": "13 марта",
+        "title": "Journey",
+        "year": 2012,
+        "platforms": [
+          "PlayStation 3"
+        ],
+        "summary": "Атмосферное инди-приключение, покорившее сердца игроков медитативным геймплеем и прекрасным визуальным стилем.",
+        "comment": ""
+      }
+    },
+    "03-14": {
+      "selected": "Dark Souls II",
+      "sourceRow": 74,
+      "incomplete": [],
+      "original": {
+        "date": "14 марта",
+        "title": "Dark Souls II",
+        "year": 2014,
+        "platforms": [
+          "PS3",
+          "X360"
+        ],
+        "summary": "Большая и суровая action/RPG от FromSoftware, расширившая формулу Souls новыми системами и разветвлёнными локациями.",
+        "comment": ""
+      }
+    },
+    "03-15": {
+      "selected": "Fallout Tactics",
+      "sourceRow": 75,
+      "incomplete": [],
+      "original": {
+        "date": "15 марта",
+        "title": "Fallout Tactics",
+        "year": 2001,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Тактическое ответвление Fallout, сместившее акцент с RPG на отрядные бои в постъядерной пустоши.",
+        "comment": ""
+      }
+    },
+    "03-16": {
+      "selected": "Kirby Star Allies",
+      "sourceRow": 76,
+      "incomplete": [],
+      "original": {
+        "date": "16 марта",
+        "title": "Kirby Star Allies",
+        "year": 2018,
+        "platforms": [
+          "Nintendo Switch"
+        ],
+        "summary": "Яркий кооперативный платформер, где Kirby собирает союзников и комбинирует способности в духе дружеского приключения.",
+        "comment": ""
+      }
+    },
+    "03-17": {
+      "selected": "Rayman 2: The Great Escape",
+      "sourceRow": 77,
+      "incomplete": [],
+      "original": {
+        "date": "17 марта",
+        "title": "Rayman 2: The Great Escape",
+        "year": 2000,
+        "platforms": [
+          "Dreamcast"
+        ],
+        "summary": "Один из самых заметных 3D-платформеров конца 90-х, запомнившийся пластичной анимацией и сказочной атмосферой.",
+        "comment": ""
+      }
+    },
+    "03-18": {
+      "selected": "Syberia: The World Before",
+      "sourceRow": 78,
+      "incomplete": [],
+      "original": {
+        "date": "18 марта",
+        "title": "Syberia: The World Before",
+        "year": 2022,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Новая глава серии Syberia с упором на повествование, меланхоличную атмосферу и европейское приключенческое наследие.",
+        "comment": ""
+      }
+    },
+    "03-19": {
+      "selected": "Gears of War: Judgment",
+      "sourceRow": 79,
+      "incomplete": [],
+      "original": {
+        "date": "19 марта",
+        "title": "Gears of War: Judgment",
+        "year": 2013,
+        "platforms": [
+          "Xbox 360"
+        ],
+        "summary": "Спин-офф и приквел серии Gears, сосредоточенный на Бэрде и Коуле и сохранивший фирменный ритм укрытий и тяжёлых перестрелок.",
+        "comment": ""
+      }
+    },
+    "03-20": {
+      "selected": "Animal Crossing: New Horizons",
+      "sourceRow": 80,
+      "incomplete": [],
+      "original": {
+        "date": "20 марта",
+        "title": "Animal Crossing: New Horizons",
+        "year": 2020,
+        "platforms": [
+          "Nintendo Switch"
+        ],
+        "summary": "Социальный симулятор, позволивший миллионам создать свой райский остров; феномен 2020 года с беспрецедентной популярностью.",
+        "comment": ""
+      }
+    },
+    "03-21": {
+      "selected": "Need for Speed: Most Wanted U",
+      "sourceRow": 81,
+      "incomplete": [],
+      "original": {
+        "date": "21 марта",
+        "title": "Need for Speed: Most Wanted U",
+        "year": 2013,
+        "platforms": [
+          "Wii U"
+        ],
+        "summary": "Wii U-версия аркадной гонки Criterion с открытым миром, скоростными погонями и асинхронными возможностями контроллера.",
+        "comment": ""
+      }
+    },
+    "03-22": {
+      "selected": "Resident Evil",
+      "sourceRow": 82,
+      "incomplete": [],
+      "original": {
+        "date": "22 марта",
+        "title": "Resident Evil",
+        "year": 1996,
+        "platforms": [
+          "PlayStation"
+        ],
+        "summary": "Родоначальник жанра survival horror",
+        "comment": "напряжённая атмосфера выживания в особняке задала новый стандарт для хорроров​"
+      }
+    },
+    "03-23": {
+      "selected": "Far Cry",
+      "sourceRow": 83,
+      "incomplete": [],
+      "original": {
+        "date": "23 марта",
+        "title": "Far Cry",
+        "year": 2004,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Тропический шутер, впечатливший открытыми уровнями, дальностью обзора и свободой подхода для своего времени.",
+        "comment": ""
+      }
+    },
+    "03-24": {
+      "selected": "Bloodborne",
+      "sourceRow": 84,
+      "incomplete": [],
+      "original": {
+        "date": "24 марта",
+        "title": "Bloodborne",
+        "year": 2015,
+        "platforms": [
+          "PlayStation 4"
+        ],
+        "summary": "Готическая action/RPG, где агрессивный стиль боя и лавкрафтианский ужас сделали её одной из главных игр PlayStation 4.",
+        "comment": ""
+      }
+    },
+    "03-25": {
+      "selected": "Kirby and the Forgotten Land",
+      "sourceRow": 85,
+      "incomplete": [],
+      "original": {
+        "date": "25 марта",
+        "title": "Kirby and the Forgotten Land",
+        "year": 2022,
+        "platforms": [
+          "Nintendo Switch"
+        ],
+        "summary": "Первое полноценное 3D-приключение Kirby, сохранившее фирменную лёгкость серии в мире постапокалиптических руин.",
+        "comment": ""
+      }
+    },
+    "03-26": {
+      "selected": "BioShock Infinite",
+      "sourceRow": 86,
+      "incomplete": [],
+      "original": {
+        "date": "26 марта",
+        "title": "BioShock Infinite",
+        "year": 2013,
+        "platforms": [
+          "ПК",
+          "PlayStation 3",
+          "Xbox 360"
+        ],
+        "summary": "Шутер с глубоким сюжетом в альтернативной Америке 1912 года",
+        "comment": "отмечен наградами за повествование и дизайн."
+      }
+    },
+    "03-27": {
+      "selected": "Far Cry 5",
+      "sourceRow": 87,
+      "incomplete": [],
+      "original": {
+        "date": "27 марта",
+        "title": "Far Cry 5",
+        "year": 2018,
+        "platforms": [
+          "ПК",
+          "PS4",
+          "Xbox One"
+        ],
+        "summary": "Открытый шутер о борьбе с религиозным культом в Монтане, сочетающий хаос песочницы и кооперативное прохождение.",
+        "comment": ""
+      }
+    },
+    "03-28": {
+      "selected": "Kingdom Hearts",
+      "sourceRow": 88,
+      "incomplete": [],
+      "original": {
+        "date": "28 марта",
+        "title": "Kingdom Hearts",
+        "year": 2002,
+        "platforms": [
+          "PlayStation 2"
+        ],
+        "summary": "Кроссовер Disney и Final Fantasy, превративший знакомые миры в эмоциональную action/RPG о дружбе и тьме.",
+        "comment": ""
+      }
+    },
+    "03-29": {
+      "selected": "Yoshi’s Crafted World",
+      "sourceRow": 89,
+      "incomplete": [],
+      "original": {
+        "date": "29 марта",
+        "title": "Yoshi’s Crafted World",
+        "year": 2019,
+        "platforms": [
+          "Nintendo Switch"
+        ],
+        "summary": "Платформер с рукотворной визуальной стилистикой, где картон, ткань и бумага формируют уютный мир Yoshi.",
+        "comment": ""
+      }
+    },
+    "03-30": {
+      "selected": "Just Cause 2",
+      "sourceRow": 90,
+      "incomplete": [],
+      "original": {
+        "date": "30 марта",
+        "title": "Just Cause 2",
+        "year": 2010,
+        "platforms": [
+          "ПК",
+          "PS3",
+          "X360"
+        ],
+        "summary": "Взрывной экшен-песочница, прославившаяся крюком-кошкой, вертикальностью и зрелищным разрушением.",
+        "comment": ""
+      }
+    },
+    "03-31": {
+      "selected": "StarCraft",
+      "sourceRow": 91,
+      "incomplete": [],
+      "original": {
+        "date": "31 марта",
+        "title": "StarCraft",
+        "year": 1998,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Культовая стратегия в реальном времени от Blizzard, ставшая эталоном киберспортивных RTS и породившая легендарные турниры.",
+        "comment": ""
+      }
+    },
+    "04-01": {
+      "selected": "Goat Simulator",
+      "sourceRow": 92,
+      "incomplete": [],
+      "original": {
+        "date": "1 апреля",
+        "title": "Goat Simulator",
+        "year": 2014,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Абсурдный козий сэндбокс, вирусный феномен.",
+        "comment": ""
+      }
+    },
+    "04-02": {
+      "selected": "Final Fantasy VI",
+      "sourceRow": 93,
+      "incomplete": [],
+      "original": {
+        "date": "2 апреля",
+        "title": "Final Fantasy VI",
+        "year": 1994,
+        "platforms": [
+          "Super Famicom (SNES)"
+        ],
+        "summary": "Классическая японская RPG с глубоким сюжетом и проработанными персонажами",
+        "comment": "один из шедевров 16-битной эры."
+      }
+    },
+    "04-03": {
+      "selected": "Resident Evil 3 (ремейк)",
+      "sourceRow": 94,
+      "incomplete": [],
+      "original": {
+        "date": "3 апреля",
+        "title": "Resident Evil 3 (ремейк)",
+        "year": 2020,
+        "platforms": [
+          "ПК",
+          "PS4",
+          "Xbox One"
+        ],
+        "summary": "Ремейк классики с Немезисом.",
+        "comment": ""
+      }
+    },
+    "04-04": {
+      "selected": "Persona 5",
+      "sourceRow": 95,
+      "incomplete": [],
+      "original": {
+        "date": "4 апреля",
+        "title": "Persona 5",
+        "year": 2017,
+        "platforms": [
+          "PlayStation 4"
+        ],
+        "summary": "Стильная японская RPG про школьников-«фантомных воров», получила восторги критиков за сюжет, музыку и дизайн подземелий.",
+        "comment": ""
+      }
+    },
+    "04-05": {
+      "selected": "Enter the Gungeon",
+      "sourceRow": 96,
+      "incomplete": [],
+      "original": {
+        "date": "5 апреля",
+        "title": "Enter the Gungeon",
+        "year": 2016,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Roguelite‑шутер, 1M+ копий.",
+        "comment": ""
+      }
+    },
+    "04-06": {
+      "selected": "Oddworld: Soulstorm",
+      "sourceRow": 97,
+      "incomplete": [],
+      "original": {
+        "date": "6 апреля",
+        "title": "Oddworld: Soulstorm",
+        "year": 2021,
+        "platforms": [
+          "ПК",
+          "PS4/5",
+          "Xbox Series"
+        ],
+        "summary": "Новая глава Oddworld.",
+        "comment": ""
+      }
+    },
+    "04-07": {
+      "selected": "Bulletstorm: Full Clip Edition",
+      "sourceRow": 98,
+      "incomplete": [],
+      "original": {
+        "date": "7 апреля",
+        "title": "Bulletstorm: Full Clip Edition",
+        "year": 2017,
+        "platforms": [
+          "ПК",
+          "PS4",
+          "Xbox One"
+        ],
+        "summary": "Культовый шутер‑скиллшот.",
+        "comment": ""
+      }
+    },
+    "04-08": {
+      "selected": "Chrono Cross: Radical Dreamers",
+      "sourceRow": 99,
+      "incomplete": [],
+      "original": {
+        "date": "8 апреля",
+        "title": "Chrono Cross: Radical Dreamers",
+        "year": 2022,
+        "platforms": [
+          "ПК",
+          "PS4/5",
+          "Switch",
+          "Xbox One"
+        ],
+        "summary": "HD‑ремастер JRPG.",
+        "comment": ""
+      }
+    },
+    "04-09": {
+      "selected": "Age of Empires II HD",
+      "sourceRow": 100,
+      "incomplete": [],
+      "original": {
+        "date": "9 апреля",
+        "title": "Age of Empires II HD",
+        "year": 2013,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Обновлённая RTS‑классика.",
+        "comment": ""
+      }
+    },
+    "04-10": {
+      "selected": "Final Fantasy VII Remake",
+      "sourceRow": 101,
+      "incomplete": [],
+      "original": {
+        "date": "10 апреля",
+        "title": "Final Fantasy VII Remake",
+        "year": 2020,
+        "platforms": [
+          "PlayStation 4"
+        ],
+        "summary": "Современный ремейк культовой JRPG, обновивший графику и систему боя оригинала; высоко оценен фанатами и критиками.",
+        "comment": ""
+      }
+    },
+    "04-11": {
+      "selected": "Yooka‑Laylee",
+      "sourceRow": 102,
+      "incomplete": [],
+      "original": {
+        "date": "11 апреля",
+        "title": "Yooka‑Laylee",
+        "year": 2017,
+        "platforms": [
+          "ПК",
+          "PS4",
+          "Xbox One",
+          "Switch"
+        ],
+        "summary": "Наследник Banjo‑Kazooie.",
+        "comment": ""
+      }
+    },
+    "04-12": {
+      "selected": "The Longest Journey",
+      "sourceRow": 103,
+      "incomplete": [],
+      "original": {
+        "date": "12 апреля",
+        "title": "The Longest Journey",
+        "year": 2000,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Культовый сюжетный квест.",
+        "comment": ""
+      }
+    },
+    "04-13": {
+      "selected": "Fez",
+      "sourceRow": 104,
+      "incomplete": [],
+      "original": {
+        "date": "13 апреля",
+        "title": "Fez",
+        "year": 2012,
+        "platforms": [
+          "Xbox 360 (XBLA)",
+          "ПК"
+        ],
+        "summary": "Уникальный инди-платформер-головоломка с меняющейся перспективой, отмеченный наградами за оригинальный дизайн уровней.",
+        "comment": ""
+      }
+    },
+    "04-14": {
+      "selected": "Total War: Rome II Emper. Ed.",
+      "sourceRow": 105,
+      "incomplete": [],
+      "original": {
+        "date": "14 апреля",
+        "title": "Total War: Rome II Emper. Ed.",
+        "year": 2015,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Большое улучшение TW.",
+        "comment": ""
+      }
+    },
+    "04-15": {
+      "selected": "FTL iPad",
+      "sourceRow": 106,
+      "incomplete": [],
+      "original": {
+        "date": "15 апреля",
+        "title": "FTL iPad",
+        "year": 2014,
+        "platforms": [
+          "iOS"
+        ],
+        "summary": "Мобильный порт рогалика.",
+        "comment": ""
+      }
+    },
+    "04-16": {
+      "selected": "Ultima VII: The Black Gate",
+      "sourceRow": 107,
+      "incomplete": [],
+      "original": {
+        "date": "16 апреля",
+        "title": "Ultima VII: The Black Gate",
+        "year": 1992,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Классическая ролевая игра с обширным открытым миром и нелинейным сюжетом",
+        "comment": "вершина серии Ultima в глазах многих фанатов."
+      }
+    },
+    "04-17": {
+      "selected": "Don't Starve",
+      "sourceRow": 108,
+      "incomplete": [],
+      "original": {
+        "date": "17 апреля",
+        "title": "Don't Starve",
+        "year": 2013,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Сурвайвал‑хит Klei.",
+        "comment": ""
+      }
+    },
+    "04-18": {
+      "selected": "Super Metroid",
+      "sourceRow": 109,
+      "incomplete": [],
+      "original": {
+        "date": "18 апреля",
+        "title": "Super Metroid",
+        "year": 1994,
+        "platforms": [
+          "Super Nintendo (SNES)"
+        ],
+        "summary": "Легендарный приключенческий экшен с элементами исследований (метроидвания), ставший образцом для подражания в жанре.",
+        "comment": ""
+      }
+    },
+    "04-19": {
+      "selected": "Portal 2",
+      "sourceRow": 110,
+      "incomplete": [],
+      "original": {
+        "date": "19 апреля",
+        "title": "Portal 2",
+        "year": 2011,
+        "platforms": [
+          "ПК",
+          "PlayStation 3",
+          "Xbox 360"
+        ],
+        "summary": "Продолжение культовой головоломки, расширившее возможности порталов кооперативным режимом и запоминающимся юмором.",
+        "comment": ""
+      }
+    },
+    "04-20": {
+      "selected": "God of War",
+      "sourceRow": 111,
+      "incomplete": [],
+      "original": {
+        "date": "20 апреля",
+        "title": "God of War",
+        "year": 2018,
+        "platforms": [
+          "PlayStation 4"
+        ],
+        "summary": "Эпическое переосмысление приключений Кратоса в скандинавской мифологии; игра года, отмеченная за глубокий сюжет и боевую систему.",
+        "comment": ""
+      }
+    },
+    "04-21": {
+      "selected": "Game Boy + Tetris",
+      "sourceRow": 112,
+      "incomplete": [],
+      "original": {
+        "date": "21 апреля",
+        "title": "Game Boy + Tetris",
+        "year": 1989,
+        "platforms": [
+          "Game Boy"
+        ],
+        "summary": "Старт портативной эпохи.",
+        "comment": ""
+      }
+    },
+    "04-22": {
+      "selected": "Portal 2 (Cloud)",
+      "sourceRow": 113,
+      "incomplete": [],
+      "original": {
+        "date": "22 апреля",
+        "title": "Portal 2 (Cloud)",
+        "year": 2022,
+        "platforms": [
+          "Switch"
+        ],
+        "summary": "Облачный порт головоломки.",
+        "comment": ""
+      }
+    },
+    "04-23": {
+      "selected": "The Banner Saga",
+      "sourceRow": 114,
+      "incomplete": [],
+      "original": {
+        "date": "23 апреля",
+        "title": "The Banner Saga",
+        "year": 2014,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Тактическая сага, BAFTA.",
+        "comment": ""
+      }
+    },
+    "04-24": {
+      "selected": "Streets of Rage 4",
+      "sourceRow": 115,
+      "incomplete": [],
+      "original": {
+        "date": "24 апреля",
+        "title": "Streets of Rage 4",
+        "year": 2020,
+        "platforms": [
+          "ПК",
+          "PS4",
+          "Xbox One",
+          "Switch"
+        ],
+        "summary": "Возрождение битем‑апа.",
+        "comment": ""
+      }
+    },
+    "04-25": {
+      "selected": "Returnal",
+      "sourceRow": 116,
+      "incomplete": [],
+      "original": {
+        "date": "25 апреля",
+        "title": "Returnal",
+        "year": 2021,
+        "platforms": [
+          "PS5"
+        ],
+        "summary": "Roguelite‑шутер, GOTY Action.",
+        "comment": ""
+      }
+    },
+    "04-26": {
+      "selected": "Alien: Isolation",
+      "sourceRow": 117,
+      "incomplete": [],
+      "original": {
+        "date": "26 апреля",
+        "title": "Alien: Isolation",
+        "year": 2019,
+        "platforms": [
+          "Switch"
+        ],
+        "summary": "Лучший хоррор Alien.",
+        "comment": ""
+      }
+    },
+    "04-27": {
+      "selected": "Outer Wilds",
+      "sourceRow": 118,
+      "incomplete": [],
+      "original": {
+        "date": "27 апреля",
+        "title": "Outer Wilds",
+        "year": 2019,
+        "platforms": [
+          "PS4",
+          "Xbox One"
+        ],
+        "summary": "BAFTA GOTY.",
+        "comment": ""
+      }
+    },
+    "04-28": {
+      "selected": "Nier Replicant ver.1.22",
+      "sourceRow": 119,
+      "incomplete": [],
+      "original": {
+        "date": "28 апреля",
+        "title": "Nier Replicant ver.1.22",
+        "year": 2021,
+        "platforms": [
+          "ПК",
+          "PS4",
+          "Xbox One"
+        ],
+        "summary": "Ремейк ранней игры Йоко Таро.",
+        "comment": ""
+      }
+    },
+    "04-29": {
+      "selected": "Tekken 3",
+      "sourceRow": 120,
+      "incomplete": [],
+      "original": {
+        "date": "29 апреля",
+        "title": "Tekken 3",
+        "year": 1998,
+        "platforms": [
+          "PlayStation"
+        ],
+        "summary": "Один из лучших файтингов эпохи PS1, отличающийся разнообразным составом бойцов и плавным, отточенным геймплеем.",
+        "comment": ""
+      }
+    },
+    "04-30": {
+      "selected": "Need for Speed II",
+      "sourceRow": 121,
+      "incomplete": [],
+      "original": {
+        "date": "30 апреля",
+        "title": "Need for Speed II",
+        "year": 1997,
+        "platforms": [
+          "PlayStation"
+        ],
+        "summary": "Аркадная гонка эпохи раннего 3D, сделавшая ставку на экзотические суперкары и скоростные трассы по всему миру.",
+        "comment": ""
+      }
+    },
+    "05-01": {
+      "selected": "The Elder Scrolls III: Morrowind",
+      "sourceRow": 122,
+      "incomplete": [],
+      "original": {
+        "date": "1 мая",
+        "title": "The Elder Scrolls III: Morrowind",
+        "year": 2002,
+        "platforms": [
+          "ПК",
+          "Xbox"
+        ],
+        "summary": "Открытый фэнтезийный мир, где игрок получил невиданную свободу; игра сформировала культ серии TES.",
+        "comment": ""
+      }
+    },
+    "05-02": {
+      "selected": "TumbleSeed",
+      "sourceRow": 123,
+      "incomplete": [],
+      "original": {
+        "date": "2 мая",
+        "title": "TumbleSeed",
+        "year": 2017,
+        "platforms": [
+          "Switch",
+          "PS4",
+          "ПК"
+        ],
+        "summary": "Инди‑roguelike баланс.",
+        "comment": ""
+      }
+    },
+    "05-03": {
+      "selected": "Forza Motorsport",
+      "sourceRow": 124,
+      "incomplete": [],
+      "original": {
+        "date": "3 мая",
+        "title": "Forza Motorsport",
+        "year": 2005,
+        "platforms": [
+          "Xbox"
+        ],
+        "summary": "Первый автосим Microsoft.",
+        "comment": ""
+      }
+    },
+    "05-04": {
+      "selected": "Red Dead Revolver",
+      "sourceRow": 125,
+      "incomplete": [],
+      "original": {
+        "date": "4 мая",
+        "title": "Red Dead Revolver",
+        "year": 2004,
+        "platforms": [
+          "PS2",
+          "Xbox"
+        ],
+        "summary": "Предтеча Red Dead.",
+        "comment": ""
+      }
+    },
+    "05-05": {
+      "selected": "Wolfenstein 3D",
+      "sourceRow": 126,
+      "incomplete": [],
+      "original": {
+        "date": "5 мая",
+        "title": "Wolfenstein 3D",
+        "year": 1992,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "«Дедушка» жанра шутеров: игра id Software, заложившая основы FPS с динамичным экшеном про побег из нацистского замка.",
+        "comment": ""
+      }
+    },
+    "05-06": {
+      "selected": "Hades II EA",
+      "sourceRow": 127,
+      "incomplete": [],
+      "original": {
+        "date": "6 мая",
+        "title": "Hades II EA",
+        "year": 2024,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Сиквел roguelike‑хита.",
+        "comment": ""
+      }
+    },
+    "05-07": {
+      "selected": "Resident Evil Village",
+      "sourceRow": 128,
+      "incomplete": [],
+      "original": {
+        "date": "7 мая",
+        "title": "Resident Evil Village",
+        "year": 2021,
+        "platforms": [
+          "PS5",
+          "XSX",
+          "ПК"
+        ],
+        "summary": "Современный хоррор.",
+        "comment": ""
+      }
+    },
+    "05-08": {
+      "selected": "Boom Blox",
+      "sourceRow": 129,
+      "incomplete": [],
+      "original": {
+        "date": "8 мая",
+        "title": "Boom Blox",
+        "year": 2008,
+        "platforms": [
+          "Wii"
+        ],
+        "summary": "Головоломка Спилберга.",
+        "comment": ""
+      }
+    },
+    "05-09": {
+      "selected": "GeoGuessr",
+      "sourceRow": 130,
+      "incomplete": [],
+      "original": {
+        "date": "9 мая",
+        "title": "GeoGuessr",
+        "year": 2013,
+        "platforms": [
+          "Web"
+        ],
+        "summary": "Популярная игра основанная на Google Street View",
+        "comment": ""
+      }
+    },
+    "05-10": {
+      "selected": "Uncharted 4: A Thief’s End",
+      "sourceRow": 131,
+      "incomplete": [],
+      "original": {
+        "date": "10 мая",
+        "title": "Uncharted 4: A Thief’s End",
+        "year": 2016,
+        "platforms": [
+          "PlayStation 4"
+        ],
+        "summary": "Завершение приключений Нейтана Дрейка с кинематографичным размахом",
+        "comment": "получила высокие оценки за сюжет и графику."
+      }
+    },
+    "05-11": {
+      "selected": "Virtua Fighter",
+      "sourceRow": 132,
+      "incomplete": [],
+      "original": {
+        "date": "11 мая",
+        "title": "Virtua Fighter",
+        "year": 1995,
+        "platforms": [
+          "Saturn"
+        ],
+        "summary": "Первая 3D‑драка дома.",
+        "comment": ""
+      }
+    },
+    "05-12": {
+      "selected": "Zelda TOTK",
+      "sourceRow": 133,
+      "incomplete": [],
+      "original": {
+        "date": "12 мая",
+        "title": "Zelda TOTK",
+        "year": 2023,
+        "platforms": [
+          "Switch"
+        ],
+        "summary": "Продолжение BotW.",
+        "comment": ""
+      }
+    },
+    "05-13": {
+      "selected": "DOOM (2016)",
+      "sourceRow": 134,
+      "incomplete": [],
+      "original": {
+        "date": "13 мая",
+        "title": "DOOM (2016)",
+        "year": 2016,
+        "platforms": [
+          "PS4",
+          "XB1",
+          "ПК"
+        ],
+        "summary": "Aggressive reboot.",
+        "comment": ""
+      }
+    },
+    "05-14": {
+      "selected": "ME Legendary Edition",
+      "sourceRow": 135,
+      "incomplete": [],
+      "original": {
+        "date": "14 мая",
+        "title": "ME Legendary Edition",
+        "year": 2021,
+        "platforms": [
+          "PS4",
+          "XSX",
+          "ПК"
+        ],
+        "summary": "Ремастер трилогии.",
+        "comment": ""
+      }
+    },
+    "05-15": {
+      "selected": "Diablo III",
+      "sourceRow": 136,
+      "incomplete": [],
+      "original": {
+        "date": "15 мая",
+        "title": "Diablo III",
+        "year": 2012,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Выход хита Blizzard.",
+        "comment": ""
+      }
+    },
+    "05-16": {
+      "selected": "Terraria",
+      "sourceRow": 137,
+      "incomplete": [],
+      "original": {
+        "date": "16 мая",
+        "title": "Terraria",
+        "year": 2011,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Пиксельная песочница, совмещающая исследование, крафт и выживание; получила поклонников за глубину и реиграбельность.",
+        "comment": ""
+      }
+    },
+    "05-17": {
+      "selected": "Minecraft alpha",
+      "sourceRow": 138,
+      "incomplete": [],
+      "original": {
+        "date": "17 мая",
+        "title": "Minecraft alpha",
+        "year": 2009,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Публичная альфа.",
+        "comment": ""
+      }
+    },
+    "05-18": {
+      "selected": "Red Dead Redemption",
+      "sourceRow": 139,
+      "incomplete": [],
+      "original": {
+        "date": "18 мая",
+        "title": "Red Dead Redemption",
+        "year": 2010,
+        "platforms": [
+          "PlayStation 3",
+          "Xbox 360"
+        ],
+        "summary": "Вестерн-экшен от Rockstar с драматичной историей и живым открытым миром Дикого Запада",
+        "comment": "культовая игра поколения."
+      }
+    },
+    "05-19": {
+      "selected": "The Witcher 3: Wild Hunt",
+      "sourceRow": 140,
+      "incomplete": [],
+      "original": {
+        "date": "19 мая",
+        "title": "The Witcher 3: Wild Hunt",
+        "year": 2015,
+        "platforms": [
+          "ПК",
+          "PlayStation 4",
+          "Xbox One"
+        ],
+        "summary": "Знаковая RPG от CD Projekt RED с нелинейным сюжетом и огромным миром",
+        "comment": "новая планка качества в жанре."
+      }
+    },
+    "05-20": {
+      "selected": "Transistor",
+      "sourceRow": 141,
+      "incomplete": [],
+      "original": {
+        "date": "20 мая",
+        "title": "Transistor",
+        "year": 2014,
+        "platforms": [
+          "ПК",
+          "PlayStation 4"
+        ],
+        "summary": "Стильный инди-экшен от создателей Bastion: атмосферный киберпанк-мир сочетается с тактической боевой системой.",
+        "comment": ""
+      }
+    },
+    "05-21": {
+      "selected": "Beat Saber",
+      "sourceRow": 142,
+      "incomplete": [],
+      "original": {
+        "date": "21 мая",
+        "title": "Beat Saber",
+        "year": 2019,
+        "platforms": [
+          "PSVR",
+          "PCVR"
+        ],
+        "summary": "VR‑ритм феномен.",
+        "comment": ""
+      }
+    },
+    "05-22": {
+      "selected": "Pac-Man",
+      "sourceRow": 143,
+      "incomplete": [],
+      "original": {
+        "date": "22 мая",
+        "title": "Pac-Man",
+        "year": 1980,
+        "platforms": [
+          "Аркада"
+        ],
+        "summary": "Аркадная классика от Namco: жёлтый персонаж, поедающий точки в лабиринте; одна из самых узнаваемых игр в истории.",
+        "comment": ""
+      }
+    },
+    "05-23": {
+      "selected": "Mario Galaxy 2",
+      "sourceRow": 144,
+      "incomplete": [],
+      "original": {
+        "date": "23 мая",
+        "title": "Mario Galaxy 2",
+        "year": 2010,
+        "platforms": [
+          "Wii"
+        ],
+        "summary": "Эталон платформеров.",
+        "comment": ""
+      }
+    },
+    "05-24": {
+      "selected": "Overwatch",
+      "sourceRow": 145,
+      "incomplete": [],
+      "original": {
+        "date": "24 мая",
+        "title": "Overwatch",
+        "year": 2016,
+        "platforms": [
+          "ПК",
+          "PlayStation 4",
+          "Xbox One"
+        ],
+        "summary": "Командный шутер от Blizzard с яркими героями и соревновательным геймплеем",
+        "comment": "мгновенно завоевал популярность и киберспорт."
+      }
+    },
+    "05-25": {
+      "selected": "Dark Souls Remastered",
+      "sourceRow": 146,
+      "incomplete": [],
+      "original": {
+        "date": "25 мая",
+        "title": "Dark Souls Remastered",
+        "year": 2018,
+        "platforms": [
+          "PS4",
+          "XB1",
+          "ПК"
+        ],
+        "summary": "60fps возврат.",
+        "comment": ""
+      }
+    },
+    "05-26": {
+      "selected": "Friday the 13th",
+      "sourceRow": 147,
+      "incomplete": [],
+      "original": {
+        "date": "26 мая",
+        "title": "Friday the 13th",
+        "year": 2017,
+        "platforms": [
+          "PS4",
+          "XB1",
+          "ПК"
+        ],
+        "summary": "Асимметр хоррор.",
+        "comment": ""
+      }
+    },
+    "05-27": {
+      "selected": "Watch Dogs",
+      "sourceRow": 148,
+      "incomplete": [],
+      "original": {
+        "date": "27 мая",
+        "title": "Watch Dogs",
+        "year": 2014,
+        "platforms": [
+          "ПК",
+          "PS4",
+          "XB1"
+        ],
+        "summary": "Дебют хакерского мира.",
+        "comment": ""
+      }
+    },
+    "05-28": {
+      "selected": "Outer Wilds",
+      "sourceRow": 149,
+      "incomplete": [],
+      "original": {
+        "date": "28 мая",
+        "title": "Outer Wilds",
+        "year": 2019,
+        "platforms": [
+          "Xbox One",
+          "ПК"
+        ],
+        "summary": "Инди‑классика.",
+        "comment": ""
+      }
+    },
+    "05-29": {
+      "selected": "Dragon's Dogma",
+      "sourceRow": 150,
+      "incomplete": [],
+      "original": {
+        "date": "29 мая",
+        "title": "Dragon's Dogma",
+        "year": 2012,
+        "platforms": [
+          "PS3",
+          "360"
+        ],
+        "summary": "Культовая ARPG Capcom.",
+        "comment": ""
+      }
+    },
+    "05-30": {
+      "selected": "Mario Kart 8",
+      "sourceRow": 151,
+      "incomplete": [],
+      "original": {
+        "date": "30 мая",
+        "title": "Mario Kart 8",
+        "year": 2014,
+        "platforms": [
+          "Wii U"
+        ],
+        "summary": "Картинг‑хит.",
+        "comment": ""
+      }
+    },
+    "05-31": {
+      "selected": "Advent Rising",
+      "sourceRow": 152,
+      "incomplete": [],
+      "original": {
+        "date": "31 мая",
+        "title": "Advent Rising",
+        "year": 2005,
+        "platforms": [
+          "Xbox"
+        ],
+        "summary": "Космическая сага.",
+        "comment": ""
+      }
+    },
+    "06-01": {
+      "selected": "Space Invaders",
+      "sourceRow": 153,
+      "incomplete": [],
+      "original": {
+        "date": "1 июня",
+        "title": "Space Invaders",
+        "year": 1978,
+        "platforms": [
+          "Аркада"
+        ],
+        "summary": "Ранний аркадный хит: игрок отражает нашествие инопланетян",
+        "comment": "символ золотой эры игровых автоматов."
+      }
+    },
+    "06-02": {
+      "selected": "Tekken 7",
+      "sourceRow": 154,
+      "incomplete": [],
+      "original": {
+        "date": "2 июня",
+        "title": "Tekken 7",
+        "year": 2017,
+        "platforms": [
+          "PS4",
+          "XB1",
+          "ПК"
+        ],
+        "summary": "Топ 3D‑файтинг.",
+        "comment": ""
+      }
+    },
+    "06-03": {
+      "selected": "Ninja Gaiden II",
+      "sourceRow": 155,
+      "incomplete": [],
+      "original": {
+        "date": "3 июня",
+        "title": "Ninja Gaiden II",
+        "year": 2008,
+        "platforms": [
+          "Xbox 360"
+        ],
+        "summary": "Хардкор слэшер.",
+        "comment": ""
+      }
+    },
+    "06-04": {
+      "selected": "Remember Me",
+      "sourceRow": 156,
+      "incomplete": [],
+      "original": {
+        "date": "4 июня",
+        "title": "Remember Me",
+        "year": 2013,
+        "platforms": [
+          "ПК",
+          "PS3",
+          "360"
+        ],
+        "summary": "Киберпанк боевик.",
+        "comment": ""
+      }
+    },
+    "06-05": {
+      "selected": "Diablo IV",
+      "sourceRow": 157,
+      "incomplete": [],
+      "original": {
+        "date": "5 июня",
+        "title": "Diablo IV",
+        "year": 2023,
+        "platforms": [
+          "PS5",
+          "XSX",
+          "ПК"
+        ],
+        "summary": "Новый Diablo.",
+        "comment": ""
+      }
+    },
+    "06-06": {
+      "selected": "Tetris",
+      "sourceRow": 158,
+      "incomplete": [],
+      "original": {
+        "date": "6 июня",
+        "title": "Tetris",
+        "year": 1984,
+        "platforms": [
+          "Электроника-60 (ПК)"
+        ],
+        "summary": "Знаменитая головоломка, созданная Алексеем Пажитновым; завоевала мир своей простой, но затягивающей механикой.",
+        "comment": ""
+      }
+    },
+    "06-07": {
+      "selected": "Slay the Spire",
+      "sourceRow": 159,
+      "incomplete": [],
+      "original": {
+        "date": "7 июня",
+        "title": "Slay the Spire",
+        "year": 2019,
+        "platforms": [
+          "Switch"
+        ],
+        "summary": "Карточный рогалик.",
+        "comment": ""
+      }
+    },
+    "06-08": {
+      "selected": "MGS Peace Walker",
+      "sourceRow": 160,
+      "incomplete": [],
+      "original": {
+        "date": "8 июня",
+        "title": "MGS Peace Walker",
+        "year": 2010,
+        "platforms": [
+          "PSP"
+        ],
+        "summary": "Ко‑оп шпион экшен.",
+        "comment": ""
+      }
+    },
+    "06-09": {
+      "selected": "TESO Tamriel Unl.",
+      "sourceRow": 161,
+      "incomplete": [],
+      "original": {
+        "date": "9 июня",
+        "title": "TESO Tamriel Unl.",
+        "year": 2015,
+        "platforms": [
+          "PS4",
+          "XB1"
+        ],
+        "summary": "Консольный старт MMO.",
+        "comment": ""
+      }
+    },
+    "06-10": {
+      "selected": "FFVII Remake Int.",
+      "sourceRow": 162,
+      "incomplete": [],
+      "original": {
+        "date": "10 июня",
+        "title": "FFVII Remake Int.",
+        "year": 2021,
+        "platforms": [
+          "PS5"
+        ],
+        "summary": "Версия с Юффи.",
+        "comment": ""
+      }
+    },
+    "06-11": {
+      "selected": "Ratchet Rift Apart",
+      "sourceRow": 163,
+      "incomplete": [],
+      "original": {
+        "date": "11 июня",
+        "title": "Ratchet Rift Apart",
+        "year": 2021,
+        "platforms": [
+          "PS5"
+        ],
+        "summary": "SSD шоу‑кейс.",
+        "comment": ""
+      }
+    },
+    "06-12": {
+      "selected": "Half‑Life Blue Shift",
+      "sourceRow": 164,
+      "incomplete": [],
+      "original": {
+        "date": "12 июня",
+        "title": "Half‑Life Blue Shift",
+        "year": 2001,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Дополнение.",
+        "comment": ""
+      }
+    },
+    "06-13": {
+      "selected": "Metal Slug 4",
+      "sourceRow": 165,
+      "incomplete": [],
+      "original": {
+        "date": "13 июня",
+        "title": "Metal Slug 4",
+        "year": 2002,
+        "platforms": [
+          "NeoGeo"
+        ],
+        "summary": "Run‑and‑gun класс.",
+        "comment": ""
+      }
+    },
+    "06-14": {
+      "selected": "The Last of Us",
+      "sourceRow": 166,
+      "incomplete": [],
+      "original": {
+        "date": "14 июня",
+        "title": "The Last of Us",
+        "year": 2013,
+        "platforms": [
+          "PlayStation 3"
+        ],
+        "summary": "Постапокалиптический экшен-драма от Naughty Dog с эмоциональным сюжетом и кинематографичным качеством исполнения.",
+        "comment": ""
+      }
+    },
+    "06-15": {
+      "selected": "Transport Tycoon Dlx",
+      "sourceRow": 167,
+      "incomplete": [],
+      "original": {
+        "date": "15 июня",
+        "title": "Transport Tycoon Dlx",
+        "year": 1994,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Менеджмент классика.",
+        "comment": ""
+      }
+    },
+    "06-16": {
+      "selected": "ARMS",
+      "sourceRow": 168,
+      "incomplete": [],
+      "original": {
+        "date": "16 июня",
+        "title": "ARMS",
+        "year": 2017,
+        "platforms": [
+          "Switch"
+        ],
+        "summary": "Оригинальный файтинг.",
+        "comment": ""
+      }
+    },
+    "06-17": {
+      "selected": "MGS PW (JP)",
+      "sourceRow": 169,
+      "incomplete": [],
+      "original": {
+        "date": "17 июня",
+        "title": "MGS PW (JP)",
+        "year": 2010,
+        "platforms": [
+          "PSP"
+        ],
+        "summary": "Японский релиз.",
+        "comment": ""
+      }
+    },
+    "06-18": {
+      "selected": "Wrecking Crew",
+      "sourceRow": 170,
+      "incomplete": [],
+      "original": {
+        "date": "18 июня",
+        "title": "Wrecking Crew",
+        "year": 1985,
+        "platforms": [
+          "NES"
+        ],
+        "summary": "Платформер Nintendo.",
+        "comment": ""
+      }
+    },
+    "06-19": {
+      "selected": "Zelda OoT 3D",
+      "sourceRow": 171,
+      "incomplete": [],
+      "original": {
+        "date": "19 июня",
+        "title": "Zelda OoT 3D",
+        "year": 2011,
+        "platforms": [
+          "3DS"
+        ],
+        "summary": "Ремейк легенды.",
+        "comment": ""
+      }
+    },
+    "06-20": {
+      "selected": "Wario World",
+      "sourceRow": 172,
+      "incomplete": [],
+      "original": {
+        "date": "20 июня",
+        "title": "Wario World",
+        "year": 2003,
+        "platforms": [
+          "GameCube"
+        ],
+        "summary": "3D платформер.",
+        "comment": ""
+      }
+    },
+    "06-21": {
+      "selected": "Vagrant Story",
+      "sourceRow": 173,
+      "incomplete": [],
+      "original": {
+        "date": "21 июня",
+        "title": "Vagrant Story",
+        "year": 2000,
+        "platforms": [
+          "PS1"
+        ],
+        "summary": "RPG Square.",
+        "comment": ""
+      }
+    },
+    "06-22": {
+      "selected": "Quake",
+      "sourceRow": 174,
+      "incomplete": [],
+      "original": {
+        "date": "22 июня",
+        "title": "Quake",
+        "year": 1996,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Новаторский 3D-шутер от id Software, представивший онлайн-мультиплеер; основа киберспортивных турниров по шутерам.",
+        "comment": ""
+      }
+    },
+    "06-23": {
+      "selected": "Sonic the Hedgehog",
+      "sourceRow": 175,
+      "incomplete": [],
+      "original": {
+        "date": "23 июня",
+        "title": "Sonic the Hedgehog",
+        "year": 1991,
+        "platforms": [
+          "Sega Genesis (Mega Drive)"
+        ],
+        "summary": "Молниеносный платформер от SEGA, представивший миру синего ежа Соника; икона, конкурировавшая с Марио в 90-х.",
+        "comment": ""
+      }
+    },
+    "06-24": {
+      "selected": "Advance Wars 2",
+      "sourceRow": 176,
+      "incomplete": [],
+      "original": {
+        "date": "24 июня",
+        "title": "Advance Wars 2",
+        "year": 2003,
+        "platforms": [
+          "GBA"
+        ],
+        "summary": "Тактика.",
+        "comment": ""
+      }
+    },
+    "06-25": {
+      "selected": "Conker Live Reloaded",
+      "sourceRow": 177,
+      "incomplete": [],
+      "original": {
+        "date": "25 июня",
+        "title": "Conker Live Reloaded",
+        "year": 2005,
+        "platforms": [
+          "Xbox"
+        ],
+        "summary": "Ремейк пародии.",
+        "comment": ""
+      }
+    },
+    "06-26": {
+      "selected": "Deus Ex",
+      "sourceRow": 178,
+      "incomplete": [],
+      "original": {
+        "date": "26 июня",
+        "title": "Deus Ex",
+        "year": 2000,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Киберпанковская RPG/шутер с нелинейным геймплеем",
+        "comment": "игроки решают задачи разными способами. Влиятельная игра жанра."
+      }
+    },
+    "06-27": {
+      "selected": "Smash Brawl EU",
+      "sourceRow": 179,
+      "incomplete": [],
+      "original": {
+        "date": "27 июня",
+        "title": "Smash Brawl EU",
+        "year": 2008,
+        "platforms": [
+          "Wii"
+        ],
+        "summary": "Европ релиз.",
+        "comment": ""
+      }
+    },
+    "06-28": {
+      "selected": "LEGO SW TFA",
+      "sourceRow": 180,
+      "incomplete": [],
+      "original": {
+        "date": "28 июня",
+        "title": "LEGO SW TFA",
+        "year": 2016,
+        "platforms": [
+          "ПК",
+          "консоли"
+        ],
+        "summary": "Лего адвенчура.",
+        "comment": ""
+      }
+    },
+    "06-29": {
+      "selected": "Diablo II",
+      "sourceRow": 181,
+      "incomplete": [],
+      "original": {
+        "date": "29 июня",
+        "title": "Diablo II",
+        "year": 2000,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Легендарный action/RPG от Blizzard, задавший стандарт лутер-экшенов и до сих пор любимый поклонниками жанра.",
+        "comment": ""
+      }
+    },
+    "06-30": {
+      "selected": "Banjo‑Kazooie",
+      "sourceRow": 182,
+      "incomplete": [],
+      "original": {
+        "date": "30 июня",
+        "title": "Banjo‑Kazooie",
+        "year": 1998,
+        "platforms": [
+          "N64"
+        ],
+        "summary": "Rare платформер.",
+        "comment": ""
+      }
+    },
+    "07-01": {
+      "selected": "Warcraft III: Reign of Chaos",
+      "sourceRow": 183,
+      "incomplete": [],
+      "original": {
+        "date": "1 июля",
+        "title": "Warcraft III: Reign of Chaos",
+        "year": 2002,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Стратегия с глубоким сюжетом и RPG-элементами",
+        "comment": "породила жанр MOBA через пользовательскую карту DotA."
+      }
+    },
+    "07-02": {
+      "selected": "FFXIV Shadowbringers",
+      "sourceRow": 184,
+      "incomplete": [],
+      "original": {
+        "date": "2 июля",
+        "title": "FFXIV Shadowbringers",
+        "year": 2019,
+        "platforms": [
+          "ПК",
+          "PS4"
+        ],
+        "summary": "Сюжетная арка MMO.",
+        "comment": ""
+      }
+    },
+    "07-03": {
+      "selected": "The Secret World",
+      "sourceRow": 185,
+      "incomplete": [],
+      "original": {
+        "date": "3 июля",
+        "title": "The Secret World",
+        "year": 2012,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "MMO тайные общества.",
+        "comment": ""
+      }
+    },
+    "07-04": {
+      "selected": "Zenless Zone Zero",
+      "sourceRow": 186,
+      "incomplete": [],
+      "original": {
+        "date": "4 июля",
+        "title": "Zenless Zone Zero",
+        "year": 2024,
+        "platforms": [
+          "ПК",
+          "PS5",
+          "моб"
+        ],
+        "summary": "Action gacha HoYoverse.",
+        "comment": ""
+      }
+    },
+    "07-05": {
+      "selected": "NiGHTS into Dreams",
+      "sourceRow": 187,
+      "incomplete": [],
+      "original": {
+        "date": "5 июля",
+        "title": "NiGHTS into Dreams",
+        "year": 1996,
+        "platforms": [
+          "Saturn JP"
+        ],
+        "summary": "Революция полётов.",
+        "comment": ""
+      }
+    },
+    "07-06": {
+      "selected": "Pokémon Go",
+      "sourceRow": 188,
+      "incomplete": [],
+      "original": {
+        "date": "6 июля",
+        "title": "Pokémon Go",
+        "year": 2016,
+        "platforms": [
+          "iOS",
+          "Android (мобильная)"
+        ],
+        "summary": "Мобильная AR-игра, объединившая миллионы людей по всему миру в погоне за покемонами; социальный феномен.",
+        "comment": ""
+      }
+    },
+    "07-07": {
+      "selected": "Final Fantasy IX",
+      "sourceRow": 189,
+      "incomplete": [],
+      "original": {
+        "date": "7 июля",
+        "title": "Final Fantasy IX",
+        "year": 2000,
+        "platforms": [
+          "PS1 JP"
+        ],
+        "summary": "JRPG 94 MC.",
+        "comment": ""
+      }
+    },
+    "07-08": {
+      "selected": "MADiSON",
+      "sourceRow": 190,
+      "incomplete": [],
+      "original": {
+        "date": "8 июля",
+        "title": "MADiSON",
+        "year": 2022,
+        "platforms": [
+          "ПК",
+          "PS5"
+        ],
+        "summary": "Инди‑хоррор.",
+        "comment": ""
+      }
+    },
+    "07-09": {
+      "selected": "Donkey Kong",
+      "sourceRow": 191,
+      "incomplete": [],
+      "original": {
+        "date": "9 июля",
+        "title": "Donkey Kong",
+        "year": 1981,
+        "platforms": [
+          "Аркада"
+        ],
+        "summary": "Аркада Nintendo, с которой началась карьера Марио; историческая игра, заложившая основы жанра платформеров.",
+        "comment": ""
+      }
+    },
+    "07-10": {
+      "selected": "Persona 4",
+      "sourceRow": 192,
+      "incomplete": [],
+      "original": {
+        "date": "10 июля",
+        "title": "Persona 4",
+        "year": 2008,
+        "platforms": [
+          "PlayStation 2"
+        ],
+        "summary": "Японская RPG-детектив, совмещающая школьную жизнь с исследованиями параллельного мира; обожаема за историю и героев.",
+        "comment": ""
+      }
+    },
+    "07-11": {
+      "selected": "FFXII Zodiac Age",
+      "sourceRow": 193,
+      "incomplete": [],
+      "original": {
+        "date": "11 июля",
+        "title": "FFXII Zodiac Age",
+        "year": 2017,
+        "platforms": [
+          "PS4"
+        ],
+        "summary": "Ремастер классики.",
+        "comment": ""
+      }
+    },
+    "07-12": {
+      "selected": "Dragon Quest Builders 2",
+      "sourceRow": 194,
+      "incomplete": [],
+      "original": {
+        "date": "12 июля",
+        "title": "Dragon Quest Builders 2",
+        "year": 2019,
+        "platforms": [
+          "Switch",
+          "PS4"
+        ],
+        "summary": "Песочница RPG.",
+        "comment": ""
+      }
+    },
+    "07-13": {
+      "selected": "Octopath Traveler",
+      "sourceRow": 195,
+      "incomplete": [],
+      "original": {
+        "date": "13 июля",
+        "title": "Octopath Traveler",
+        "year": 2018,
+        "platforms": [
+          "Switch"
+        ],
+        "summary": "HD‑2D JRPG.",
+        "comment": ""
+      }
+    },
+    "07-14": {
+      "selected": "God of War III Rem.",
+      "sourceRow": 196,
+      "incomplete": [],
+      "original": {
+        "date": "14 июля",
+        "title": "God of War III Rem.",
+        "year": 2015,
+        "platforms": [
+          "PS4"
+        ],
+        "summary": "Переиздание 1080p.",
+        "comment": ""
+      }
+    },
+    "07-15": {
+      "selected": "Star Wars: Knights of the Old Republic",
+      "sourceRow": 197,
+      "incomplete": [],
+      "original": {
+        "date": "15 июля",
+        "title": "Star Wars: Knights of the Old Republic",
+        "year": 2003,
+        "platforms": [
+          "Xbox",
+          "ПК"
+        ],
+        "summary": "Знаменитая RPG во вселенной «Звёздных войн» с глубоким сюжетом и системой морали",
+        "comment": "хит игроков и критиков."
+      }
+    },
+    "07-16": {
+      "selected": "SMT IV",
+      "sourceRow": 198,
+      "incomplete": [],
+      "original": {
+        "date": "16 июля",
+        "title": "SMT IV",
+        "year": 2013,
+        "platforms": [
+          "3DS NA"
+        ],
+        "summary": "Демоническая JRPG.",
+        "comment": ""
+      }
+    },
+    "07-17": {
+      "selected": "Sonic Mania Plus",
+      "sourceRow": 199,
+      "incomplete": [],
+      "original": {
+        "date": "17 июля",
+        "title": "Sonic Mania Plus",
+        "year": 2018,
+        "platforms": [
+          "Switch",
+          "PS4",
+          "XB1"
+        ],
+        "summary": "2D Sonic триумф.",
+        "comment": ""
+      }
+    },
+    "07-18": {
+      "selected": "Star Wars TIE Fighter",
+      "sourceRow": 200,
+      "incomplete": [],
+      "original": {
+        "date": "18 июля",
+        "title": "Star Wars TIE Fighter",
+        "year": 1994,
+        "platforms": [
+          "DOS"
+        ],
+        "summary": "Космосим LucasArts.",
+        "comment": ""
+      }
+    },
+    "07-19": {
+      "selected": "Final Fantasy X",
+      "sourceRow": 201,
+      "incomplete": [],
+      "original": {
+        "date": "19 июля",
+        "title": "Final Fantasy X",
+        "year": 2001,
+        "platforms": [
+          "PlayStation 2"
+        ],
+        "summary": "Первая FF на PS2 с озвучкой персонажей",
+        "comment": "трогательная история Тидуса и Юны получила признание поклонников JRPG."
+      }
+    },
+    "07-20": {
+      "selected": "Bastion",
+      "sourceRow": 202,
+      "incomplete": [],
+      "original": {
+        "date": "20 июля",
+        "title": "Bastion",
+        "year": 2011,
+        "platforms": [
+          "XBLA"
+        ],
+        "summary": "Дебют Supergiant.",
+        "comment": ""
+      }
+    },
+    "07-21": {
+      "selected": "Splatoon 2",
+      "sourceRow": 203,
+      "incomplete": [],
+      "original": {
+        "date": "21 июля",
+        "title": "Splatoon 2",
+        "year": 2017,
+        "platforms": [
+          "Switch"
+        ],
+        "summary": "Краскошутер хит.",
+        "comment": ""
+      }
+    },
+    "07-22": {
+      "selected": "Live A Live HD",
+      "sourceRow": 204,
+      "incomplete": [],
+      "original": {
+        "date": "22 июля",
+        "title": "Live A Live HD",
+        "year": 2022,
+        "platforms": [
+          "Switch"
+        ],
+        "summary": "Ремейк JRPG.",
+        "comment": ""
+      }
+    },
+    "07-23": {
+      "selected": "F1 Manager 2024",
+      "sourceRow": 205,
+      "incomplete": [],
+      "original": {
+        "date": "23 июля",
+        "title": "F1 Manager 2024",
+        "year": 2024,
+        "platforms": [
+          "Multiplatform"
+        ],
+        "summary": "Автоспорт менеджер.",
+        "comment": ""
+      }
+    },
+    "07-24": {
+      "selected": "Mega Man X Legacy",
+      "sourceRow": 206,
+      "incomplete": [],
+      "original": {
+        "date": "24 июля",
+        "title": "Mega Man X Legacy",
+        "year": 2018,
+        "platforms": [
+          "PC",
+          "консоли"
+        ],
+        "summary": "Коллекция X.",
+        "comment": ""
+      }
+    },
+    "07-25": {
+      "selected": "Dragon's Crown",
+      "sourceRow": 207,
+      "incomplete": [],
+      "original": {
+        "date": "25 июля",
+        "title": "Dragon's Crown",
+        "year": 2013,
+        "platforms": [
+          "PS3",
+          "Vita JP"
+        ],
+        "summary": "2D beat'em up.",
+        "comment": ""
+      }
+    },
+    "07-26": {
+      "selected": "FE Three Houses",
+      "sourceRow": 208,
+      "incomplete": [],
+      "original": {
+        "date": "26 июля",
+        "title": "FE Three Houses",
+        "year": 2019,
+        "platforms": [
+          "Switch"
+        ],
+        "summary": "Тактическая RPG.",
+        "comment": ""
+      }
+    },
+    "07-27": {
+      "selected": "StarCraft II",
+      "sourceRow": 209,
+      "incomplete": [],
+      "original": {
+        "date": "27 июля",
+        "title": "StarCraft II",
+        "year": 2010,
+        "platforms": [
+          "Win/Mac"
+        ],
+        "summary": "RTS‑хит.",
+        "comment": ""
+      }
+    },
+    "07-28": {
+      "selected": "Disney Illusion Isl.",
+      "sourceRow": 210,
+      "incomplete": [],
+      "original": {
+        "date": "28 июля",
+        "title": "Disney Illusion Isl.",
+        "year": 2023,
+        "platforms": [
+          "Switch"
+        ],
+        "summary": "2D платформер Disney.",
+        "comment": ""
+      }
+    },
+    "07-29": {
+      "selected": "Xenoblade Chronicles 3",
+      "sourceRow": 211,
+      "incomplete": [],
+      "original": {
+        "date": "29 июля",
+        "title": "Xenoblade Chronicles 3",
+        "year": 2022,
+        "platforms": [
+          "Switch"
+        ],
+        "summary": "JRPG эпос.",
+        "comment": ""
+      }
+    },
+    "07-30": {
+      "selected": "Mario Strikers Charged",
+      "sourceRow": 212,
+      "incomplete": [],
+      "original": {
+        "date": "30 июля",
+        "title": "Mario Strikers Charged",
+        "year": 2007,
+        "platforms": [
+          "Wii NA"
+        ],
+        "summary": "Футбол Mario.",
+        "comment": ""
+      }
+    },
+    "07-31": {
+      "selected": "Soulcalibur IV",
+      "sourceRow": 213,
+      "incomplete": [],
+      "original": {
+        "date": "31 июля",
+        "title": "Soulcalibur IV",
+        "year": 2008,
+        "platforms": [
+          "PS3",
+          "360 EU"
+        ],
+        "summary": "Файтинг Star Wars гост.",
+        "comment": ""
+      }
+    },
+    "08-01": {
+      "selected": "Slime Rancher",
+      "sourceRow": 214,
+      "incomplete": [],
+      "original": {
+        "date": "1 августа",
+        "title": "Slime Rancher",
+        "year": 2017,
+        "platforms": [
+          "ПК; Xbox One"
+        ],
+        "summary": "Фермерская песочница про слаймов.",
+        "comment": ""
+      }
+    },
+    "08-02": {
+      "selected": "Streets of Rage",
+      "sourceRow": 215,
+      "incomplete": [],
+      "original": {
+        "date": "2 августа",
+        "title": "Streets of Rage",
+        "year": 1991,
+        "platforms": [
+          "SEGA Genesis"
+        ],
+        "summary": "Культовый битем-ап SEGA; JP-релиз.",
+        "comment": ""
+      }
+    },
+    "08-03": {
+      "selected": "Baldur's Gate 3",
+      "sourceRow": 216,
+      "incomplete": [],
+      "original": {
+        "date": "3 августа",
+        "title": "Baldur's Gate 3",
+        "year": 2023,
+        "platforms": [
+          "ПК; PS5"
+        ],
+        "summary": "RPG-сенсация Larian.",
+        "comment": ""
+      }
+    },
+    "08-04": {
+      "selected": "Fall Guys: Ultimate Knockout",
+      "sourceRow": 217,
+      "incomplete": [],
+      "original": {
+        "date": "4 августа",
+        "title": "Fall Guys: Ultimate Knockout",
+        "year": 2020,
+        "platforms": [
+          "ПК; PS4"
+        ],
+        "summary": "Весёлая «королевская битва»-платформер.",
+        "comment": ""
+      }
+    },
+    "08-05": {
+      "selected": "Super Mario World 2: Yoshi's Island",
+      "sourceRow": 218,
+      "incomplete": [],
+      "original": {
+        "date": "5 августа",
+        "title": "Super Mario World 2: Yoshi's Island",
+        "year": 1995,
+        "platforms": [
+          "Super Famicom"
+        ],
+        "summary": "Дебют классики в Японии",
+        "comment": ""
+      }
+    },
+    "08-06": {
+      "selected": "Braid",
+      "sourceRow": 219,
+      "incomplete": [],
+      "original": {
+        "date": "6 августа",
+        "title": "Braid",
+        "year": 2008,
+        "platforms": [
+          "Xbox 360 (XBLA)"
+        ],
+        "summary": "Инди-платформер с перемоткой времени",
+        "comment": "получил признание за инновационный геймплей и повествование."
+      }
+    },
+    "08-07": {
+      "selected": "Fire Emblem: Shadow Dragon",
+      "sourceRow": 220,
+      "incomplete": [],
+      "original": {
+        "date": "7 августа",
+        "title": "Fire Emblem: Shadow Dragon",
+        "year": 2008,
+        "platforms": [
+          "Nintendo DS"
+        ],
+        "summary": "Ремейк первой FE",
+        "comment": ""
+      }
+    },
+    "08-08": {
+      "selected": "No Man's Sky (версия PC)",
+      "sourceRow": 221,
+      "incomplete": [],
+      "original": {
+        "date": "8 августа",
+        "title": "No Man's Sky (версия PC)",
+        "year": 2016,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Старт ПК-версии космической песочницы",
+        "comment": ""
+      }
+    },
+    "08-09": {
+      "selected": "Persona 4 Arena",
+      "sourceRow": 222,
+      "incomplete": [],
+      "original": {
+        "date": "9 августа",
+        "title": "Persona 4 Arena",
+        "year": 2012,
+        "platforms": [
+          "PS3; X360"
+        ],
+        "summary": "Файтинг-спин-офф Atlus.",
+        "comment": ""
+      }
+    },
+    "08-10": {
+      "selected": "Quake II (N64)",
+      "sourceRow": 223,
+      "incomplete": [],
+      "original": {
+        "date": "10 августа",
+        "title": "Quake II (N64)",
+        "year": 1999,
+        "platforms": [
+          "Nintendo 64"
+        ],
+        "summary": "Порт культового шутера",
+        "comment": ""
+      }
+    },
+    "08-11": {
+      "selected": "System Shock 2",
+      "sourceRow": 224,
+      "incomplete": [],
+      "original": {
+        "date": "11 августа",
+        "title": "System Shock 2",
+        "year": 1999,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Хоррор-RPG; предтеча BioShock.",
+        "comment": ""
+      }
+    },
+    "08-12": {
+      "selected": "Secret of Mana",
+      "sourceRow": 225,
+      "incomplete": [],
+      "original": {
+        "date": "12 августа",
+        "title": "Secret of Mana",
+        "year": 1993,
+        "platforms": [
+          "Super Famicom"
+        ],
+        "summary": "Action-RPG Square",
+        "comment": ""
+      }
+    },
+    "08-13": {
+      "selected": "Abzû",
+      "sourceRow": 226,
+      "incomplete": [],
+      "original": {
+        "date": "13 августа",
+        "title": "Abzû",
+        "year": 2016,
+        "platforms": [
+          "ПК; PS4"
+        ],
+        "summary": "Подводная арт-адвенчура.",
+        "comment": ""
+      }
+    },
+    "08-14": {
+      "selected": "Sleeping Dogs",
+      "sourceRow": 227,
+      "incomplete": [],
+      "original": {
+        "date": "14 августа",
+        "title": "Sleeping Dogs",
+        "year": 2012,
+        "platforms": [
+          "ПК; PS3; X360"
+        ],
+        "summary": "Open-world в Гонконге.",
+        "comment": ""
+      }
+    },
+    "08-15": {
+      "selected": "Chrono Cross",
+      "sourceRow": 228,
+      "incomplete": [],
+      "original": {
+        "date": "15 августа",
+        "title": "Chrono Cross",
+        "year": 2000,
+        "platforms": [
+          "PlayStation"
+        ],
+        "summary": "JRPG-наследник Chrono Trigger",
+        "comment": "высоко оценён за саундтрек и историю."
+      }
+    },
+    "08-16": {
+      "selected": "Metroid (NA)",
+      "sourceRow": 229,
+      "incomplete": [],
+      "original": {
+        "date": "16 августа",
+        "title": "Metroid (NA)",
+        "year": 1987,
+        "platforms": [
+          "NES"
+        ],
+        "summary": "Премьера серии в США",
+        "comment": ""
+      }
+    },
+    "08-17": {
+      "selected": "Cuphead (играб. билд)",
+      "sourceRow": 230,
+      "incomplete": [],
+      "original": {
+        "date": "17 августа",
+        "title": "Cuphead (играб. билд)",
+        "year": 2015,
+        "platforms": [
+          "Xbox One"
+        ],
+        "summary": "Дебют на Gamescom",
+        "comment": ""
+      }
+    },
+    "08-18": {
+      "selected": "Street Fighter II (SNES NA)",
+      "sourceRow": 231,
+      "incomplete": [],
+      "original": {
+        "date": "18 августа",
+        "title": "Street Fighter II (SNES NA)",
+        "year": 1992,
+        "platforms": [
+          "SNES"
+        ],
+        "summary": "См. релиз в США",
+        "comment": ""
+      }
+    },
+    "08-19": {
+      "selected": "Marvel's Spider-Man (ПК-порт)",
+      "sourceRow": 232,
+      "incomplete": [],
+      "original": {
+        "date": "19 августа",
+        "title": "Marvel's Spider-Man (ПК-порт)",
+        "year": 2022,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Переиздание хита Sony",
+        "comment": ""
+      }
+    },
+    "08-20": {
+      "selected": "Tony Hawk's Pro Skater",
+      "sourceRow": 233,
+      "incomplete": [],
+      "original": {
+        "date": "20 августа",
+        "title": "Tony Hawk's Pro Skater",
+        "year": 1999,
+        "platforms": [
+          "PlayStation"
+        ],
+        "summary": "Революция скейт-симов",
+        "comment": ""
+      }
+    },
+    "08-21": {
+      "selected": "BioShock",
+      "sourceRow": 234,
+      "incomplete": [],
+      "original": {
+        "date": "21 августа",
+        "title": "BioShock",
+        "year": 2007,
+        "platforms": [
+          "ПК; X360"
+        ],
+        "summary": "Шутер в Rapture.",
+        "comment": ""
+      }
+    },
+    "08-22": {
+      "selected": "Dishonored 2 (Demo)",
+      "sourceRow": 235,
+      "incomplete": [],
+      "original": {
+        "date": "22 августа",
+        "title": "Dishonored 2 (Demo)",
+        "year": 2017,
+        "platforms": [
+          "ПК/PS4/XB1"
+        ],
+        "summary": "Свободная демо-версия",
+        "comment": ""
+      }
+    },
+    "08-23": {
+      "selected": "Destiny 2 (PC Beta)",
+      "sourceRow": 236,
+      "incomplete": [],
+      "original": {
+        "date": "23 августа",
+        "title": "Destiny 2 (PC Beta)",
+        "year": 2017,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Открытая бета",
+        "comment": ""
+      }
+    },
+    "08-24": {
+      "selected": "Counter-Strike: Global Offensive",
+      "sourceRow": 237,
+      "incomplete": [],
+      "original": {
+        "date": "24 августа",
+        "title": "Counter-Strike: Global Offensive",
+        "year": 2012,
+        "platforms": [
+          "ПК и консоли"
+        ],
+        "summary": "Глобальный запуск CS:GO",
+        "comment": ""
+      }
+    },
+    "08-25": {
+      "selected": "GoldenEye 007",
+      "sourceRow": 238,
+      "incomplete": [],
+      "original": {
+        "date": "25 августа",
+        "title": "GoldenEye 007",
+        "year": 1997,
+        "platforms": [
+          "Nintendo 64"
+        ],
+        "summary": "Шпионский FPS-эталон",
+        "comment": ""
+      }
+    },
+    "08-26": {
+      "selected": "Metroid: Samus Returns (EU)",
+      "sourceRow": 239,
+      "incomplete": [],
+      "original": {
+        "date": "26 августа",
+        "title": "Metroid: Samus Returns (EU)",
+        "year": 2017,
+        "platforms": [
+          "3DS"
+        ],
+        "summary": "Европейский релиз ремейка",
+        "comment": ""
+      }
+    },
+    "08-27": {
+      "selected": "FF XIV: A Realm Reborn",
+      "sourceRow": 240,
+      "incomplete": [],
+      "original": {
+        "date": "27 августа",
+        "title": "FF XIV: A Realm Reborn",
+        "year": 2013,
+        "platforms": [
+          "ПК; PS3"
+        ],
+        "summary": "Успешный перезапуск MMO.",
+        "comment": ""
+      }
+    },
+    "08-28": {
+      "selected": "Batman: Arkham Asylum",
+      "sourceRow": 241,
+      "incomplete": [],
+      "original": {
+        "date": "28 августа",
+        "title": "Batman: Arkham Asylum",
+        "year": 2009,
+        "platforms": [
+          "PS3; X360"
+        ],
+        "summary": "Начало серии Arkham.",
+        "comment": ""
+      }
+    },
+    "08-29": {
+      "selected": "Mario + Rabbids Kingdom Battle",
+      "sourceRow": 242,
+      "incomplete": [],
+      "original": {
+        "date": "29 августа",
+        "title": "Mario + Rabbids Kingdom Battle",
+        "year": 2017,
+        "platforms": [
+          "Switch"
+        ],
+        "summary": "Тактический кроссовер",
+        "comment": ""
+      }
+    },
+    "08-30": {
+      "selected": "Until Dawn",
+      "sourceRow": 243,
+      "incomplete": [],
+      "original": {
+        "date": "30 августа",
+        "title": "Until Dawn",
+        "year": 2015,
+        "platforms": [
+          "PS4"
+        ],
+        "summary": "Интерактивный ужастик",
+        "comment": ""
+      }
+    },
+    "08-31": {
+      "selected": "Inside (Switch)",
+      "sourceRow": 244,
+      "incomplete": [],
+      "original": {
+        "date": "31 августа",
+        "title": "Inside (Switch)",
+        "year": 2018,
+        "platforms": [
+          "Switch"
+        ],
+        "summary": "Порт инди-шедевра",
+        "comment": ""
+      }
+    },
+    "09-01": {
+      "selected": "Metal Gear Solid V: The Phantom Pain",
+      "sourceRow": 245,
+      "incomplete": [],
+      "original": {
+        "date": "1 сентября",
+        "title": "Metal Gear Solid V: The Phantom Pain",
+        "year": 2015,
+        "platforms": [
+          "ПК; PS3/4; X360/One"
+        ],
+        "summary": "Открытый мир стелс-экшена.",
+        "comment": ""
+      }
+    },
+    "09-02": {
+      "selected": "The Sims 4",
+      "sourceRow": 246,
+      "incomplete": [],
+      "original": {
+        "date": "2 сентября",
+        "title": "The Sims 4",
+        "year": 2014,
+        "platforms": [
+          "ПК; Mac"
+        ],
+        "summary": "Жизненный сим-песочница.",
+        "comment": ""
+      }
+    },
+    "09-03": {
+      "selected": "Metal Gear Solid",
+      "sourceRow": 247,
+      "incomplete": [],
+      "original": {
+        "date": "3 сентября",
+        "title": "Metal Gear Solid",
+        "year": 1998,
+        "platforms": [
+          "PlayStation"
+        ],
+        "summary": "Революция стелса",
+        "comment": ""
+      }
+    },
+    "09-04": {
+      "selected": "Dragon Quest XI: Echoes of an Elusive Age",
+      "sourceRow": 248,
+      "incomplete": [],
+      "original": {
+        "date": "4 сентября",
+        "title": "Dragon Quest XI: Echoes of an Elusive Age",
+        "year": 2018,
+        "platforms": [
+          "PS4; ПК"
+        ],
+        "summary": "Классическая JRPG.",
+        "comment": ""
+      }
+    },
+    "09-05": {
+      "selected": "Knack II",
+      "sourceRow": 249,
+      "incomplete": [],
+      "original": {
+        "date": "5 сентября",
+        "title": "Knack II",
+        "year": 2017,
+        "platforms": [
+          "PS4"
+        ],
+        "summary": "Ко-оп платформер",
+        "comment": ""
+      }
+    },
+    "09-06": {
+      "selected": "Starfield",
+      "sourceRow": 250,
+      "incomplete": [],
+      "original": {
+        "date": "6 сентября",
+        "title": "Starfield",
+        "year": 2023,
+        "platforms": [
+          "ПК; XSX|S"
+        ],
+        "summary": "Новая вселенная Bethesda.",
+        "comment": ""
+      }
+    },
+    "09-07": {
+      "selected": "Marvel's Spider-Man",
+      "sourceRow": 251,
+      "incomplete": [],
+      "original": {
+        "date": "7 сентября",
+        "title": "Marvel's Spider-Man",
+        "year": 2018,
+        "platforms": [
+          "PS4"
+        ],
+        "summary": "Лучший супергерой-экшн",
+        "comment": ""
+      }
+    },
+    "09-08": {
+      "selected": "Phoenix Wright: Spirit of Justice",
+      "sourceRow": 252,
+      "incomplete": [],
+      "original": {
+        "date": "8 сентября",
+        "title": "Phoenix Wright: Spirit of Justice",
+        "year": 2016,
+        "platforms": [
+          "3DS"
+        ],
+        "summary": "Шестая часть Ace Attorney",
+        "comment": ""
+      }
+    },
+    "09-09": {
+      "selected": "SoulCalibur",
+      "sourceRow": 253,
+      "incomplete": [],
+      "original": {
+        "date": "9 сентября",
+        "title": "SoulCalibur",
+        "year": 1999,
+        "platforms": [
+          "Dreamcast"
+        ],
+        "summary": "Файтинг-эталон",
+        "comment": ""
+      }
+    },
+    "09-10": {
+      "selected": "NBA 2K22",
+      "sourceRow": 254,
+      "incomplete": [],
+      "original": {
+        "date": "10 сентября",
+        "title": "NBA 2K22",
+        "year": 2021,
+        "platforms": [
+          "Multi"
+        ],
+        "summary": "Баскетбольный сим",
+        "comment": ""
+      }
+    },
+    "09-11": {
+      "selected": "Digital Devil Story: Megami Tensei",
+      "sourceRow": 255,
+      "incomplete": [],
+      "original": {
+        "date": "11 сентября",
+        "title": "Digital Devil Story: Megami Tensei",
+        "year": 1987,
+        "platforms": [
+          "Famicom"
+        ],
+        "summary": "Старт мрачной JRPG-серии",
+        "comment": ""
+      }
+    },
+    "09-12": {
+      "selected": "Metroid: Samus Returns (JP)",
+      "sourceRow": 256,
+      "incomplete": [],
+      "original": {
+        "date": "12 сентября",
+        "title": "Metroid: Samus Returns (JP)",
+        "year": 2017,
+        "platforms": [
+          "3DS"
+        ],
+        "summary": "Японский релиз ремейка",
+        "comment": ""
+      }
+    },
+    "09-13": {
+      "selected": "Super Mario Bros.",
+      "sourceRow": 257,
+      "incomplete": [],
+      "original": {
+        "date": "13 сентября",
+        "title": "Super Mario Bros.",
+        "year": 1985,
+        "platforms": [
+          "NES"
+        ],
+        "summary": "Рождение платформеров",
+        "comment": ""
+      }
+    },
+    "09-14": {
+      "selected": "Halo Reach",
+      "sourceRow": 258,
+      "incomplete": [],
+      "original": {
+        "date": "14 сентября",
+        "title": "Halo Reach",
+        "year": 2010,
+        "platforms": [
+          "Xbox 360"
+        ],
+        "summary": "Последняя Halo Bungie",
+        "comment": ""
+      }
+    },
+    "09-15": {
+      "selected": "Undertale",
+      "sourceRow": 259,
+      "incomplete": [],
+      "original": {
+        "date": "15 сентября",
+        "title": "Undertale",
+        "year": 2015,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Инди-RPG-феномен",
+        "comment": ""
+      }
+    },
+    "09-16": {
+      "selected": "Divinity: Original Sin II",
+      "sourceRow": 260,
+      "incomplete": [],
+      "original": {
+        "date": "16 сентября",
+        "title": "Divinity: Original Sin II",
+        "year": 2017,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Изометрическая RPG; 93 MC.",
+        "comment": ""
+      }
+    },
+    "09-17": {
+      "selected": "Grand Theft Auto V",
+      "sourceRow": 261,
+      "incomplete": [],
+      "original": {
+        "date": "17 сентября",
+        "title": "Grand Theft Auto V",
+        "year": 2013,
+        "platforms": [
+          "PS3; X360"
+        ],
+        "summary": "Открытый мир Лос-Сантоса.",
+        "comment": ""
+      }
+    },
+    "09-18": {
+      "selected": "Marvel vs. Capcom: Infinite",
+      "sourceRow": 262,
+      "incomplete": [],
+      "original": {
+        "date": "18 сентября",
+        "title": "Marvel vs. Capcom: Infinite",
+        "year": 2017,
+        "platforms": [
+          "ПК; PS4; XOne"
+        ],
+        "summary": "Кроссовер-файтинг.",
+        "comment": ""
+      }
+    },
+    "09-19": {
+      "selected": "Okami",
+      "sourceRow": 263,
+      "incomplete": [],
+      "original": {
+        "date": "19 сентября",
+        "title": "Okami",
+        "year": 2006,
+        "platforms": [
+          "PS2"
+        ],
+        "summary": "Акварельный экшен-приключение",
+        "comment": ""
+      }
+    },
+    "09-20": {
+      "selected": "Spiritfarer",
+      "sourceRow": 264,
+      "incomplete": [],
+      "original": {
+        "date": "20 сентября",
+        "title": "Spiritfarer",
+        "year": 2020,
+        "platforms": [
+          "Switch; ПК"
+        ],
+        "summary": "Тёплая адвенчура о проводниках душ.",
+        "comment": ""
+      }
+    },
+    "09-21": {
+      "selected": "Baldur's Gate II: Shadows of Amn",
+      "sourceRow": 265,
+      "incomplete": [],
+      "original": {
+        "date": "21 сентября",
+        "title": "Baldur's Gate II: Shadows of Amn",
+        "year": 2000,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Классика BioWare",
+        "comment": ""
+      }
+    },
+    "09-22": {
+      "selected": "Dark Souls",
+      "sourceRow": 266,
+      "incomplete": [],
+      "original": {
+        "date": "22 сентября",
+        "title": "Dark Souls",
+        "year": 2011,
+        "platforms": [
+          "PS3; X360"
+        ],
+        "summary": "Хардкорная RPG-легенда.",
+        "comment": ""
+      }
+    },
+    "09-23": {
+      "selected": "Project CARS 2",
+      "sourceRow": 267,
+      "incomplete": [],
+      "original": {
+        "date": "23 сентября",
+        "title": "Project CARS 2",
+        "year": 2017,
+        "platforms": [
+          "ПК; PS4; XOne"
+        ],
+        "summary": "Симулятор гонок.",
+        "comment": ""
+      }
+    },
+    "09-24": {
+      "selected": "Silent Hill 2",
+      "sourceRow": 268,
+      "incomplete": [],
+      "original": {
+        "date": "24 сентября",
+        "title": "Silent Hill 2",
+        "year": 2001,
+        "platforms": [
+          "PS2"
+        ],
+        "summary": "Психологический хоррор-эталон",
+        "comment": ""
+      }
+    },
+    "09-25": {
+      "selected": "Halo 3",
+      "sourceRow": 269,
+      "incomplete": [],
+      "original": {
+        "date": "25 сентября",
+        "title": "Halo 3",
+        "year": 2007,
+        "platforms": [
+          "Xbox 360"
+        ],
+        "summary": "Кульминация трилогии Halo",
+        "comment": ""
+      }
+    },
+    "09-26": {
+      "selected": "The Long Dark 1.0",
+      "sourceRow": 270,
+      "incomplete": [],
+      "original": {
+        "date": "26 сентября",
+        "title": "The Long Dark 1.0",
+        "year": 2017,
+        "platforms": [
+          "ПК; PS4; XOne"
+        ],
+        "summary": "Выживание в снежной Канаде.",
+        "comment": ""
+      }
+    },
+    "09-27": {
+      "selected": "FIFA 22 (ранний доступ)",
+      "sourceRow": 271,
+      "incomplete": [],
+      "original": {
+        "date": "27 сентября",
+        "title": "FIFA 22 (ранний доступ)",
+        "year": 2021,
+        "platforms": [
+          "Multi"
+        ],
+        "summary": "Футбол EA с HyperMotion",
+        "comment": ""
+      }
+    },
+    "09-28": {
+      "selected": "Total War: Warhammer II",
+      "sourceRow": 272,
+      "incomplete": [],
+      "original": {
+        "date": "28 сентября",
+        "title": "Total War: Warhammer II",
+        "year": 2017,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Стратегия в мире Warhammer",
+        "comment": ""
+      }
+    },
+    "09-29": {
+      "selected": "Cuphead",
+      "sourceRow": 273,
+      "incomplete": [],
+      "original": {
+        "date": "29 сентября",
+        "title": "Cuphead",
+        "year": 2017,
+        "platforms": [
+          "ПК; XOne"
+        ],
+        "summary": "Ретро-босс-ран платформер.",
+        "comment": ""
+      }
+    },
+    "09-30": {
+      "selected": "Final Fantasy XV",
+      "sourceRow": 274,
+      "incomplete": [],
+      "original": {
+        "date": "30 сентября",
+        "title": "Final Fantasy XV",
+        "year": 2016,
+        "platforms": [
+          "PS4; XOne"
+        ],
+        "summary": "Современная JRPG-сага.",
+        "comment": ""
+      }
+    },
+    "10-01": {
+      "selected": "Castlevania: Symphony of the Night",
+      "sourceRow": 275,
+      "incomplete": [],
+      "original": {
+        "date": "1 октября",
+        "title": "Castlevania: Symphony of the Night",
+        "year": 1997,
+        "platforms": [
+          "PlayStation"
+        ],
+        "summary": "Метроидвания-эталон",
+        "comment": ""
+      }
+    },
+    "10-02": {
+      "selected": "Crash Bandicoot 2: Cortex Strikes Back",
+      "sourceRow": 276,
+      "incomplete": [],
+      "original": {
+        "date": "2 октября",
+        "title": "Crash Bandicoot 2: Cortex Strikes Back",
+        "year": 1997,
+        "platforms": [
+          "PS1"
+        ],
+        "summary": "Классика 3D-платформеров",
+        "comment": ""
+      }
+    },
+    "10-03": {
+      "selected": "FIFA 19",
+      "sourceRow": 277,
+      "incomplete": [],
+      "original": {
+        "date": "3 октября",
+        "title": "FIFA 19",
+        "year": 2018,
+        "platforms": [
+          "Multi"
+        ],
+        "summary": "Футбол с лицензией Лиги чемпионов",
+        "comment": ""
+      }
+    },
+    "10-04": {
+      "selected": "Star Wars: Squadrons",
+      "sourceRow": 278,
+      "incomplete": [],
+      "original": {
+        "date": "4 октября",
+        "title": "Star Wars: Squadrons",
+        "year": 2020,
+        "platforms": [
+          "ПК; PS4; XOne"
+        ],
+        "summary": "Космосим EA Motive.",
+        "comment": ""
+      }
+    },
+    "10-05": {
+      "selected": "Alan Wake Remastered",
+      "sourceRow": 279,
+      "incomplete": [],
+      "original": {
+        "date": "5 октября",
+        "title": "Alan Wake Remastered",
+        "year": 2021,
+        "platforms": [
+          "ПК; PS5/XSX"
+        ],
+        "summary": "Ремастер хоррора Remedy.",
+        "comment": ""
+      }
+    },
+    "10-06": {
+      "selected": "Mafia III",
+      "sourceRow": 280,
+      "incomplete": [],
+      "original": {
+        "date": "6 октября",
+        "title": "Mafia III",
+        "year": 2016,
+        "platforms": [
+          "ПК; PS4; XOne"
+        ],
+        "summary": "Открытый мир Нового Орлеана 60-х.",
+        "comment": ""
+      }
+    },
+    "10-07": {
+      "selected": "Shadow of War",
+      "sourceRow": 281,
+      "incomplete": [],
+      "original": {
+        "date": "7 октября",
+        "title": "Shadow of War",
+        "year": 2017,
+        "platforms": [
+          "ПК; PS4; XOne"
+        ],
+        "summary": "Middle-earth экшен-RPG.",
+        "comment": ""
+      }
+    },
+    "10-08": {
+      "selected": "Mortal Kombat",
+      "sourceRow": 282,
+      "incomplete": [],
+      "original": {
+        "date": "8 октября",
+        "title": "Mortal Kombat",
+        "year": 1992,
+        "platforms": [
+          "Arcade"
+        ],
+        "summary": "Файтинг с фаталити",
+        "comment": ""
+      }
+    },
+    "10-09": {
+      "selected": "Assassin's Creed Odyssey",
+      "sourceRow": 283,
+      "incomplete": [],
+      "original": {
+        "date": "9 октября",
+        "title": "Assassin's Creed Odyssey",
+        "year": 2018,
+        "platforms": [
+          "ПК; PS4; XOne"
+        ],
+        "summary": "Греция и RPG-система.",
+        "comment": ""
+      }
+    },
+    "10-10": {
+      "selected": "Portal",
+      "sourceRow": 284,
+      "incomplete": [],
+      "original": {
+        "date": "10 октября",
+        "title": "Portal",
+        "year": 2007,
+        "platforms": [
+          "ПК; X360"
+        ],
+        "summary": "Головоломка с порталами.",
+        "comment": ""
+      }
+    },
+    "10-11": {
+      "selected": "Forza Horizon 4",
+      "sourceRow": 285,
+      "incomplete": [],
+      "original": {
+        "date": "11 октября",
+        "title": "Forza Horizon 4",
+        "year": 2018,
+        "platforms": [
+          "ПК; XOne"
+        ],
+        "summary": "Гонки-песочница в Британии.",
+        "comment": ""
+      }
+    },
+    "10-12": {
+      "selected": "Back 4 Blood",
+      "sourceRow": 286,
+      "incomplete": [],
+      "original": {
+        "date": "12 октября",
+        "title": "Back 4 Blood",
+        "year": 2021,
+        "platforms": [
+          "ПК; PS5/XSX"
+        ],
+        "summary": "Ко-оп зомби-шутер.",
+        "comment": ""
+      }
+    },
+    "10-13": {
+      "selected": "Uncharted 2: Among Thieves",
+      "sourceRow": 287,
+      "incomplete": [],
+      "original": {
+        "date": "13 октября",
+        "title": "Uncharted 2: Among Thieves",
+        "year": 2009,
+        "platforms": [
+          "PS3"
+        ],
+        "summary": "Приключенческий экшен-киноблокбастер",
+        "comment": ""
+      }
+    },
+    "10-14": {
+      "selected": "Pokémon X / Y",
+      "sourceRow": 288,
+      "incomplete": [],
+      "original": {
+        "date": "14 октября",
+        "title": "Pokémon X / Y",
+        "year": 2013,
+        "platforms": [
+          "3DS"
+        ],
+        "summary": "Дебют 3D-поколения",
+        "comment": ""
+      }
+    },
+    "10-15": {
+      "selected": "Disco Elysium",
+      "sourceRow": 289,
+      "incomplete": [],
+      "original": {
+        "date": "15 октября",
+        "title": "Disco Elysium",
+        "year": 2019,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Ролевая игра о детективе-провале",
+        "comment": ""
+      }
+    },
+    "10-16": {
+      "selected": "Batman: Arkham City",
+      "sourceRow": 290,
+      "incomplete": [],
+      "original": {
+        "date": "16 октября",
+        "title": "Batman: Arkham City",
+        "year": 2011,
+        "platforms": [
+          "PS3; X360"
+        ],
+        "summary": "Расширение Arkham.",
+        "comment": ""
+      }
+    },
+    "10-17": {
+      "selected": "The Stanley Parable",
+      "sourceRow": 291,
+      "incomplete": [],
+      "original": {
+        "date": "17 октября",
+        "title": "The Stanley Parable",
+        "year": 2013,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Нарративная мета-сатира",
+        "comment": ""
+      }
+    },
+    "10-18": {
+      "selected": "Shadow of the Colossus",
+      "sourceRow": 292,
+      "incomplete": [],
+      "original": {
+        "date": "18 октября",
+        "title": "Shadow of the Colossus",
+        "year": 2005,
+        "platforms": [
+          "PS2"
+        ],
+        "summary": "Поэма о гигантах",
+        "comment": ""
+      }
+    },
+    "10-19": {
+      "selected": "Fallout: New Vegas",
+      "sourceRow": 293,
+      "incomplete": [],
+      "original": {
+        "date": "19 октября",
+        "title": "Fallout: New Vegas",
+        "year": 2010,
+        "platforms": [
+          "ПК; PS3; X360"
+        ],
+        "summary": "Пустошь и свобода выбора.",
+        "comment": ""
+      }
+    },
+    "10-20": {
+      "selected": "Firewatch",
+      "sourceRow": 294,
+      "incomplete": [],
+      "original": {
+        "date": "20 октября",
+        "title": "Firewatch",
+        "year": 2016,
+        "platforms": [
+          "ПК; PS4"
+        ],
+        "summary": "Атмосферная сторителлинг-игра.",
+        "comment": ""
+      }
+    },
+    "10-21": {
+      "selected": "The Evil Within 2",
+      "sourceRow": 295,
+      "incomplete": [],
+      "original": {
+        "date": "21 октября",
+        "title": "The Evil Within 2",
+        "year": 2017,
+        "platforms": [
+          "ПК; PS4; XOne"
+        ],
+        "summary": "Сурвайвал-хоррор от создателя RE.",
+        "comment": ""
+      }
+    },
+    "10-22": {
+      "selected": "Grand Theft Auto III",
+      "sourceRow": 296,
+      "incomplete": [],
+      "original": {
+        "date": "22 октября",
+        "title": "Grand Theft Auto III",
+        "year": 2001,
+        "platforms": [
+          "PS2"
+        ],
+        "summary": "Эпоха 3D-песочниц",
+        "comment": ""
+      }
+    },
+    "10-23": {
+      "selected": "Bayonetta 3",
+      "sourceRow": 297,
+      "incomplete": [],
+      "original": {
+        "date": "23 октября",
+        "title": "Bayonetta 3",
+        "year": 2022,
+        "platforms": [
+          "Nintendo Switch"
+        ],
+        "summary": "Динамичный слэшер Platinum",
+        "comment": ""
+      }
+    },
+    "10-24": {
+      "selected": "Red Dead Redemption",
+      "sourceRow": 298,
+      "incomplete": [],
+      "original": {
+        "date": "24 октября",
+        "title": "Red Dead Redemption",
+        "year": 2010,
+        "platforms": [
+          "PS3; X360"
+        ],
+        "summary": "Вестерн Rockstar.",
+        "comment": ""
+      }
+    },
+    "10-25": {
+      "selected": "Sid Meier's Civilization IV",
+      "sourceRow": 299,
+      "incomplete": [],
+      "original": {
+        "date": "25 октября",
+        "title": "Sid Meier's Civilization IV",
+        "year": 2005,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Эталон 4X-стратегий",
+        "comment": ""
+      }
+    },
+    "10-26": {
+      "selected": "Red Dead Redemption 2",
+      "sourceRow": 300,
+      "incomplete": [],
+      "original": {
+        "date": "26 октября",
+        "title": "Red Dead Redemption 2",
+        "year": 2018,
+        "platforms": [
+          "PS4; XOne"
+        ],
+        "summary": "Преквел-драма о Диком Западе.",
+        "comment": "кинематографичное повествование и детализированный мир принесли игре множество наград."
+      }
+    },
+    "10-27": {
+      "selected": "League of Legends",
+      "sourceRow": 301,
+      "incomplete": [],
+      "original": {
+        "date": "27 октября",
+        "title": "League of Legends",
+        "year": 2009,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "MOBA-феномен",
+        "comment": ""
+      }
+    },
+    "10-28": {
+      "selected": "Resident Evil 4 VR",
+      "sourceRow": 302,
+      "incomplete": [],
+      "original": {
+        "date": "28 октября",
+        "title": "Resident Evil 4 VR",
+        "year": 2021,
+        "platforms": [
+          "Quest 2"
+        ],
+        "summary": "VR-пересмотр классики",
+        "comment": ""
+      }
+    },
+    "10-29": {
+      "selected": "Titanfall 2",
+      "sourceRow": 303,
+      "incomplete": [],
+      "original": {
+        "date": "29 октября",
+        "title": "Titanfall 2",
+        "year": 2016,
+        "platforms": [
+          "ПК; PS4; XOne"
+        ],
+        "summary": "FPS с титанами и лучшей кампанией.",
+        "comment": ""
+      }
+    },
+    "10-30": {
+      "selected": "Luigi's Mansion 3",
+      "sourceRow": 304,
+      "incomplete": [],
+      "original": {
+        "date": "30 октября",
+        "title": "Luigi's Mansion 3",
+        "year": 2019,
+        "platforms": [
+          "Switch"
+        ],
+        "summary": "Пылесос-хоррор с юмором",
+        "comment": ""
+      }
+    },
+    "10-31": {
+      "selected": "Bloodborne: The Old Hunters",
+      "sourceRow": 305,
+      "incomplete": [],
+      "original": {
+        "date": "31 октября",
+        "title": "Bloodborne: The Old Hunters",
+        "year": 2015,
+        "platforms": [
+          "PS4"
+        ],
+        "summary": "Дополнение-мастер-класс FromSoftware",
+        "comment": ""
+      }
+    },
+    "11-01": {
+      "selected": "Counter-Strike 1.0",
+      "sourceRow": 306,
+      "incomplete": [],
+      "original": {
+        "date": "1 ноября",
+        "title": "Counter-Strike 1.0",
+        "year": 2000,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Тактический шутер-легенда",
+        "comment": ""
+      }
+    },
+    "11-02": {
+      "selected": "BioShock Infinite",
+      "sourceRow": 307,
+      "incomplete": [],
+      "original": {
+        "date": "2 ноября",
+        "title": "BioShock Infinite",
+        "year": 2013,
+        "platforms": [
+          "ПК; PS3; X360"
+        ],
+        "summary": "Шутер в летающем Колумбии.",
+        "comment": ""
+      }
+    },
+    "11-03": {
+      "selected": "Call of Duty 4: Modern Warfare",
+      "sourceRow": 308,
+      "incomplete": [],
+      "original": {
+        "date": "3 ноября",
+        "title": "Call of Duty 4: Modern Warfare",
+        "year": 2007,
+        "platforms": [
+          "ПК; PS3; X360"
+        ],
+        "summary": "Революция военной FPS.",
+        "comment": ""
+      }
+    },
+    "11-04": {
+      "selected": "Star Wars Jedi: Fallen Order",
+      "sourceRow": 309,
+      "incomplete": [],
+      "original": {
+        "date": "4 ноября",
+        "title": "Star Wars Jedi: Fallen Order",
+        "year": 2019,
+        "platforms": [
+          "ПК; PS4; XOne"
+        ],
+        "summary": "Сингл-плеер Star Wars.",
+        "comment": ""
+      }
+    },
+    "11-05": {
+      "selected": "God of War (2018) ПК-порт",
+      "sourceRow": 310,
+      "incomplete": [],
+      "original": {
+        "date": "5 ноября",
+        "title": "God of War (2018) ПК-порт",
+        "year": 2022,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Кратос на PC",
+        "comment": ""
+      }
+    },
+    "11-06": {
+      "selected": "Need for Speed: Underground",
+      "sourceRow": 311,
+      "incomplete": [],
+      "original": {
+        "date": "6 ноября",
+        "title": "Need for Speed: Underground",
+        "year": 2003,
+        "platforms": [
+          "PS2; XBOX; ПК"
+        ],
+        "summary": "Тюнинг-гоночная классика.",
+        "comment": ""
+      }
+    },
+    "11-07": {
+      "selected": "Mass Effect 2 (PS3)",
+      "sourceRow": 312,
+      "incomplete": [],
+      "original": {
+        "date": "7 ноября",
+        "title": "Mass Effect 2 (PS3)",
+        "year": 2011,
+        "platforms": [
+          "PS3"
+        ],
+        "summary": "Отличный порт RPG-эпопеи",
+        "comment": ""
+      }
+    },
+    "11-08": {
+      "selected": "Forza Horizon 5",
+      "sourceRow": 313,
+      "incomplete": [],
+      "original": {
+        "date": "8 ноября",
+        "title": "Forza Horizon 5",
+        "year": 2021,
+        "platforms": [
+          "ПК; XSX|S"
+        ],
+        "summary": "Открытые гонки в Мексике.",
+        "comment": ""
+      }
+    },
+    "11-09": {
+      "selected": "Halo 2",
+      "sourceRow": 314,
+      "incomplete": [],
+      "original": {
+        "date": "9 ноября",
+        "title": "Halo 2",
+        "year": 2004,
+        "platforms": [
+          "Xbox"
+        ],
+        "summary": "Продолжение с Xbox Live",
+        "comment": ""
+      }
+    },
+    "11-10": {
+      "selected": "God of War Ragnarök",
+      "sourceRow": 315,
+      "incomplete": [],
+      "original": {
+        "date": "10 ноября",
+        "title": "God of War Ragnarök",
+        "year": 2022,
+        "platforms": [
+          "PS5/PS4"
+        ],
+        "summary": "Финал северной саги",
+        "comment": ""
+      }
+    },
+    "11-11": {
+      "selected": "The Elder Scrolls V: Skyrim",
+      "sourceRow": 316,
+      "incomplete": [],
+      "original": {
+        "date": "11 ноября",
+        "title": "The Elder Scrolls V: Skyrim",
+        "year": 2011,
+        "platforms": [
+          "ПК; PS3; X360"
+        ],
+        "summary": "Открытый мир Тамриэля.",
+        "comment": ""
+      }
+    },
+    "11-12": {
+      "selected": "Super Mario Galaxy",
+      "sourceRow": 317,
+      "incomplete": [],
+      "original": {
+        "date": "12 ноября",
+        "title": "Super Mario Galaxy",
+        "year": 2007,
+        "platforms": [
+          "Wii"
+        ],
+        "summary": "Космический платформер",
+        "comment": ""
+      }
+    },
+    "11-13": {
+      "selected": "Call of Duty: Black Ops",
+      "sourceRow": 318,
+      "incomplete": [],
+      "original": {
+        "date": "13 ноября",
+        "title": "Call of Duty: Black Ops",
+        "year": 2010,
+        "platforms": [
+          "PS3; X360; ПК"
+        ],
+        "summary": "Холодная война и зомби.",
+        "comment": ""
+      }
+    },
+    "11-14": {
+      "selected": "Tomb Raider",
+      "sourceRow": 319,
+      "incomplete": [],
+      "original": {
+        "date": "14 ноября",
+        "title": "Tomb Raider",
+        "year": 1996,
+        "platforms": [
+          "PlayStation"
+        ],
+        "summary": "Дебют Лары Крофт",
+        "comment": ""
+      }
+    },
+    "11-15": {
+      "selected": "Halo: Combat Evolved",
+      "sourceRow": 320,
+      "incomplete": [],
+      "original": {
+        "date": "15 ноября",
+        "title": "Halo: Combat Evolved",
+        "year": 2001,
+        "platforms": [
+          "Xbox"
+        ],
+        "summary": "Флагман Microsoft",
+        "comment": ""
+      }
+    },
+    "11-16": {
+      "selected": "Half-Life 2",
+      "sourceRow": 321,
+      "incomplete": [],
+      "original": {
+        "date": "16 ноября",
+        "title": "Half-Life 2",
+        "year": 2004,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Революционная FPS",
+        "comment": ""
+      }
+    },
+    "11-17": {
+      "selected": "Metroid Prime",
+      "sourceRow": 322,
+      "incomplete": [],
+      "original": {
+        "date": "17 ноября",
+        "title": "Metroid Prime",
+        "year": 2002,
+        "platforms": [
+          "GameCube"
+        ],
+        "summary": "Перевод серии в 3D",
+        "comment": "отмечена за погружение в атмосферу исследовательского геймплея и дизайн уровней."
+      }
+    },
+    "11-18": {
+      "selected": "Minecraft",
+      "sourceRow": 323,
+      "incomplete": [],
+      "original": {
+        "date": "18 ноября",
+        "title": "Minecraft",
+        "year": 2011,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Блоковая песочница-феномен",
+        "comment": ""
+      }
+    },
+    "11-19": {
+      "selected": "Half-Life",
+      "sourceRow": 324,
+      "incomplete": [],
+      "original": {
+        "date": "19 ноября",
+        "title": "Half-Life",
+        "year": 1998,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Новый стандарт нарратива в FPS",
+        "comment": ""
+      }
+    },
+    "11-20": {
+      "selected": "Assassin's Creed II",
+      "sourceRow": 325,
+      "incomplete": [],
+      "original": {
+        "date": "20 ноября",
+        "title": "Assassin's Creed II",
+        "year": 2009,
+        "platforms": [
+          "PS3; X360"
+        ],
+        "summary": "Эцио и Ренессанс.",
+        "comment": "улучшил формулу оригинала и стал любимым в серии Assassin’s Creed."
+      }
+    },
+    "11-21": {
+      "selected": "Zelda: Ocarina of Time",
+      "sourceRow": 326,
+      "incomplete": [],
+      "original": {
+        "date": "21 ноября",
+        "title": "Zelda: Ocarina of Time",
+        "year": 1998,
+        "platforms": [
+          "Nintendo 64"
+        ],
+        "summary": "Эталон 3D-приключений",
+        "comment": ""
+      }
+    },
+    "11-22": {
+      "selected": "Pokémon Brilliant Diamond / Shining Pearl",
+      "sourceRow": 327,
+      "incomplete": [],
+      "original": {
+        "date": "22 ноября",
+        "title": "Pokémon Brilliant Diamond / Shining Pearl",
+        "year": 2021,
+        "platforms": [
+          "Switch"
+        ],
+        "summary": "Ремейки Sinnoh",
+        "comment": ""
+      }
+    },
+    "11-23": {
+      "selected": "World of Warcraft",
+      "sourceRow": 328,
+      "incomplete": [],
+      "original": {
+        "date": "23 ноября",
+        "title": "World of Warcraft",
+        "year": 2004,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "MMORPG-феномен",
+        "comment": ""
+      }
+    },
+    "11-24": {
+      "selected": "Pokemon Sun / Moon",
+      "sourceRow": 329,
+      "incomplete": [],
+      "original": {
+        "date": "24 ноября",
+        "title": "Pokemon Sun / Moon",
+        "year": 2016,
+        "platforms": [
+          "3DS"
+        ],
+        "summary": "7-е поколение; Алола.",
+        "comment": ""
+      }
+    },
+    "11-25": {
+      "selected": "Super Mario 3D World",
+      "sourceRow": 330,
+      "incomplete": [],
+      "original": {
+        "date": "25 ноября",
+        "title": "Super Mario 3D World",
+        "year": 2013,
+        "platforms": [
+          "Wii U"
+        ],
+        "summary": "Ко-оп платформер",
+        "comment": ""
+      }
+    },
+    "11-26": {
+      "selected": "Dragon Age: Inquisition",
+      "sourceRow": 331,
+      "incomplete": [],
+      "original": {
+        "date": "26 ноября",
+        "title": "Dragon Age: Inquisition",
+        "year": 2014,
+        "platforms": [
+          "ПК; PS4; XOne"
+        ],
+        "summary": "RPG года.",
+        "comment": ""
+      }
+    },
+    "11-27": {
+      "selected": "Hitman 3",
+      "sourceRow": 332,
+      "incomplete": [],
+      "original": {
+        "date": "27 ноября",
+        "title": "Hitman 3",
+        "year": 2021,
+        "platforms": [
+          "ПК; PS5/XSX"
+        ],
+        "summary": "Завершение трилогии World of Assassination.",
+        "comment": ""
+      }
+    },
+    "11-28": {
+      "selected": "The Witcher 3: Wild Hunt (Next-Gen)",
+      "sourceRow": 333,
+      "incomplete": [],
+      "original": {
+        "date": "28 ноября",
+        "title": "The Witcher 3: Wild Hunt (Next-Gen)",
+        "year": 2022,
+        "platforms": [
+          "PS5/XSX"
+        ],
+        "summary": "Переиздание RPG-шедевра",
+        "comment": ""
+      }
+    },
+    "11-29": {
+      "selected": "Final Fantasy XV: Comrades",
+      "sourceRow": 334,
+      "incomplete": [],
+      "original": {
+        "date": "29 ноября",
+        "title": "Final Fantasy XV: Comrades",
+        "year": 2017,
+        "platforms": [
+          "PS4; XOne"
+        ],
+        "summary": "Ко-оп дополнение.",
+        "comment": ""
+      }
+    },
+    "11-30": {
+      "selected": "Just Cause 3",
+      "sourceRow": 335,
+      "incomplete": [],
+      "original": {
+        "date": "30 ноября",
+        "title": "Just Cause 3",
+        "year": 2015,
+        "platforms": [
+          "ПК; PS4; XOne"
+        ],
+        "summary": "Взрывной сэндбокс.",
+        "comment": ""
+      }
+    },
+    "12-01": {
+      "selected": "Doom Eternal (Switch)",
+      "sourceRow": 336,
+      "incomplete": [],
+      "original": {
+        "date": "1 декабря",
+        "title": "Doom Eternal (Switch)",
+        "year": 2020,
+        "platforms": [
+          "Nintendo Switch"
+        ],
+        "summary": "Порт ультра-динамичного шутера",
+        "comment": ""
+      }
+    },
+    "12-02": {
+      "selected": "Halo Infinite: Season 1",
+      "sourceRow": 337,
+      "incomplete": [],
+      "original": {
+        "date": "2 декабря",
+        "title": "Halo Infinite: Season 1",
+        "year": 2021,
+        "platforms": [
+          "XSX|S; ПК"
+        ],
+        "summary": "Запуск мультиплеера F2P.",
+        "comment": ""
+      }
+    },
+    "12-03": {
+      "selected": "Super Smash Bros. Melee",
+      "sourceRow": 338,
+      "incomplete": [],
+      "original": {
+        "date": "3 декабря",
+        "title": "Super Smash Bros. Melee",
+        "year": 2001,
+        "platforms": [
+          "GameCube"
+        ],
+        "summary": "Киберспортивный платформ-файтинг",
+        "comment": ""
+      }
+    },
+    "12-04": {
+      "selected": "World of Warcraft: Shadowlands",
+      "sourceRow": 339,
+      "incomplete": [],
+      "original": {
+        "date": "4 декабря",
+        "title": "World of Warcraft: Shadowlands",
+        "year": 2020,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Дополнение-загробный мир",
+        "comment": ""
+      }
+    },
+    "12-05": {
+      "selected": "Persona 5 Royal (Switch)",
+      "sourceRow": 340,
+      "incomplete": [],
+      "original": {
+        "date": "5 декабря",
+        "title": "Persona 5 Royal (Switch)",
+        "year": 2022,
+        "platforms": [
+          "Nintendo Switch"
+        ],
+        "summary": "Релиз лучшей JRPG на гибриде",
+        "comment": ""
+      }
+    },
+    "12-06": {
+      "selected": "Star Wars: Knights of the Old Republic II",
+      "sourceRow": 341,
+      "incomplete": [],
+      "original": {
+        "date": "6 декабря",
+        "title": "Star Wars: Knights of the Old Republic II",
+        "year": 2004,
+        "platforms": [
+          "ПК; Xbox"
+        ],
+        "summary": "Продолжение мрачной космо-RPG.",
+        "comment": ""
+      }
+    },
+    "12-07": {
+      "selected": "Fortnite Chapter 1 Season 7",
+      "sourceRow": 342,
+      "incomplete": [],
+      "original": {
+        "date": "7 декабря",
+        "title": "Fortnite Chapter 1 Season 7",
+        "year": 2018,
+        "platforms": [
+          "Multi"
+        ],
+        "summary": "Сезон «X-4 Stormwing»",
+        "comment": ""
+      }
+    },
+    "12-08": {
+      "selected": "Cyberpunk 2077 (Patch 1.6)",
+      "sourceRow": 343,
+      "incomplete": [],
+      "original": {
+        "date": "8 декабря",
+        "title": "Cyberpunk 2077 (Patch 1.6)",
+        "year": 2022,
+        "platforms": [
+          "Multi"
+        ],
+        "summary": "«EdgeRunners» обновление",
+        "comment": ""
+      }
+    },
+    "12-09": {
+      "selected": "Among Us (Switch)",
+      "sourceRow": 344,
+      "incomplete": [],
+      "original": {
+        "date": "9 декабря",
+        "title": "Among Us (Switch)",
+        "year": 2020,
+        "platforms": [
+          "Nintendo Switch"
+        ],
+        "summary": "Социальный мультиплеер-хит",
+        "comment": ""
+      }
+    },
+    "12-10": {
+      "selected": "Doom",
+      "sourceRow": 345,
+      "incomplete": [],
+      "original": {
+        "date": "10 декабря",
+        "title": "Doom",
+        "year": 1993,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Игра-основатель жанра FPS",
+        "comment": ""
+      }
+    },
+    "12-11": {
+      "selected": "Angry Birds",
+      "sourceRow": 346,
+      "incomplete": [],
+      "original": {
+        "date": "11 декабря",
+        "title": "Angry Birds",
+        "year": 2009,
+        "platforms": [
+          "iOS"
+        ],
+        "summary": "Казуальный мировой хит",
+        "comment": ""
+      }
+    },
+    "12-12": {
+      "selected": "Planescape: Torment",
+      "sourceRow": 347,
+      "incomplete": [],
+      "original": {
+        "date": "12 декабря",
+        "title": "Planescape: Torment",
+        "year": 1999,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Философская RPG",
+        "comment": ""
+      }
+    },
+    "12-13": {
+      "selected": "Elden Ring DLC",
+      "sourceRow": 348,
+      "incomplete": [],
+      "original": {
+        "date": "13 декабря",
+        "title": "Elden Ring DLC",
+        "year": 2024,
+        "platforms": [
+          "Multi"
+        ],
+        "summary": "Выход доп. «Shadow of the Erdtree»",
+        "comment": ""
+      }
+    },
+    "12-14": {
+      "selected": "Gran Turismo 7 Spec II апдейт",
+      "sourceRow": 349,
+      "incomplete": [],
+      "original": {
+        "date": "14 декабря",
+        "title": "Gran Turismo 7 Spec II апдейт",
+        "year": 2023,
+        "platforms": [
+          "PS5/PS4"
+        ],
+        "summary": "Крупное расширение",
+        "comment": ""
+      }
+    },
+    "12-15": {
+      "selected": "Final Fantasy VII Crisis Core Reunion",
+      "sourceRow": 350,
+      "incomplete": [],
+      "original": {
+        "date": "15 декабря",
+        "title": "Final Fantasy VII Crisis Core Reunion",
+        "year": 2022,
+        "platforms": [
+          "Multi"
+        ],
+        "summary": "Ремейк приквела",
+        "comment": ""
+      }
+    },
+    "12-16": {
+      "selected": "Hades (1.0)",
+      "sourceRow": 351,
+      "incomplete": [],
+      "original": {
+        "date": "16 декабря",
+        "title": "Hades (1.0)",
+        "year": 2018,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Roguelike-революция",
+        "comment": ""
+      }
+    },
+    "12-17": {
+      "selected": "Among Us VR",
+      "sourceRow": 352,
+      "incomplete": [],
+      "original": {
+        "date": "17 декабря",
+        "title": "Among Us VR",
+        "year": 2022,
+        "platforms": [
+          "Quest 2; ПКVR"
+        ],
+        "summary": "VR-версия хита.",
+        "comment": ""
+      }
+    },
+    "12-18": {
+      "selected": "Celeste",
+      "sourceRow": 353,
+      "incomplete": [],
+      "original": {
+        "date": "18 декабря",
+        "title": "Celeste",
+        "year": 2018,
+        "platforms": [
+          "ПК; PS4; Switch"
+        ],
+        "summary": "Платформер о преодолении.",
+        "comment": ""
+      }
+    },
+    "12-19": {
+      "selected": "Stardew Valley Mobile",
+      "sourceRow": 354,
+      "incomplete": [],
+      "original": {
+        "date": "19 декабря",
+        "title": "Stardew Valley Mobile",
+        "year": 2018,
+        "platforms": [
+          "iOS"
+        ],
+        "summary": "Мобильный порт фермы-инди",
+        "comment": ""
+      }
+    },
+    "12-20": {
+      "selected": "Cave Story",
+      "sourceRow": 355,
+      "incomplete": [],
+      "original": {
+        "date": "20 декабря",
+        "title": "Cave Story",
+        "year": 2004,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Инди-классика",
+        "comment": ""
+      }
+    },
+    "12-21": {
+      "selected": "Baldur's Gate",
+      "sourceRow": 356,
+      "incomplete": [],
+      "original": {
+        "date": "21 декабря",
+        "title": "Baldur's Gate",
+        "year": 1998,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Классическая D&D-RPG",
+        "comment": ""
+      }
+    },
+    "12-22": {
+      "selected": "The Walking Dead Finale (Season 1)",
+      "sourceRow": 357,
+      "incomplete": [],
+      "original": {
+        "date": "22 декабря",
+        "title": "The Walking Dead Finale (Season 1)",
+        "year": 2012,
+        "platforms": [
+          "Multi"
+        ],
+        "summary": "Эмоциональный финал Telltale",
+        "comment": ""
+      }
+    },
+    "12-23": {
+      "selected": "Gran Turismo",
+      "sourceRow": 358,
+      "incomplete": [],
+      "original": {
+        "date": "23 декабря",
+        "title": "Gran Turismo",
+        "year": 1997,
+        "platforms": [
+          "PlayStation"
+        ],
+        "summary": "Реалистичный автосим",
+        "comment": ""
+      }
+    },
+    "12-24": {
+      "selected": "Phasmophobia (VR 1.0)",
+      "sourceRow": 359,
+      "incomplete": [],
+      "original": {
+        "date": "24 декабря",
+        "title": "Phasmophobia (VR 1.0)",
+        "year": 2024,
+        "platforms": [
+          "ПКVR"
+        ],
+        "summary": "Полный релиз хоррора-ко-оп",
+        "comment": ""
+      }
+    },
+    "12-25": {
+      "selected": "Animal Crossing",
+      "sourceRow": 360,
+      "incomplete": [],
+      "original": {
+        "date": "25 декабря",
+        "title": "Animal Crossing",
+        "year": 2001,
+        "platforms": [
+          "GameCube JP"
+        ],
+        "summary": "Праздничный релиз в Японии",
+        "comment": ""
+      }
+    },
+    "12-26": {
+      "selected": "Katamari Damacy REROLL (PS4/XOne)",
+      "sourceRow": 361,
+      "incomplete": [],
+      "original": {
+        "date": "26 декабря",
+        "title": "Katamari Damacy REROLL (PS4/XOne)",
+        "year": 2020,
+        "platforms": [
+          "PS4; XOne"
+        ],
+        "summary": "Ремастер катамари-классики.",
+        "comment": ""
+      }
+    },
+    "12-27": {
+      "selected": "Faster Than Light (iPad)",
+      "sourceRow": 362,
+      "incomplete": [],
+      "original": {
+        "date": "27 декабря",
+        "title": "Faster Than Light (iPad)",
+        "year": 2014,
+        "platforms": [
+          "iOS"
+        ],
+        "summary": "Мобильный порт FTL",
+        "comment": ""
+      }
+    },
+    "12-28": {
+      "selected": "Dead Cells: The Queen and the Sea DLC",
+      "sourceRow": 363,
+      "incomplete": [],
+      "original": {
+        "date": "28 декабря",
+        "title": "Dead Cells: The Queen and the Sea DLC",
+        "year": 2022,
+        "platforms": [
+          "Multi"
+        ],
+        "summary": "Финальное DLC",
+        "comment": ""
+      }
+    },
+    "12-29": {
+      "selected": "Loop Hero (Switch JP)",
+      "sourceRow": 364,
+      "incomplete": [],
+      "original": {
+        "date": "29 декабря",
+        "title": "Loop Hero (Switch JP)",
+        "year": 2021,
+        "platforms": [
+          "Switch"
+        ],
+        "summary": "Тактический «краулер»-инди",
+        "comment": ""
+      }
+    },
+    "12-30": {
+      "selected": "Outer Wilds Echoes of the Eye (PS5/XSX)",
+      "sourceRow": 365,
+      "incomplete": [],
+      "original": {
+        "date": "30 декабря",
+        "title": "Outer Wilds Echoes of the Eye (PS5/XSX)",
+        "year": 2023,
+        "platforms": [
+          "PS5; XSX"
+        ],
+        "summary": "Next-gen переиздание.",
+        "comment": ""
+      }
+    },
+    "12-31": {
+      "selected": "Diablo",
+      "sourceRow": 366,
+      "incomplete": [],
+      "original": {
+        "date": "31 декабря",
+        "title": "Diablo",
+        "year": 1996,
+        "platforms": [
+          "ПК"
+        ],
+        "summary": "Классика hack'n'slash от Blizzard",
+        "comment": ""
+      }
+    },
+    "02-29": {
+      "selected": "Heroes of Might and Magic III",
+      "sourceRow": 60,
+      "incomplete": [],
+      "fallbackFrom": "02-28"
+    }
+  }
+}

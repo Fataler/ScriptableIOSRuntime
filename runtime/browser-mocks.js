@@ -156,6 +156,38 @@ export function installMocks(options = {}) {
         clearTimeout(timer);
       }
     }
+
+    async loadImage() {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), this.timeoutInterval * 1000);
+
+      try {
+        const res = await fetch(this.url, {
+          signal: controller.signal,
+          method: this.method || "GET",
+          headers: { ...this.headers }
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        const blob = await res.blob();
+        const dataUrl = await new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = () => reject(new Error(`Image decode failed: ${this.url}`));
+          reader.readAsDataURL(blob);
+        });
+
+        const img = new Image();
+        await new Promise((resolve, reject) => {
+          img.onload = () => resolve();
+          img.onerror = () => reject(new Error(`Image load failed: ${this.url}`));
+          img.src = dataUrl;
+        });
+        return img;
+      } finally {
+        clearTimeout(timer);
+      }
+    }
   };
 
   globalThis.FileManager = {
@@ -291,8 +323,18 @@ function createFileManager(storagePrefix) {
       if (v === null) throw new Error(`Missing file: ${path}`);
       return v;
     },
+    readImage(path) {
+      const v = localStorage.getItem(path);
+      if (v === null) throw new Error(`Missing image: ${path}`);
+      const img = new Image();
+      img.src = v;
+      return img;
+    },
     writeString(path, text) {
       localStorage.setItem(path, text);
+    },
+    writeImage(path, image) {
+      localStorage.setItem(path, image?.src || image || "");
     },
     remove(path) {
       localStorage.removeItem(path);
@@ -591,6 +633,12 @@ function createDrawContextClass() {
         ctx.fillText(line, x, y);
         y += lineHeight;
       }
+    }
+
+    drawImageInRect(image, rect) {
+      this.ensureCanvas();
+      const ctx = this._ctx;
+      ctx.drawImage(image, rect.x, rect.y, rect.width, rect.height);
     }
 
     getImage() {

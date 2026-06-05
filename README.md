@@ -2,6 +2,15 @@
 
 A collection of hand-crafted widgets for the [Scriptable](https://scriptable.app/) iOS app, with a local preview server for development on macOS.
 
+## Layout
+
+- `widgets/`: Scriptable widgets and phone-side scripts
+- `tools/game-of-day/`: GameOfDay data builders
+- `tools/router-vpn/`: router VPN dev helpers
+- `docs/feedme/`: FeedMe backend docs
+- `data/game-of-day/`: generated local GameOfDay data
+- `temp/game-of-day/`: source notes and raw imports for GameOfDay
+
 ## Widgets
 
 ### 🌤 FWeather
@@ -67,6 +76,11 @@ Each widget is a single self-contained `.js` file that runs in Scriptable:
 
 - **On device:** [Scriptable](https://scriptable.app/) (free, iOS/iPadOS)
 - **For local preview:** Node.js 18+
+
+## Related Projects
+
+Alice skills are now maintained in a separate sibling project:
+[AliceSkills](/Users/fataler/SRC/AliceSkills/README.md)
 
 ---
 

@@ -30,6 +30,14 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  if (pathname === "/api/proxy-image") {
+    proxyImage(res, url).catch(error => {
+      res.writeHead(502, { "Content-Type": "text/plain; charset=utf-8" });
+      res.end(`Proxy error: ${error.message}`);
+    });
+    return;
+  }
+
   let filePathname = pathname;
   if (filePathname === "/") filePathname = "/preview/index.html";
 
@@ -136,6 +144,44 @@ function sendJson(res, payload) {
     "Cache-Control": "no-store"
   });
   res.end(body);
+}
+
+async function proxyImage(res, url) {
+  const target = url.searchParams.get("url");
+  if (!target) {
+    res.writeHead(400, { "Content-Type": "text/plain; charset=utf-8" });
+    res.end("Missing url");
+    return;
+  }
+
+  const parsed = new URL(target);
+  if (!/^https?:$/.test(parsed.protocol)) {
+    res.writeHead(400, { "Content-Type": "text/plain; charset=utf-8" });
+    res.end("Unsupported protocol");
+    return;
+  }
+
+  const upstream = await fetch(parsed, {
+    headers: {
+      "User-Agent": "ScriptableWidgetsPreview/1.0"
+    }
+  });
+
+  if (!upstream.ok) {
+    res.writeHead(upstream.status, { "Content-Type": "text/plain; charset=utf-8" });
+    res.end(`Upstream HTTP ${upstream.status}`);
+    return;
+  }
+
+  const contentType = upstream.headers.get("content-type") || "application/octet-stream";
+  const arrayBuffer = await upstream.arrayBuffer();
+
+  res.writeHead(200, {
+    "Content-Type": contentType,
+    "Cache-Control": "no-store",
+    "Access-Control-Allow-Origin": "*"
+  });
+  res.end(Buffer.from(arrayBuffer));
 }
 
 function openBrowser(url) {

@@ -7,7 +7,7 @@ Not part of Scriptable on iPhone.
 | `scripts/RouterVpnToggle.js` | Script to copy into Scriptable and run on the phone |
 | `tools/router-vpn/smoke-test.mjs` | Optional LAN check from a Mac on home Wi‑Fi |
 
-Same idea as FeedMe: widget/script in repo root paths, backend/dev helper elsewhere (`docs/feeding-gas-server.gs` for GAS).
+Same idea as FeedMe: widget/script in repo root paths, backend/dev helper elsewhere (`docs/feedme/gas-server.gs` for GAS).
 
 ```bash
 ROUTER_PASSWORD=your_password node tools/router-vpn/smoke-test.mjs
